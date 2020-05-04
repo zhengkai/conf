@@ -1,0 +1,32 @@
+#!/bin/bash -e
+
+if [ -z "$1" ]; then
+	>&2 echo no ip input
+	exit 1
+fi
+
+IP=$(echo "$1" | grep '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}')
+if [ -z "$IP" ]; then
+	>&2 echo "$1 is not a ip"
+	exit 1
+fi
+
+ROUTE=$(ip route | grep '^default' | head -n 1)
+if [ -z "$ROUTE" ]; then
+	>&2 echo route not found
+	exit 1
+fi
+
+GATEWAY=$(echo "$ROUTE" | cut -d ' ' -f 3 | grep '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}')
+echo "$GATEWAY"
+if [ -z "$GATEWAY" ]; then
+	>&2 echo gateway not found
+	exit 1
+fi
+
+DEV=$(echo "$ROUTE" | cut -d ' ' -f 5)
+echo "$DEV"
+
+set -x
+sudo route del default gw "$GATEWAY" "$DEV"
+sudo route add default gw "$IP" "$DEV"

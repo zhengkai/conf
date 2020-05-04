@@ -185,6 +185,7 @@ alias cleanacl="sudo setfacl -b -R ."
 alias set644="(find . -type d -exec sudo chmod 755 {} \;) && (find . -not -type d -exec sudo chmod 644 {} \;)"
 alias set664="(find . -type d -exec sudo chmod 775 {} \;) && (find . -not -type d -exec sudo chmod 664 {} \;)"
 alias set666="(find . -type d -exec sudo chmod 777 {} \;) && (find . -not -type d -exec sudo chmod 666 {} \;)"
+alias set600="(find . -type d -exec sudo chmod 700 {} \;) && (find . -not -type d -exec sudo chmod 600 {} \;)"
 
 #alias flushmc="echo 'flush_all' | nc localhost 11211"
 

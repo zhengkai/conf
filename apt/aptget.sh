@@ -1,11 +1,15 @@
 #!/bin/bash
-DIR=`readlink -f "$0"` && DIR=`dirname "$DIR"` && cd "$DIR" || exit 1
+DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
 
 if [ -f ~/.ssh/id_rsa.pub ] && [ ! -e ~/.ssh/authorized_keys ]; then
 	cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
 fi
 
-sudo chown -R zhengkai:zhengkai /home/zhengkai
+if [ ! -f ~/.ssh/id_rsa ]; then
+	sed '/github\.com/d' -i ./dotfiles/gitconfig
+fi
+
+sudo chown -R "${USER}:${USER}" "$HOME"
 
 sudo cp ../file/sudoers-nopassword /etc/sudoers.d/nopassword
 
@@ -27,18 +31,16 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 # sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 sudo timedatectl set-timezone Asia/Shanghai
 
-list=(`cat list-aptget`)
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq ${list[@]}
-
-sudo apt-get remove -y fonts-droid
+mapfile -t list < <(cat list-aptget)
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq "${list[@]}"
 
 sudo systemctl disable webhook
 sudo systemctl disable shadowsocks-libev
 
-sudo adduser zhengkai www-data
+sudo adduser "$USER" www-data
 
 touch ~/.vim/.viminfo
-sudo chown -R zhengkai:zhengkai ~/
+sudo chown -R "${USER}:${USER}" ~/
 
 mkdir -p ~/script
 if [ ! -e "$HOME/script/daily.sh" ]; then
@@ -50,5 +52,15 @@ fi
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-update-rc --no-fish --no-bash
 
-../update/npm.sh
+CHECK_ZHENGKAI=$(grep ' zhengkai' ~/.ssh/id_rsa.pub || :)
+if [ -n "$CHECK_ZHENGKAI" ]; then
+	if [ ! -e ~/hide ]; then
+		git clone --depth 1 git@github.com:zhengkai/hide.git ~/hide
+	fi
+	if [ ! -e ~/build ]; then
+		git clone --depth 1 git@github.com:zhengkai/build.git ~/build
+	fi
+fi
+
+# ../update/npm.sh
 ../update/pip.sh
