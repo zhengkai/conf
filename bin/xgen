@@ -1,0 +1,20 @@
+#! /bin/bash -e
+
+FILE="${HOME}/.local/xgen"
+if [ ! -f "$FILE" ]; then
+	DIR=$(dirname "$FILE")
+	mkdir -p "$DIR"
+	touch "$FILE"
+fi
+
+chmod 600 "$FILE"
+
+PASSWORD=$(pwgen -cnsy 100 1 | tr -d "\n\\\/\"'" | grep -o "[a-z].\{13\}[a-z]" | tail -n 1)
+
+echo -n -E "$PASSWORD" > "$FILE"
+echo -E "$PASSWORD"
+
+XCLIP=$(command -v xclip)
+if [ -n "$XCLIP" ]; then
+	echo -n -E "$PASSWORD" | xclip -selection clipboard
+fi

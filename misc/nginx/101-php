@@ -1,0 +1,29 @@
+server {
+
+	server_name php;
+
+	listen [::]:80;
+
+	access_log off;
+
+	root /www/manual/php;
+
+	location / {
+		index index.php;
+	}
+
+	location ~ \.php$ {
+		try_files $uri =404;
+		include fastcgi_params;
+	 	fastcgi_pass php:9000;
+	}
+
+	error_page 401 403 404 = /error.php;
+
+	location ~ \.(gif|jpg|jpeg|png|bmp|ico|css|js)$ {
+
+		rewrite ^\/styles\/mirror\.css$   /styles/phpnet.css last;
+
+		expires max;
+	}
+}

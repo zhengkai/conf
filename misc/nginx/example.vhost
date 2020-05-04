@@ -1,0 +1,18 @@
+server {
+
+	server_name _;
+
+	listen [::]:80;
+
+	location / {
+		root   /www/test;
+		index  index.php;
+
+		client_body_in_file_only clean;
+		fastcgi_pass_request_body off;
+		if ($request_filename ~ "\.php$") {
+			fastcgi_pass unix:/tmp/fastcgi.socket;
+		}
+	}
+}
+

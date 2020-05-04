@@ -1,0 +1,24 @@
+partial modifier_keys
+xkb_symbols "base" {
+
+	replace key <COMP> { [ XF86Shop ] };
+
+	replace key <RTSH> { [ XF86Game ] };
+	modifier_map Shift { <LFSH> };
+
+	replace key <RWIN> { [ XF86Messenger ] };
+	modifier_map Mod4 { <LWIN> };
+};
+
+partial modifier_keys
+xkb_symbols "esc" {
+
+	replace key <ESC>  { [ grave, asciitilde ] };
+	replace key <TLDE> { [ Escape, asciitilde ] };
+};
+
+partial modifier_keys
+xkb_symbols "hhkb_esc" {
+
+	replace key <ESC> { [ Escape, asciitilde ] };
+};

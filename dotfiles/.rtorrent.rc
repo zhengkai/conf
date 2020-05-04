@@ -1,0 +1,14 @@
+check_hash = yes
+
+ip = zhengkai.f3322.org
+bind = 192.168.1.212
+
+#http_proxy=http://127.0.0.1:8118/
+#proxy_address=127.0.0.7:55777
+
+directory = /rtorrent/incoming/
+session = /rtorrent/session/
+system.method.set_key = event.download.finished,move_complete,"execute=mv,-n,$d.get_base_path=,/rtorrent/incoming/;$d.set_directory=/rtorrent/download/"
+schedule = watch_directory,5,5,load_start=/rtorrent/watch/*.torrent
+
+

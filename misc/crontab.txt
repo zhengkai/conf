@@ -1,0 +1,23 @@
+# m h  dom mon dow   command
+
+1	8,20	* * * ~/conf/script/update_git.sh >/dev/null 2>&1
+
+1	14	* * 3 ~/conf/script/geoip-update.sh >/dev/null 2>&1
+
+13	7	* * * ~/script/php.manual.sh >/dev/null 2>&1
+18	6	* * * ~/script/update.sh >/dev/null 2>&1
+
+51	23	* * * ~/script/github_sync.sh >/dev/null 2>&1
+37	*	* * * ~/script/clean_thumbdb.sh >/dev/null 2>&1
+
+45	4	* * * ~/script/iconfans_sync.sh >/dev/null 2>&1
+
+*/20	*	* * *  ~/script/pet_vim_ctags.sh >/dev/null 2>&1
+
+*/10	*	* * *  ~/pet_pic_git.sh >/dev/null 2>&1
+*/10	*	* * *  ~/pet_svn.sh >/dev/null 2>&1
+*/10	*	* * *  ~/pet_git.sh >/dev/null 2>&1
+*	*	* * *  ~/pet_svn_htmlonly.sh >/dev/null 2>&1
+
+*/2	*	* * *  (/usr/bin/php /www/pet/cli/battle_convert.php) >/dev/null 2>&1
+

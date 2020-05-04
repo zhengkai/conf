@@ -1,0 +1,66 @@
+[user]
+	email = zhengkai@gmail.com
+	name = Zheng Kai
+	# signingkey = 57540DC7
+	signingkey = "934B08CA57540DC7"
+
+[alias]
+	who = shortlog -sn
+	st = status -s -u
+	co = checkout
+	df = diff --no-ext-diff
+	dl = diff --no-ext-diff HEAD~1 HEAD
+	ci = commit
+	br = branch
+	po = push origin
+	ps = push
+	pl = pull
+	l  = log --pretty=oneline -n 12 --graph --abbrev-commit --decorate
+	ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	pa = "!f() { git pull \"$@\" && git submodule update --init --recursive; }; f"
+
+[color]
+	ui = true
+
+[commit]
+	gpgsign = true
+
+[push]
+	default = upstream
+
+[pull]
+	rebase = true
+
+[rebase]
+	autostash = true
+
+[diff]
+    # external = ~/conf/script/git_diff_vim.sh
+	algorithm = patience
+
+[pager]
+	diff =
+
+[apply]
+	whitespace = nowarn
+
+[merge]
+	tool = vimdiff
+
+[color "status"]
+	added = bold 121
+	changed = bold 222
+	untracked = bold 141
+
+[core]
+	safecrlf = true
+	attributesfile = ~/conf/dotfiles/.gitattributes
+
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

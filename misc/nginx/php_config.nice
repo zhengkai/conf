@@ -1,0 +1,30 @@
+#! /bin/sh
+#
+# PHP configure
+
+'./configure' \
+'--enable-fpm' \
+'--with-readline' \
+'--enable-mysqlnd' \
+'--enable-sockets' \
+'--with-pdo-mysql' \
+'--enable-mbstring' \
+'--with-gd' \
+'--enable-gd-native-ttf' \
+'--disable-short-tags' \
+'--with-curl' \
+'--with-mcrypt' \
+'--with-mhash' \
+'--with-pear' \
+'--with-config-file-scan-dir=/etc/php5/conf.d' \
+'--without-sqlite3' \
+'--without-pdo-sqlite' \
+'--without-regex' \
+'--with-mysqli' \
+'--enable-embedded-mysqli' \
+'--with-gettext' \
+'--with-zlib' \
+'--with-jpeg-dir' \
+'--with-png-dir' \
+'--with-freetype-dir' \
+"$@"

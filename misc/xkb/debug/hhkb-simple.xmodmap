@@ -1,0 +1,5 @@
+keycode   9 = Escape asciitilde
+keycode  62 = XF86Game
+
+clear Shift
+add Shift = Shift_L

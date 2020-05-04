@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 查看 mkv 文件的 stream 信息（视频/音频/字幕等
+
+ffmpeg -i "$1" 2>&1 | grep '  Stream'

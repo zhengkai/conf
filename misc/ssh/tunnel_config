@@ -1,0 +1,35 @@
+Host *
+	ServerAliveCountMax 3
+	ServerAliveInterval 30
+	ExitOnForwardFailure yes
+	Compression yes
+	CompressionLevel 9
+	GSSAPIAuthentication no
+	ControlMaster no
+	ControlPath none
+	ControlPersist no
+	User zhengkai
+	StrictHostKeyChecking no
+	LogLevel quiet
+	UserKnownHostsFile /dev/null
+	PasswordAuthentication no
+
+Host freya
+	HostName 106.187.48.203
+
+Host tesla
+	HostName 106.120.209.227
+
+Host alpha
+	HostName 108.61.217.82
+
+Host sigma
+	HostName 52.77.17.190
+
+Host molly
+	Port 10001
+
+Host monk
+	LogLevel=quiet
+	HostName zhengkai.f3322.org
+	StrictHostKeyChecking no

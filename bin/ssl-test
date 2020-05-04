@@ -1,0 +1,11 @@
+#!/bin/bash
+
+NAME="${1:-soulogic.com}"
+
+openssl s_client -connect "${NAME}:443" -servername "$NAME" -tls1_3 < /dev/null 2>/dev/null
+
+echo
+openssl s_client -connect "${NAME}:443" -servername "$NAME" -tls1_3 < /dev/null 2>/dev/null | openssl x509 -noout -dates
+
+echo
+echo "https://ssllabs.com/ssltest/analyze.html?d=${NAME}"

@@ -1,0 +1,20 @@
+Host *
+	ServerAliveCountMax 3
+	ServerAliveInterval 30
+	ExitOnForwardFailure yes
+	Compression yes
+	CompressionLevel 9
+	GSSAPIAuthentication no
+	ControlMaster auto
+	ControlPath ~/.tmp/ssh_mux_deploy_%h_%p_%r
+	ControlPersist 4h
+	StrictHostKeyChecking=no
+	LogLevel=quiet
+	UserKnownHostsFile=/dev/null
+	User root
+	IdentityFile ~/.ssh/deploy/id_rsa
+	ProxyCommand ssh kai.zheng@deploy exec nc %h %p 2>/dev/null
+
+Host tesla
+	ProxyCommand ssh molly exec nc %h %p 2>/dev/null
+	HostName 10.0.16.140

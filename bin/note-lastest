@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DATE=`TZ='Asia/Shanghai' date '+%Y-%m-%d'`
+
+SAVE_PATH="${HOME}/hide/note"
+cd "$SAVE_PATH" || exit
+
+FILE=`ls "${HOSTNAME}-"* | sort -r | head -n 1`
+if [ -n "$FILE" ]; then
+	vi "$FILE"
+fi

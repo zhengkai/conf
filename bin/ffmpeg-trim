@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# 裁剪 mkv 文件，只保留指定的 stream id
+
+PATTERN='\.mkv$'
+
+if [[ ! $1 =~ $PATTERN ]]; then
+	>&2 echo mkv only
+	exit 1
+fi
+
+if [[ -z "$2" ]]; then
+	>&2 echo input stream id
+	exit 1
+fi
+
+FILE=`printf '%q' "$1"`
+
+CMD="ffmpeg -i $FILE"
+
+OUTPUT_DEFAULT="${1:0:-3}trim.mkv"
+
+OUTPUT="${3:-$OUTPUT_DEFAULT}"
+OUTPUT=`printf '%q' "$OUTPUT"`
+
+STREAM=`ffmpeg -i "$1" 2>&1 | grep '  Stream' | cut -d ':' -f 2 | grep -o -P '\d+'`
+STREAM=($STREAM)
+STREAM=" ${STREAM[@]} "
+
+IFS=',' read -ra KEEP <<< "$2"
+
+for K in "${KEEP[@]}"
+do
+	if [[ "$STREAM" = *" $K "* ]]; then
+		CMD+=" -map 0:$K"
+	else
+		>&2 echo unknown stream $K
+		exit
+	fi
+done
+
+# -map 0:0 -map 0:1
+CMD+=" -vcodec copy -acodec copy $OUTPUT"
+
+echo "$CMD"
+echo "$CMD" | bash
+ls -al $OUTPUT

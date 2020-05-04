@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function checkip() {
+	echo
+	echo "check $1"
+	IP=$(curl -s --max-time 10 --ipv4 "$1")
+	IP=${IP##::ffff:}
+	echo
+	echo "  ip: $IP"
+	if [[ -n "$IP" ]]; then
+		echo
+		geoiplookup "$IP"
+	fi
+}
+
+checkip "https://soulogic.com/ip"
+checkip "https://ifconfig.io/ip"

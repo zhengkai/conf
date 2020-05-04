@@ -1,0 +1,9 @@
+#! /bin/bash
+
+sudo docker ps
+echo
+
+sudo docker images
+echo
+
+sudo docker system prune -a

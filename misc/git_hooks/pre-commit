@@ -1,0 +1,132 @@
+#!/usr/bin/env php
+<?php
+
+$lDisableBranch = [
+//	"master",
+	"release",
+];
+
+$iError = 0;
+
+$sInitCommit  = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
+$sEmptyObject = "390672e6e4d4cc86cef6cdda93ec26b6a8c6b329";
+
+function error($sType, $lMessage) {
+	global $iError;
+	$iError = 1;
+	echo "\n\t".$sType." Error\n\n";
+	if (!is_array($lMessage)) {
+		$lMessage = explode("\n", $lMessage);
+	}
+	foreach ($lMessage as $sMessage) {
+		echo "\t\t".$sMessage."\n";
+	}
+	echo "\n";
+}
+
+/*
+ * 检查分支
+ */
+
+if ($lDisableBranch) {
+	$sCmd = "git branch --no-color 2>/dev/null";
+	$lBranch = [];
+	exec($sCmd, $lBranch);
+
+	foreach ($lBranch as $sBranch) {
+		if (substr($sBranch, 0, 1) == "*") { $sBranch = trim(substr($sBranch, 1));
+			if (in_array($sBranch, $lDisableBranch)) {
+				error("Branch", "Don't commit in branch \"".$sBranch."\"");
+			}
+		}
+	}
+}
+
+$sCmd = "git rev-parse --verify HEAD";
+$sCommit = exec($sCmd);
+if (!$sCommit) {
+	$sCommit = $sInitCommit;
+}
+
+$lSyntax = [];
+$lFilename = [];
+$lBOM = [];
+$sCmd = "git diff-index --cached --full-index ".escapeshellarg($sCommit);
+exec($sCmd, $lLine);
+foreach ($lLine as $sLine) {
+
+	list(, , , $sHash, $sStatus, $sFilename) = sscanf($sLine, ":%s %s %s %s %s %s");
+	if ($sStatus == "D") {
+		continue;
+	}
+	$sExt = (string)pathinfo($sFilename, PATHINFO_EXTENSION);
+
+	/*
+	 * 检查文件名
+	 */
+
+	/*
+	$sPattern = '#^'
+		.'('
+			.'\.?'
+			.'([0-9a-zA-Z]+)'
+			.'(\-|_|/|/_)?'
+		.')*'
+		.'$#';
+	$sPatternCase = '#([0-9a-z][A-Z]|[A-Z][0-9a-z])#'; // 不得大小写混合
+	if (!preg_match($sPattern, $sFilename) || preg_match($sPatternCase, $sFilename)) {
+		$lFilename[] = $sFilename;
+	}
+	 */
+
+	/*
+	 * 检查 BOM
+	 */
+
+	if ($sHash != $sEmptyObject) { // empty file
+		$sCmd = "git cat-file -p ".escapeshellarg($sHash)." | head -c 3";
+		$sHead = (string)exec($sCmd);
+		if ($sHead == "efbbbf") {
+			$lBOM[] = $sFilename;
+		}
+	}
+
+	/*
+	 * 检查 PHP 语法
+	 */
+
+	if ($sExt != "php") {
+		continue;
+	}
+
+	$sCmd = "git cat-file -p ".escapeshellarg($sHash)." | /usr/bin/env php -d display_errors=On -l 2>&1";
+	$lOutput = [];
+	$iCmdError = 0;
+	exec($sCmd, $lOutput, $iCmdError);
+	$sError = trim(implode("\n", $lOutput));
+	if (!$iCmdError) {
+		continue;
+	}
+
+	$sPattern = '#syntax error, (.+) in \- on line (\d+)$#m';
+	$aMatch = [];
+	preg_match($sPattern, $sError, $aMatch);
+	list(, $sMessage, $iLine) = $aMatch;
+
+	$lSyntax[] = $sFilename.' [ '.$iLine.' ]: '.$sMessage;
+}
+
+if ($lFilename) {
+	error("Filename", $lFilename);
+}
+if ($lSyntax) {
+	error("Syntax", $lSyntax);
+}
+if ($lBOM) {
+	error("UTF-8 BOM", $lBOM);
+}
+
+if ($iError) {
+	echo "\n - Commit fail -\n";
+}
+exit($iError);

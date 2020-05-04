@@ -1,0 +1,132 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	>&2 echo no image file
+	exit 1
+fi
+
+RESIZE="$2"
+if [ -z "$2" ]; then
+	TW=$(($(tput cols || echo 80) - 1))
+	TH=$(($(($(tput lines || echo 30) - 1)) * 2))
+
+	RESIZE="${TW}x${TH}"
+fi
+
+if [[ "$1" =~ ^https?:// ]]; then
+	BMP=($(curl -s "$1" | convert '-[0]' -type truecolor -resize "$RESIZE" bmp:- | hexdump -v -e '/1 "%02x\n"'))
+else
+
+	if [ ! -e "$1" ]; then
+		>&2 echo no image file $1
+		exit 1
+	fi
+	CHECK=`identify "$1" 2>/dev/null`
+
+	if [ -z "$CHECK" ]; then
+		>&2 echo not a image file $1
+		exit 1
+	fi
+
+	BMP=($(convert "${1}[0]" -type truecolor -resize "$RESIZE" bmp:- 2>/dev/null | hexdump -v -e '/1 "%02x\n"'))
+fi
+
+FILESIZE=${#BMP[@]}
+
+if [[ $FILESIZE -le 0 ]]; then
+	>&2 echo convert fail, maybe not a image file
+	exit 1
+fi
+
+PIXEL=3
+
+function getNum() {
+	local hex="${BMP[$(($1 + 3))]}${BMP[$(($1 + 2))]}${BMP[$(($1 + 1))]}${BMP[$(($1))]}"
+	echo $((16#$hex))
+}
+
+function getSingle() {
+	local pos=$1
+	if [ -n "$2" ]; then
+		pos=$(($pos + $2))
+	fi
+	echo $((16#${BMP[$pos]}))
+}
+
+function getColor() {
+
+	if [ $3 -lt 0 ]; then
+		echo "$1;2;0;0;0"
+		return
+	fi
+
+	local start=$(($OFFSET + $2 * $PIXEL + $3 * $LINE_BIT))
+
+	# r=$(getSingle $start 2)
+
+	r=$((16#${BMP[$(($start + 2))]}))
+	g=$((16#${BMP[$(($start + 1))]}))
+	b=$((16#${BMP[$start]}))
+
+	if [ -z "$r$g$b" ]; then
+		return
+	fi
+
+	# echo $1 $2 $start $r $g $b
+
+	echo "$1;2;$r;$g;$b"
+}
+
+OFFSET=$( getNum $((0x0a)) )
+W=$( getNum $((0x12)) )
+H=$( getNum $((0x16)) )
+
+LINE_BIT=$(( $(($W * $PIXEL)) % 4 ))
+LINE_BIT=$(( $(($W * $PIXEL)) + 4 - $LINE_BIT ))
+
+# echo "   size $FILESIZE"
+# echo " offset $OFFSET"
+# echo "  width $W"
+# echo " height $H"
+
+for y in $(seq $H -2 0)
+do
+
+	OUTPUT=""
+
+	PREV_FG=""
+	PREV_BG=""
+
+	for x in $(seq 0 1 $(($W - 1)))
+	do
+
+		FG=$(getColor 38 $x $(($y - 1)))
+
+		if [[ $PREV_FG == "$FG" ]]; then
+			FG=''
+		else
+			PREV_FG=$FG
+		fi
+
+		BG=$(getColor 48 $x $y)
+		if [[ $PREV_BG == $BG ]]; then
+			BG=''
+		else
+			PREV_BG=$BG
+		fi
+
+		if [ -n "$FG$BG" ]; then
+			if [ -n "$FG" ] && [ -n "$BG" ]; then
+				FG+=';'
+			fi
+			OUTPUT+="\033[${FG}${BG}m▄"
+		else
+			OUTPUT+="▄"
+		fi
+
+	done
+
+	OUTPUT+='\033[0m'
+
+	echo -e $OUTPUT
+done

@@ -1,0 +1,11 @@
+server {
+
+	server_name vim;
+
+	listen   80;
+
+	location / {
+		root /www/manual/vim;
+	}
+}
+

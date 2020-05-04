@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [[ -n "$TMUX" || -n "$TERMCAP" ]]; then
+	>&2 echo ERROR: already in tmux, exit
+	sleep 10
+	exit
+fi
+
+name=${1:-default}
+window_num=${2:-3}
+
+tmux='/usr/bin/tmux'
+
+has_session=true
+"$tmux" has-session -t $name 2>/dev/null || has_sesion=false
+
+if [ "$has_sesion" = false ]; then
+
+	"$tmux" -2 new-session -d -s "$name"
+
+	i=$window_num
+	while [ $i -gt 1 ]; do
+		"$tmux" new-window -t "$name:$i"
+		let i=$i-1
+	done
+
+	if [ "$name" == 'default' ]; then
+		INIT_SCRIPT="${HOME}/hide/tmux/${HOSTNAME,,}.sh"
+		if [ -f "$INIT_SCRIPT" ]; then
+			. "$INIT_SCRIPT"
+		fi
+	fi
+
+	"$tmux" select-window -t "$name:1"
+fi
+
+"$tmux" -2 attach -t "$name"

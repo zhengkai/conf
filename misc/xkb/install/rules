@@ -1,0 +1,3 @@
+  zhengkai:base     = +zhengkai(base)
+  zhengkai:esc      = +zhengkai(esc)
+  zhengkai:hhkb_esc = +zhengkai(hhkb_esc)

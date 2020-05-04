@@ -1,0 +1,112 @@
+# moc keymap file
+# by jwc < http://jwcxz.com >
+#
+# this keymap scheme attempts to make
+# moc very vimlike ... there are a few
+# (such as h and l) that are customized
+# to my taste
+
+quit_client =				q
+go =						ENTER
+menu_down =					DOWN		j
+menu_up =					UP			k
+menu_page_down =            ^f
+menu_page_up =				^b
+menu_first_item =			H
+menu_last_item =			L
+quit = 						Q
+stop = 						s
+next =						n
+previous =					b
+pause =						p SPACE
+toggle_read_tags =			f
+toggle_shuffle =			S
+toggle_repeat =				R
+toggle_auto_next =			X
+toggle_menu =				TAB			h
+toggle_layout =				M-L
+add_file =					l
+clear_playlist =			C
+remove_dead_entries =		Y
+add_directory =				A
+volume_down_1 =				<
+volume_up_1 =				>
+volume_down_5 =				,
+volume_up_5 =				.
+seek_forward =				RIGHT
+seek_backward =				LEFT
+seek_forward_fast =			]
+seek_backward_fast =		[
+help =						?
+hide_message =				M
+refresh =					^r
+reload =					r
+toggle_hidden_files =		^H
+go_to_music_directory =		m
+delete_from_playlist =		o
+search_menu =				/
+save_playlist =				V
+toggle_show_time =			^t
+toggle_show_format =		M-f
+go_to_playing_file =		G
+go_to_a_directory =			g
+go_up =						y
+cancel =					^x ESCAPE
+go_url =					^o
+volume_10 =					M-1
+volume_20 =					M-2
+volume_30 =					M-3
+volume_40 =					M-4
+volume_50 =					M-5
+volume_60 =					M-6
+volume_70 =					M-7
+volume_80 =					M-8
+volume_90 =					M-9
+mark_start =				'
+mark_end =					"
+
+# Key bindings for directories: defaults are Shift-number
+# shift 1 = ! = Fastdir1
+go_to_fast_dir1 =			!
+go_to_fast_dir2 =			@
+go_to_fast_dir3 =			#
+go_to_fast_dir4 =			$
+go_to_fast_dir5 =			%
+go_to_fast_dir6 =			^
+go_to_fast_dir7 =			&
+go_to_fast_dir8 =			*
+go_to_fast_dir9 =			(
+go_to_fast_dir10 =			)
+
+plist_add_stream =			^u
+toggle_mixer =				x
+# for softmixer
+toggle_softmixer =			^w
+history_up =				UP
+history_down =				DOWN
+plist_move_up =				i
+plist_move_down =			u
+theme_menu =				T
+
+toggle_equalizer =			E
+equalizer_refresh =			e
+equalizer_prev =			W
+equalizer_next =			w
+toggle_make_mono =			J
+show_lyrics =				^l
+playlist_full_paths =		P
+enqueue_file =				z
+clear_queue =				Z
+
+exec_command1 =				F1
+exec_command2 =				F2
+exec_command3 =				F3
+exec_command4 =				F4
+exec_command5 =				F5
+exec_command6 =				F6
+exec_command7 =				F7
+exec_command8 =				F8
+exec_command9 =				F9
+exec_command10 =			F10
+
+#  vim: ts=4 sw=4

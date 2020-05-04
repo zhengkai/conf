@@ -1,0 +1,20 @@
+! Esc
+keycode  9 = Escape asciitilde
+
+! right shift
+keycode 62 = XF86Game
+
+! right win
+keycode 134 = XF86Messenger NoSymbol XF86Messenger
+
+! right alt
+keycode 108 = Meta_R Meta_R Meta_R Meta_R
+
+clear Shift
+add Shift = Shift_L
+
+clear Mod2
+add Mod2 = Alt_L
+
+clear Mod1
+add Mod1 = Meta_R

@@ -1,0 +1,18 @@
+!
+! Swap Caps_Lock and Control_L
+!
+keycode  66 = Control_L
+keycode  37 = Caps_Lock
+keycode  62 = XF86Game
+
+! orig Esc
+keycode   9 = XF86Game
+
+! orig `
+keycode  49 = Escape asciitilde
+
+! orig Alt_R
+keycode 108 = grave asciitilde
+
+clear Shift
+add Shift = Shift_L

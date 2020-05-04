@@ -1,0 +1,9 @@
+XTermTheme = transparent-background
+SetXtermTitle		= no
+SetScreenTitle		= no
+InputBuffer		= 2048
+
+XTerms = xterm
+XTerms += screen-256color
+
+Keymap = keymap_vim

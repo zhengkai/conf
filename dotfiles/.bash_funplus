@@ -1,0 +1,22 @@
+alias gethost='ssh deploy "php /mnt/deploy/gethost.php"'
+
+fssh() {
+	arg=($@)
+	unset arg[0]
+
+	if [[ "${1:0:3}" == "10." ]]; then
+		server_ip=$1
+	else
+		server_ip=$(gethost | \grep -F ",$1," | \head -n 1 | \cut -d',' -f2)
+		if [ -z "$server_ip" ]; then
+			echo "no server \"$1\""
+			return
+		fi
+	fi
+
+	ssh -F ~/.ssh/deploy_config $server_ip "${arg[*]}"
+	return
+}
+
+alias fscp='scp -F ~/.ssh/deploy_config'
+

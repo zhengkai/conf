@@ -1,0 +1,31 @@
+#!/bin/bash -e
+
+# 不断往上递归，看哪个目录有 Makefile 可以 make
+
+DIR=`pwd`
+FOUND=''
+
+while [ "$DIR" != '/' ]
+do
+
+	FILE="${DIR}/Makefile"
+
+	if [ -e "$FILE" ]; then
+
+		FOUND='true'
+
+		echo $FILE
+		echo
+
+		cd "$DIR" || exit
+		/usr/bin/make "$@"
+		break
+	fi
+
+	DIR=`dirname "$DIR"`
+done
+
+if [ -z "$FOUND" ]; then
+	>&2 echo Makefile not found
+	exit 1
+fi

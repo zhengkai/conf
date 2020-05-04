@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DATE=`TZ='Asia/Shanghai' date '+%Y-%m-%d'`
+
+SAVE_PATH="${HOME}/hide/note"
+if [ ! -d "$SAVE_PATH" ]; then
+	mkdir -p "$SAVE_PATH"
+fi
+
+FILE="${SAVE_PATH}/${HOSTNAME}-${DATE}.txt"
+
+vi "$FILE"
+
+if [ -f "$FILE" ]; then
+	SIZE=`stat -c%s "$FILE" 2>/dev/null`
+	echo $SIZE
+fi

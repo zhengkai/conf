@@ -1,0 +1,33 @@
+server {
+	listen [::]:80;
+
+	access_log /www/log/pma.access.log;
+	error_log /www/log/pma.error.log;
+
+	server_name pma;
+	server_name pma.tesla;
+	server_name pma.garona;
+	server_name pma.iconfans;
+	server_name pma.monk;
+	server_name pma.freya;
+
+	root /www/pma;
+
+	location / {
+		index index.php;
+
+		allow 127.0.0.1;
+		deny all;
+
+		client_body_in_file_only clean;
+		fastcgi_pass_request_body off;
+		if ($request_filename ~ "\.php$") {
+			fastcgi_pass unix:/var/run/php5-fpm.sock;
+		}
+	}
+
+	location ~ \.(gif|jpg|jpeg|png|bmp|ico|css|js)$ {
+		expires max;
+	}
+}
+

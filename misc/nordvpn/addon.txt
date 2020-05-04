@@ -1,0 +1,3 @@
+route 106.187.48.203  255.255.255.255 net_gateway
+
+auth-user-pass /etc/openvpn/pwd

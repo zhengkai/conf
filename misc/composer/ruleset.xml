@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<ruleset name="Tango Standard">
+	<description>zhengkai custom coding standard</description>
+
+	<!-- tab 缩进 -->
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+
+	<!-- UNIX 换行 -->
+	<rule ref="Generic.Files.LineEndings">
+		<properties>
+			<property name="eolChar" value="\n"/>
+		</properties>
+	</rule>
+
+	<!-- 每行不超过 80 个字符 -->
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property phpcs-only="true" name="lineLimit" value="80"/>
+			<property phpcbf-only="true" name="lineLimit" value="120"/>
+		</properties>
+	</rule>
+
+	<!-- 类名必须开头大写 -->
+	<rule ref="Squiz.Classes.ValidClassName"/>
+
+    <!-- class 类名 括号{ 必须在同一行 -->
+    <rule ref="FunPlus.Classes.OpeningClassBraceKernighanRitchie"/>
+
+	<!-- 所有常量大写 -->
+	<rule ref="Generic.PHP.UpperCaseConstant"/>
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+	<!-- 方法名用骆驼 -->
+	<rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
+
+	<!-- 行尾禁止多余 -->
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+		<properties>
+			<property name="ignoreBlankLines" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+		<severity>0</severity>
+	</rule>
+
+	<!-- 文件尾空行 -->
+	<rule ref="Generic.Files.EndFileNewline"/>
+
+	<!-- 数组必须用 [] 而不能用 array() -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+	<!-- 函数如果没有参数，() 里不应该有空格 -->
+	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+		<properties>
+			<property name="equalsSpacing" value="1"/>
+		</properties>
+	</rule>
+
+	<!-- 运算符两侧要有空格 -->
+	<rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
+
+	<!-- 显式声明成员修饰符 -->
+	<rule ref="Squiz.Scope.MemberVarScope"/>
+	<rule ref="Squiz.Scope.MethodScope"/>
+	<rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+
+	<!-- 类型转换（开头有 (string) 之类的）里面和后面不能有空格 -->
+	<rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
+
+	<!-- 结尾分号前不能有空格 -->
+	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+	<!-- 方法调用（->）不能有空格 -->
+	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
+
+	<!-- new 不能有太多空格，echo 之后必须有空格 -->
+	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
+	<!-- 禁用 global -->
+	<rule ref="Squiz.PHP.GlobalKeyword"/>
+
+	<!-- 内置函数全部小写 -->
+	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+
+	<!-- 禁止一行多个分号的给多个值赋值 -->
+	<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+
+	<!-- if 等结构必须有花括号，且不得写成一行 -->
+	<rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+	<!-- 右花括号 } 必须单起一行 -->
+	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+
+	<!-- 提示函数有没用到的参数 -->
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
+	<!-- 方法名相关（static 最后，final 最前，抽象类必须可见，不可见的必须下划线前缀） -->
+	<rule ref="PSR2.Methods.MethodDeclaration"/>
+
+	<!-- 多余的 final 关键字 -->
+	<rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+
+	<!-- 多余的 ?> -->
+	<rule ref="Zend.Files.ClosingTag"/>
+
+	<!-- 花括号在行尾而不是新起一行 -->
+	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+
+	<!-- 空格检查（if while for foreach do 等） -->
+	<rule ref="PEAR.ControlStructures.ControlSignature"/>
+
+	<!-- 参数默认值必须放最后 -->
+	<rule ref="PEAR.Functions.ValidDefaultValue"/> 
+
+</ruleset>

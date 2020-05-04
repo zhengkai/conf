@@ -1,0 +1,17 @@
+! Esc
+keycode  9 = grave asciitilde grave asciitilde
+
+! '~' key
+keycode 49 = Escape asciitilde
+
+! right shift
+keycode 62 = XF86Game
+
+! right win
+keycode 134 = XF86Messenger NoSymbol XF86Messenger
+
+! right menu
+keycode 135 = XF86Shop NoSymbol XF86Shop
+
+clear Shift
+add Shift = Shift_L

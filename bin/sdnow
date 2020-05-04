@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$DISPLAY" ]; then
+	>&2 echo only run in X11
+	exit 1
+fi
+
+DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
+
+set +x
+../update/ubuntu.sh
+
+sudo shutdown -P 0
