@@ -16,8 +16,6 @@ list=(
 
 # ----------------------------------------------------------------------------
 
-DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
-
 export NG_CLI_ANALYTICS=ci
 
 mkdir -p ~/.npm
@@ -31,6 +29,6 @@ fi
 
 for item in "${list[@]}"
 do
-	npm install -g "${item}"
+	"$BIN" install -g "${item}"
 	hash -r
 done
