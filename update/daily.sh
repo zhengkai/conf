@@ -1,11 +1,15 @@
 #!/bin/bash -e
 
-DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
+~/conf/script/safe-git-pull.sh ~/.vim &
+#~/.vim/update.sh || : &
 
-sudo chown -R zhengkai:zhengkai /home/zhengkai &
+~/conf/script/safe-git-pull.sh ~/conf &
+~/conf/script/safe-git-pull.sh ~/build &
+~/conf/script/safe-git-pull.sh ~/hide &
 
 ./npm.sh || : &
 ./pip.sh || : &
+
 ./ubuntu.sh &
 
 CHN="$HOME/hide/redir/chn/update.sh"
@@ -14,6 +18,8 @@ if [ -x "$CHN" ]; then
 fi
 
 wait
+
+sudo chown -R zhengkai:zhengkai /home/zhengkai
 
 ./clean-motd.sh
 

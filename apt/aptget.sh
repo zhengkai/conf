@@ -42,9 +42,10 @@ sudo adduser "$USER" www-data
 touch ~/.vim/.viminfo
 sudo chown -R "${USER}:${USER}" ~/
 
-mkdir -p ~/script
-if [ ! -e "$HOME/script/daily.sh" ]; then
-	cp ../script/customize/daily.sh ~/script/
+DAILY_SH="$HOME/script/daily.sh"
+if [ ! -e "$DAILY_SH" ]; then
+	mkdir -p ~/script
+	cp ../script/customize/daily.sh "$DAILY_SH"
 fi
 
 ./desktop.sh
