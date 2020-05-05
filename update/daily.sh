@@ -23,7 +23,6 @@ wait
 
 sudo chown -R zhengkai:zhengkai /home/zhengkai
 
-./clean-motd.sh
-
-./before-reboot.sh
+./clean-motd.sh || :
+./before-reboot.sh || :
 ./reboot-check.sh

@@ -6,7 +6,7 @@ if [ ! -e "$CHECK" ]; then
 fi
 cat "$CHECK"
 
-DIR=`readlink -f "$0"` && DIR=`dirname "$DIR"` && cd "$DIR" || exit 1
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
 FILE='last-reboot.log'
 
