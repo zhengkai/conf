@@ -2,15 +2,15 @@
 
 cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
-~/conf/script/safe-git-pull.sh ~/.vim &
+#~/conf/script/safe-git-pull.sh ~/.vim &
 #~/.vim/update.sh || : &
 
 ~/conf/script/safe-git-pull.sh ~/conf &
 ~/conf/script/safe-git-pull.sh ~/build &
 ~/conf/script/safe-git-pull.sh ~/hide &
 
-./npm.sh || : &
-./pip.sh || : &
+# ./npm.sh || : &
+# ./pip.sh || : &
 
 ./ubuntu.sh &
 
