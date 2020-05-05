@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
+
 ~/conf/script/safe-git-pull.sh ~/.vim &
 #~/.vim/update.sh || : &
 
