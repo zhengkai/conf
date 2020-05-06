@@ -47,7 +47,7 @@ while ($sLine = fgets(STDIN)) {
 	$sMode = substr($sLine, 0, 1);
 	$sLine = substr($sLine, 1);
 
-	if (!trim($sLine)) {
+	if (!strlen(trim($sLine))) {
 		continue;
 	}
 
@@ -100,4 +100,3 @@ while ($sLine = fgets(STDIN)) {
 
 	echo $sLine;
 }
-
