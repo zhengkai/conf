@@ -23,6 +23,8 @@ gawk
 gem
 geoip-bin
 gettext
+git
+git-lfs
 gnupg-agent
 gnupg2
 highlight
