@@ -59,6 +59,9 @@
 [url "git@github.com:"]
 	insteadOf = "https://github.com/"
 
+[url "git@gitlab.funplus.io:"]
+	insteadOf = "https://gitlab.funplus.io/"
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

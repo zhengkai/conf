@@ -7,6 +7,8 @@ export GOPATH=/go
 export GOTMPDIR=/go/tmp
 export GO111MODULE=on
 
+export GOPRIVATE="gitlab.funplus.io"
+
 export EDITOR=/usr/bin/vim.basic
 export LC_ALL=en_US.UTF-8
 
