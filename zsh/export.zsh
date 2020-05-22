@@ -4,6 +4,7 @@ export GOROOT=/usr/local/go
 #export GOARCH=amd64
 export GOOS=linux
 export GOPATH=/go
+export GOTMPDIR=/go/tmp
 export GO111MODULE=on
 
 export EDITOR=/usr/bin/vim.basic
