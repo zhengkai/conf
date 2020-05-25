@@ -18,6 +18,8 @@
 	l  = log --pretty=oneline -n 12 --graph --abbrev-commit --decorate
 	ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	pa = "!f() { git pull \"$@\" && git submodule update --init --recursive; }; f"
+	url = config --get remote.origin.url
+	first-hash = rev-list --max-parents=0 HEAD
 
 [color]
 	ui = true
