@@ -38,9 +38,6 @@ alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
 # alias try='docker run --rm=true -t -i'
 
-alias godoc='~/conf/script/godoc/godoc.sh'
-alias pgo='http_proxy=http://127.0.0.1:8118 https_proxy=http://127.0.0.1:8118 no_proxy=localhost,127.0.0.0/8,::1,monk,rpi go'
-
 alias ifstat='ifstat -t'
 alias cpuinfo='less /proc/cpuinfo'
 alias jour='journalctl -xe'
