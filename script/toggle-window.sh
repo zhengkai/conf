@@ -1,12 +1,12 @@
 #!/bin/bash
 
 TOGGLE_WIN_FILE="${HOME}/.config/toggle-win"
-ID=$(cat "$TOGGLE_WIN_FILE")
+ID=$(cat "$TOGGLE_WIN_FILE" 2>/dev/null || :)
 
 xwininfo -id "$ID" >/dev/null || ID=""
 
 if [ -z "$ID" ]; then
-	/usr/local/src/alacritty/target/release/alacritty &
+	alacritty &
 	PID="$!"
 	while [ -z "$ID" ]
 	do
