@@ -1,6 +1,7 @@
 font:
   normal:
-    family: JetBrains Mono
+    family: JetBrains Mono NL
+    style: Regular
   size: 13.0
   offset:
     x: 0
