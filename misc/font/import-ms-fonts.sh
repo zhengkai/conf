@@ -25,6 +25,9 @@ FONT=(
 	malgunsl.ttf
 	malgunbd.ttf
 	malgun.ttf
+
+	monbaiti.ttf
+	himalaya.ttf
 )
 
 # mingliub.ttc
