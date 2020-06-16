@@ -3,7 +3,9 @@
 TOGGLE_WIN_FILE="${HOME}/.config/toggle-win"
 ID=$(cat "$TOGGLE_WIN_FILE" 2>/dev/null || :)
 
-xwininfo -id "$ID" >/dev/null || ID=""
+if [ -n "$ID" ]; then
+	xwininfo -id "$ID" >/dev/null || ID=""
+fi
 
 if [ -z "$ID" ]; then
 	alacritty &

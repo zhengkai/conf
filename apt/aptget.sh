@@ -11,7 +11,7 @@ fi
 
 sudo chown -R "${USER}:${USER}" "$HOME"
 
-sudo cp ../file/sudoers-nopassword /etc/sudoers.d/nopassword
+sudo cp ../misc/sudoers-nopassword /etc/sudoers.d/nopassword
 
 mkdir -p ~/.tmp/vim-undo
 mkdir -p ~/.tmp/vim-swap

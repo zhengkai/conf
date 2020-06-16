@@ -2,7 +2,7 @@
 
 echo 'installing...'
 
-cd $(dirname `readlink -f $0`)
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
 if [ ! -e /usr/share/X11/xkb/symbols/zhengkai ]; then
 	echo
@@ -10,7 +10,7 @@ if [ ! -e /usr/share/X11/xkb/symbols/zhengkai ]; then
 	sudo cp ./zhengkai /usr/share/X11/xkb/symbols/
 fi
 
-match=`grep 'zhengkai:' /usr/share/X11/xkb/rules/evdev | head -n 1`
+match=$(grep 'zhengkai:' /usr/share/X11/xkb/rules/evdev | head -n 1)
 
 if [ -n "$match" ]; then
 	echo
@@ -23,19 +23,20 @@ else
 fi
 
 ESC='esc'
-if [ "$HOSTNAME" == 'Tesla' ]; then
+if [ "$HOSTNAME" == 'Tesla' ] || [ "$HOSTNAME" == 'Anna' ]; then
 	ESC='hhkb_esc'
 fi
+
 XKBSET="['ctrl:nocaps','zhengkai:base','zhengkai:${ESC}']"
 
-match=`grep 'zhengkai:' /usr/share/X11/xkb/rules/evdev | head -n 1`
+match=$(grep 'zhengkai:' /usr/share/X11/xkb/rules/evdev | head -n 1)
 if [ -n "$match" ]; then
 	echo
-	echo 'gsettings set' $XKBSET
+	echo "gsettings set $XKBSET"
 	gsettings set org.gnome.desktop.input-sources xkb-options "$XKBSET"
 else
 	echo 'add rule failed'
 fi
 
 echo
-echo 'end'
+echo end
