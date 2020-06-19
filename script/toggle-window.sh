@@ -16,6 +16,7 @@ if [ -z "$ID" ]; then
 		sleep 1
 	done
 	echo "$ID" > "$TOGGLE_WIN_FILE"
+	xdotool windowmove "$ID" 0 0
 	exit
 fi
 
