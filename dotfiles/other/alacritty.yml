@@ -32,4 +32,7 @@ mouse:
       program: google-chrome
 
 key_bindings:
-  - { key: V,      mods: Control|Shift, action: Paste }
+  - { key: V,        mods: Control|Shift, action: Paste }
+  - { key: Key0,     mods: Control, action: None }
+  - { key: Equals,   mods: Control, action: None }
+  - { key: Subtract, mods: Control, action: None }

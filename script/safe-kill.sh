@@ -8,6 +8,11 @@ if [ -z "$PID" ] || [ -z "$EXEC" ]; then
 	exit 1
 fi
 
+if [ "$PID" -lt 11 ]; then
+	>&2 echo pid wrong
+	exit 1
+fi
+
 EXE_LINK="/proc/$PID/exe"
 
 if [ ! -L "$EXE_LINK" ]; then
