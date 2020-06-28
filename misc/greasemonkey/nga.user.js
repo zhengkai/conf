@@ -21,14 +21,15 @@
 		return {};
 	};
 
-	st('mainmenu').margin = '0';
-	st('toptopics').display = 'none';
-	st('bbs_ads9_add').display = 'none';
-	st('custombg').display = 'none';
-
 	__COOKIE.setMiscCookieInSecond('pv_count_for_insad', -300);
 
 	const clearAD = () => {
+
+		st('mainmenu').margin = '0';
+		st('toptopics').display = 'none';
+		st('bbs_ads9_add').display = 'none';
+		st('custombg').display = 'none';
+
 		try {
 			const list = document.body.querySelectorAll('img');
 			for (const img of list) {
