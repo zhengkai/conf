@@ -82,6 +82,7 @@ alias gms='git merge --squash'
 alias gtp='git stash apply'
 alias gpp='git pull && git push'
 alias gpt='git push && git push --tags'
+alias grb='git ls-remote --heads `git url` | sed "s#^.*refs/heads/##"'
 
 # 从整个仓库的所有历史里搜索某个关键词
 alias git_all_search='git rev-list --all | xargs git grep -F'

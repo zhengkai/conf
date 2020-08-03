@@ -23,8 +23,10 @@ SUM_FILE=$(realpath "$2")
 
 if [ -f "$SUM_FILE" ]; then
 	if md5sum -c "$SUM_FILE"; then
-		>&2 echo "no update needed: $PACKAGE"
-		exit
+		if [ -d "${DIR}/node_modules" ]; then
+			>&2 echo "no update needed: $PACKAGE"
+			exit
+		fi
 	fi
 fi
 

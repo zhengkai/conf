@@ -20,6 +20,7 @@
 	pa = "!f() { git pull \"$@\" && git submodule update --init --recursive; }; f"
 	url = config --get remote.origin.url
 	first-hash = rev-list --max-parents=0 HEAD
+	del-remote-branch = push origin --delete
 
 [color]
 	ui = true

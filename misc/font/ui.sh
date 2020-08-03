@@ -13,4 +13,4 @@ FONT_MONO='Note Mono'
 
 gsettings set org.gnome.desktop.interface document-font-name "$FONT 11"
 gsettings set org.gnome.desktop.interface font-name "$FONT 11"
-gsettings set org.gnome.desktop.interface monospace-font-name "$FONT_MONO 11"
+gsettings set org.gnome.desktop.interface monospace-font-name "$FONT 11"
