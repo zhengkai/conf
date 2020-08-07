@@ -19,4 +19,5 @@ usb-creator-gtk
 vde2
 vim-gui-common
 xclip
+xdotool
 xorg-dev
