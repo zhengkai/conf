@@ -11,6 +11,7 @@ window:
   decorations: none
   startup_mode: Fullscreen
   title: Alacritty
+  dynamic_title: false
 
 scrolling:
   history: 0
@@ -18,9 +19,11 @@ scrolling:
 selection:
   save_to_clipboard: true
 
-dynamic_title: false
-
 live_config_reload: true
+
+colors:
+  primary:
+    background: '#000000'
 
 shell:
   program: /home/zhengkai/conf/script/tmux-tilda.sh
