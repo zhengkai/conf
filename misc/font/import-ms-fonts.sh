@@ -28,6 +28,8 @@ FONT=(
 
 	monbaiti.ttf
 	himalaya.ttf
+	phagspa.ttf
+	phagspab.ttf
 )
 
 # mingliub.ttc
