@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+# download font from https://developer.apple.com/fonts/
+
 DIR="/tmp/apple-font"
 
 mkdir -p "$DIR"
@@ -28,7 +30,7 @@ do
 
 	cd "$DIR"
 
-	wget "https://developer.apple.com/design/downloads/${NAME}.dmg"
+	curl "https://developer.apple.com/design/downloads/${NAME}.dmg" -o "$FILE"
 
 	7z x "$FILE"
 
