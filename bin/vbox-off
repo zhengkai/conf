@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# ACPI shutdown
+
+# https://www.virtualbox.org/manual/ch08.html#vboxmanage-controlvm
+
+NAME="${1:-im}"
+
+set -x
+vboxmanage controlvm "$NAME" acpipowerbutton
