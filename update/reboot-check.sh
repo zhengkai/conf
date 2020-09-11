@@ -6,6 +6,8 @@ if [ ! -e "$CHECK" ]; then
 fi
 cat "$CHECK"
 
+sudo apt clean
+
 cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
 FILE='last-reboot.log'
