@@ -12,7 +12,7 @@ if [ -z "$ID" ]; then
 	PID="$!"
 	while [ -z "$ID" ]
 	do
-		ID=$(xdotool search --pid "$PID")
+		ID=$(xdotool search --pid "$PID" || :)
 		sleep 1
 	done
 	echo "$ID" > "$TOGGLE_WIN_FILE"
