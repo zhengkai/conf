@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
 
@@ -11,7 +11,14 @@ for FILE in *; do
 		continue
 	fi
 
-	ln -sf "$SRC" "${HOME}/.${FILE}"
+	TARGET="${HOME}/.${FILE}"
+
+	if [ "$FILE" == "gitconfig" ] && [ ! -e "${HOME}/.ssh/id_rsa.pub" ]; then
+		grep -E -v '\[url|insteadOf' "$SRC" > "$TARGET"
+		continue
+	fi
+
+	ln -sf "$SRC" "$TARGET"
 done
 
 if [ -z "$DISPLAY" ]; then
