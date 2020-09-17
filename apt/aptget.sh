@@ -5,10 +5,6 @@ if [ -f ~/.ssh/id_rsa.pub ] && [ ! -e ~/.ssh/authorized_keys ]; then
 	cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
 fi
 
-if [ ! -f ~/.ssh/id_rsa ]; then
-	sed '/github\.com/d' -i ./dotfiles/gitconfig
-fi
-
 sudo chown -R "${USER}:${USER}" "$HOME"
 
 sudo cp ../misc/sudoers-nopassword /etc/sudoers.d/nopassword
@@ -39,7 +35,9 @@ sudo systemctl disable shadowsocks-libev
 
 sudo adduser "$USER" www-data
 
-touch ~/.vim/.viminfo
+if [ -d ~/.vim ]; then
+	touch ~/.vim/.viminfo
+fi
 sudo chown -R "${USER}:${USER}" ~/
 
 DAILY_SH="$HOME/script/daily.sh"
