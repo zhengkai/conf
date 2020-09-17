@@ -51,7 +51,7 @@ fi
 ./desktop.sh
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --no-update-rc --no-fish --no-bash
+~/.fzf/install --no-update-rc --no-fish --no-bash --completion --no-key-bindings
 
 CHECK_ZHENGKAI=$(grep ' zhengkai' ~/.ssh/id_rsa.pub || :)
 if [ -n "$CHECK_ZHENGKAI" ]; then
