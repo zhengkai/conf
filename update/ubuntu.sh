@@ -13,7 +13,7 @@ sudo DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get -y -q autoclean
 sudo rm -f /etc/ssl/certs/CNNIC_ROOT.pem || :
 sudo rm -f /usr/share/ca-certificates/mozilla/CNNIC_ROOT.crt || :
 
-DIR=`readlink -f "$0"` && DIR=`dirname "$DIR"` && cd "$DIR" || exit 1
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
 ./clean-motd.sh
 
 echo
