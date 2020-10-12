@@ -153,6 +153,16 @@ function fn_add_user_to_group() {
 }
 alias add_user_to_group=fn_add_user_to_group
 
+alias c1="awk '{print \$1}'"
+alias c2="awk '{print \$2}'"
+alias c3="awk '{print \$3}'"
+alias c4="awk '{print \$4}'"
+alias c5="awk '{print \$5}'"
+alias c6="awk '{print \$6}'"
+alias c7="awk '{print \$7}'"
+alias c8="awk '{print \$8}'"
+alias c9="awk '{print \$9}'"
+
 alias head='((L=$LINES-8)); ((L=L>10?L:10)); sudo \head -n $L'
 alias tail='((L=$LINES-8)); ((L=L>10?L:10)); sudo \tail -n $L'
 alias f='((L=$LINES-3)); ((L=L>10?L:10)); sudo \tail -n $L -f'
