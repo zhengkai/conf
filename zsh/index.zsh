@@ -46,10 +46,3 @@ if [ -f /usr/local/lib/libstderred.so ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /www/slot/version/client/node_modules/tabtab/.completions/serverless.zsh ]] && . /www/slot/version/client/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /www/slot/version/client/node_modules/tabtab/.completions/sls.zsh ]] && . /www/slot/version/client/node_modules/tabtab/.completions/sls.zsh
