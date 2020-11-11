@@ -59,6 +59,8 @@ alias 'cd-'='cd -'
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
+alias ag='sudo ag --ignore node_modules'
+
 alias g='go run'
 alias t='go test -v'
 alias tt='go test -v -test.bench=".*" -test.benchmem -cover'
