@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 提前检测两个分支是否有冲突，把冲突文件列出来
+
+BA="$1"
+BB="$2"
+
+if [ -z "$BA" ] || [ -z "$BB" ]; then
+	>&2 echo branch name error
+	exit 1
+fi
+
+COMMON=$(git merge-base "$BA" "$BB")
+
+echo git merge-tree "$COMMON" "$BA" "$BB"
+echo
+
+NEXT_BIN="$(dirname "$(dirname "$(readlink -f "$0")")")/script/git-merge-tree-conflict.sh"
+git merge-tree "$COMMON" "$BA" "$BB" 2>/dev/null | "$NEXT_BIN"
