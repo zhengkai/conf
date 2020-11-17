@@ -29,3 +29,6 @@ ln -sf "${DIR}/zsh/index.zsh" "${HOME}/.zshrc"
 
 mkdir -p ~/.config/tig
 ln -sf "${DIR}/dotfiles/other/tigrc" ~/.config/tig/config
+
+mkdir -p ~/.config/kitty
+ln -sf "${DIR}/dotfiles/other/kitty.conf" ~/.config/kitty/kitty.conf

@@ -8,7 +8,7 @@ if [ -n "$ID" ]; then
 fi
 
 if [ -z "$ID" ]; then
-	alacritty &
+	/usr/local/src/kitty/kitty/launcher/kitty --start-as=fullscreen &
 	PID="$!"
 	while [ -z "$ID" ]
 	do
