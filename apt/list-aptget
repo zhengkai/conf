@@ -34,6 +34,7 @@ iftop
 iotop
 ipset
 jq
+kitty-terminfo
 libtinfo-dev
 locate
 lolcat
