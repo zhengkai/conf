@@ -46,3 +46,7 @@ if [ -f /usr/local/lib/libstderred.so ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
+	~/conf/bin/tmu
+fi
