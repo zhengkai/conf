@@ -3,7 +3,7 @@
 FILE=""
 FOUND=""
 
-MATCH_BEGIN="^(added|changed) in "
+MATCH_BEGIN="^(added in|changed in|merged)"
 MATCH_CONFLICT="^\+<<<<<<< \.our"
 MATCH_CONFLICT_SIDE="^\+======="
 MATCH_CONFLICT_END="^\+>>>>>>> \.their"
@@ -32,6 +32,9 @@ do
 
 	if [ -z "$FILE" ]; then
 		FILE="${LINE:55}"
+		if [ -z "$FILE" ]; then
+			continue
+		fi
 		FOUND=""
 		continue
 	fi
