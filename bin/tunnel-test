@@ -16,7 +16,7 @@ fi
 echo "test $TUNNEL"
 
 function checkip() {
-	local IP=$(TIME="\ntime: %E" time curl -s --max-time 10 "$1" --socks5-hostname "$2" | sed 's#^::ffff:##')
+	IP=$(TIME="\ntime: %E" time curl -s --max-time 10 "$1" --socks5-hostname "$2" | sed 's#^::ffff:##')
 	echo
 	echo "  ip: $IP"
 
@@ -26,5 +26,5 @@ function checkip() {
 	fi
 }
 
-checkip "https://soulogic.com/ip" "$TUNNEL"
+checkip "http://9farm.com/ip" "$TUNNEL"
 checkip "http://ifconfig.io/ip"   "$TUNNEL"
