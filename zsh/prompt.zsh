@@ -46,8 +46,7 @@ function vi_prompt_color() {
 }
 
 function git_propmt() {
-	local branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"`
-
+	local branch=$(git branch --show-current 2>/dev/null)
 	if [ -z "$branch" ]; then
 		return
 	fi

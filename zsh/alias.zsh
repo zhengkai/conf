@@ -87,6 +87,7 @@ alias gpp='git pull && git push'
 alias gpt='git push && git push --tags'
 alias grb='git ls-remote --heads `git url` | sed "s#^.*refs/heads/##"'
 alias gl='git log --abbrev=12 --date="format:%Y-%m-%d %H:%M:%S" --pretty=format:"%C(44)%cd %C(7)%h %C(214)%<(30)%s %C(8)- %cn"'
+alias git-delete-all-local-branch='git br | \grep -v "^*" | sed "s#  ##" | xargs -L 1 git br -D | tee -a ./`git rev-parse --show-cdup 2>/dev/null`.git/deleted-brnach'
 
 # 从整个仓库的所有历史里搜索某个关键词
 alias git_all_search='git rev-list --all | xargs git grep -F'
