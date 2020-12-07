@@ -9,4 +9,4 @@ cd $(dirname `readlink -f $0`)
 
 # sleep $[ $RANDOM * 3600 / 32767 ]
 
-./screenshot.sh '%Y_%m/%d_%H%M%S'
+./screenshot.sh '%Y-%m/%d-%H%M%S'

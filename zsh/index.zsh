@@ -1,3 +1,7 @@
+if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
+	~/conf/bin/tmu
+fi
+
 source $HOME/conf/zsh/prompt.zsh
 source $HOME/conf/zsh/vi.zsh
 source $HOME/conf/zsh/export.zsh
@@ -47,6 +51,9 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
-	~/conf/bin/tmu
+if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then
+	. ~/google-cloud-sdk/path.zsh.inc
+fi
+if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then
+	. ~/google-cloud-sdk/completion.zsh.inc
 fi
