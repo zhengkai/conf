@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         rarbg ad block
 // @namespace    https://soulogic.com/
-// @version      0.8
+// @version      0.9
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://rarbgunblocked.org/*
@@ -36,7 +36,25 @@
 
 	let clearCount = 0;
 
+	const addTracker = () => {
+        document.querySelectorAll('a').forEach(v => {
+            let h = v.href
+            if (!h.startsWith('magnet:')) {
+                return;
+            }
+            console.log(h);
+            h = h.split('&tr')[0];
+            if (!(h?.length > 10)) {
+                return;
+            }
+            h += '&tr=udp%3A%2F%2F192.168.1.212%3A2770';
+            v.href = h;
+        });
+	};
+
 	const clear = () => {
+
+        addTracker();
 
 		if (document.hidden) {
 			return;

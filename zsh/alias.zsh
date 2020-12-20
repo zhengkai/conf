@@ -29,6 +29,7 @@ alias sha256sum='sudo sha256sum'
 alias lsof='sudo lsof'
 alias lsb_release='sudo lsb_release'
 alias kitty='/usr/local/src/kitty/kitty/launcher/kitty'
+alias youtube-dl="${HOME}/conf/script/youtube-dl.sh"
 
 alias adduser='sudo adduser'
 alias groupadd='sudo groupadd'
