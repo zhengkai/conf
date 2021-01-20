@@ -21,5 +21,6 @@ cd "$SAVE_PATH" || exit 1
 set -x
 /usr/local/bin/youtube-dl -f bestvideo+bestaudio \
 	--merge-output-format mkv \
+	--write-sub --all-subs --embed-subs \
 	-o "${SAVE_PATH}/%(title)s-%(id)s.%(ext)s" \
 	"$@"
