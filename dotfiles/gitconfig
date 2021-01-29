@@ -4,6 +4,9 @@
 	# signingkey = 57540DC7
 	signingkey = "934B08CA57540DC7"
 
+[protocol]
+	version = 2
+
 [alias]
 	who = shortlog -sn
 	st = status -s -u
