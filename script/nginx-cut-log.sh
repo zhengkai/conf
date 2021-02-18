@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 DIR=$(dirname `readlink -f $0`)
-"$DIR/fpm-cut-log.sh" 2>&1 || : &
+# "$DIR/fpm-cut-log.sh" 2>&1 || : &
 
 NGINX='/var/run/nginx.pid'
 if [ ! -e "$NGINX" ]; then
