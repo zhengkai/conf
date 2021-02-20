@@ -14,6 +14,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt share_history
 setopt inc_append_history
+setopt autocd
+setopt ignoreeof
 
 if [ -z "$(declare -f -F j)" ] && [ -f /usr/share/autojump/autojump.zsh ]; then
 

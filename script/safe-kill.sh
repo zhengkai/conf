@@ -24,7 +24,7 @@ if [ ! -r "$EXE_LINK" ]; then
 	exit 3
 fi
 
-EXE_READLINK=$(readlink -f "$EXE_LINK" || :)
+EXE_READLINK=$(sudo readlink -f "$EXE_LINK" || :)
 if [ -z "$EXE_READLINK" ]; then
 	>&2 echo "unknown pid $PID"
 	exit 4
@@ -35,7 +35,7 @@ if [ "$EXE_READLINK" != "$EXEC" ]; then
 fi
 
 echo "kill pid $PID $EXEC"
-kill "$PID"
+sudo kill "$PID"
 while [ -e "/proc/${PID}/exe" ];
 do
 	sleep 1;
