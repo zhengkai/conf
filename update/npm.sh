@@ -2,7 +2,8 @@
 
 list=(
 
-	npm
+	protoc-gen-grpc-web
+	grpc-web
 	node-sass
 	@angular/cli
 	eslint
@@ -29,6 +30,6 @@ fi
 
 for item in "${list[@]}"
 do
-	"$BIN" install -g "${item}"
+	sudo "$BIN" install -g "${item}"
 	hash -r
 done
