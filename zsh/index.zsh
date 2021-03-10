@@ -17,6 +17,8 @@ setopt inc_append_history
 setopt autocd
 setopt ignoreeof
 
+alias -s {html,scss,css,go,json,yml,yaml}=vim
+
 if [ -z "$(declare -f -F j)" ] && [ -f /usr/share/autojump/autojump.zsh ]; then
 
 	. /usr/share/autojump/autojump.zsh

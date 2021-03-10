@@ -79,7 +79,7 @@ alias gdn='gd --no-index'
 alias gdh='gd HEAD'
 alias gds='gd --staged'
 alias gs='git st'
-alias gc='git co'
+alias gc='git clone'
 alias gc1='git clone --depth 1'
 alias gm='git merge --no-ff'
 alias gms='git merge --squash'
@@ -121,6 +121,7 @@ alias dus="sudo du --max-depth=0 -h"
 
 alias sshsync='rsync --partial -vzrtopg -e ssh'
 alias ssltime='curl -w "TCP handshake: %{time_connect}, SSL handshake: %{time_appconnect}\n" -so /dev/null'
+alias sslview='sudo openssl x509 -noout -text -in'
 
 alias pwgen='((L=$LINES-8)); ((L=L>10?L:10)); ((W=$COLUMNS)); ((W=W>80?W:80)); pwgen -cns $W $L'
 alias pwgens='((L=$LINES-8)); ((L=L>10?L:10)); ((W=$COLUMNS)); ((W=W>80?W:80)); pwgen -cnsy $W $L'
@@ -208,8 +209,8 @@ alias pwdcp='echo -n "`pwd`" | xclip -selection c'
 alias nping='TIME="%E" \time nc -w 5 -vz'
 alias iptest="curl https://ifconfig.io/ip --socks5-hostname"
 
-alias x='xclip -selection clipboard'
-alias xt='tr -d "\\n" |x'
+alias -g x='| tr -d "\\n" xt'
+alias -g xt='| tee /dev/tty | xclip -selection clipboard'
 
 alias ms='sudo mongosniff --source NET lo 27017'
 
