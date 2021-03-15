@@ -10,9 +10,11 @@ fi
 if [ -z "$ID" ]; then
 	/usr/local/src/kitty/kitty/launcher/kitty --start-as=fullscreen -o "shell=/home/zhengkai/conf/script/tmux-tilda.sh" &
 	PID="$!"
-	while [ -z "$ID" ]
-	do
+	while true; do
 		ID=$(xdotool search --pid "$PID" || :)
+		if [ -n "$ID" ]; then
+			break
+		fi
 		sleep 1
 	done
 	echo "$ID" > "$TOGGLE_WIN_FILE"
