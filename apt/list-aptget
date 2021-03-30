@@ -6,6 +6,7 @@ automake
 autossh
 axel
 bison
+brotli
 build-essential
 cloc
 cmake
