@@ -2,7 +2,8 @@
 
 # 不断往上递归，看哪个目录有 Makefile 可以 make
 
-DIR=`pwd`
+DIR=$(pwd)
+CURRENT=1
 FOUND=''
 
 while [ "$DIR" != '/' ]
@@ -14,15 +15,18 @@ do
 
 		FOUND='true'
 
-		echo $FILE
-		echo
+		if [ "$CURRENT" != 1 ]; then
+			echo "$FILE"
+			echo
+		fi
 
 		cd "$DIR" || exit
 		/usr/bin/make "$@"
 		break
 	fi
 
-	DIR=`dirname "$DIR"`
+	CURRENT=0
+	DIR=$(dirname "$DIR")
 done
 
 if [ -z "$FOUND" ]; then
