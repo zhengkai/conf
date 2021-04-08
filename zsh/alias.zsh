@@ -31,6 +31,8 @@ alias lsb_release='sudo lsb_release'
 alias kitty='/usr/local/src/kitty/kitty/launcher/kitty'
 alias youtube-dl="${HOME}/conf/script/youtube-dl.sh"
 
+alias gkl="gpg2 --list-keys --keyid-format long 'Zheng Kai'"
+
 alias adduser='sudo adduser'
 alias groupadd='sudo groupadd'
 
