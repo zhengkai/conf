@@ -19,6 +19,10 @@ if [ -x "$CHN" ]; then
 	"$CHN" &
 fi
 
+if [ -w /go/tmp ]; then
+	find /go/tmp -mtime +10 -delete
+fi
+
 wait
 
 sudo chown -R zhengkai:zhengkai /home/zhengkai
