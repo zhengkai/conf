@@ -29,7 +29,8 @@ alias sha256sum='sudo sha256sum'
 alias lsof='sudo lsof'
 alias lsb_release='sudo lsb_release'
 alias kitty='/usr/local/src/kitty/kitty/launcher/kitty'
-alias youtube-dl="${HOME}/conf/script/youtube-dl.sh"
+alias ytl="${HOME}/conf/script/youtube-dl.sh"
+alias psql='sudo -u postgres psql --dbname=fb'
 
 alias gkl="gpg2 --list-keys --keyid-format long 'Zheng Kai'"
 
@@ -106,7 +107,7 @@ alias lsd="\ls -l | \grep ^d"
 alias free="free -h"
 
 alias naf="npm audit fix"
-alias nng="ng new --skip-git --skip-tests --style=scss --routing=true"
+alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict"
 
 alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
 alias now="php -r '\$i = time(); echo \$i, \"\\n\", date(\"Y-m-d H:i:s\", \$i);'"
@@ -173,6 +174,7 @@ alias c8="awk '{print \$8}'"
 alias c9="awk '{print \$9}'"
 
 alias head='((L=$LINES-8)); ((L=L>10?L:10)); sudo \head -n $L'
+alias st='sudo \tail -n 10'
 alias tail='((L=$LINES-8)); ((L=L>10?L:10)); sudo \tail -n $L'
 alias f='((L=$LINES-3)); ((L=L>10?L:10)); sudo \tail -n $L -f'
 alias terror="sudo touch /tmp/php-error.txt; sudo chmod 666 /tmp/php-error.txt; f /tmp/php-error.txt"
@@ -211,7 +213,7 @@ alias pwdcp='echo -n "`pwd`" | xclip -selection c'
 alias nping='TIME="%E" \time nc -w 5 -vz'
 alias iptest="curl https://ifconfig.io/ip --socks5-hostname"
 
-alias -g x='| tr -d "\\n" xt'
+alias -g xx='| tr -d "\\n" xt'
 alias -g xt='| tee /dev/tty | xclip -selection clipboard'
 
 alias ms='sudo mongosniff --source NET lo 27017'
