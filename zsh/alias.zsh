@@ -68,7 +68,8 @@ alias ag='sudo ag --ignore node_modules'
 
 alias g='go run'
 alias t='go test -v'
-alias tt='go test -v -test.bench=".*" -test.benchmem -cover'
+alias tt='go test -v -test.benchmem -cover -covermode=atomic -coverprofile=coverage.out'
+alias ttc='go tool cover -html=coverage.out'
 alias bce='go build -gcflags="-d=ssa/check_bce/debug=1"'
 
 alias gii='git init && git commit --allow-empty -m "startup"'
