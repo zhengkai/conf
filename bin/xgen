@@ -9,7 +9,13 @@ fi
 
 chmod 600 "$FILE"
 
-PASSWORD=$(pwgen -cnsy 100 1 | tr -d "\n\\\/\"'" | grep -o "[a-z].\{13\}[a-z]" | tail -n 1)
+randomChar() {
+	< /dev/urandom tr -dc 'A-Za-z0-9' | head -c1
+}
+
+PASSWORD=$(pwgen -cnsy -r "\"'$|\\/" 13 1)
+
+PASSWORD="$(randomChar)${PASSWORD}$(randomChar)"
 
 echo -n -E "$PASSWORD" > "$FILE"
 echo -E "$PASSWORD"
