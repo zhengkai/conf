@@ -10,7 +10,7 @@
 	version = 2
 
 [commit]
-	gpgsign = true
+#	gpgsign = true
 
 [alias]
 	who = shortlog -sn
@@ -32,9 +32,6 @@
 
 [color]
 	ui = true
-
-[commit]
-	gpgsign = true
 
 [push]
 	default = upstream
