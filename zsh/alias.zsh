@@ -108,7 +108,7 @@ alias lsd="\ls -l | \grep ^d"
 alias free="free -h"
 
 alias naf="npm audit fix"
-alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict"
+alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict --inline-style --directory client"
 
 alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
 alias now="php -r '\$i = time(); echo \$i, \"\\n\", date(\"Y-m-d H:i:s\", \$i);'"
