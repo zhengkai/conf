@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎去提醒
 // @namespace    https://soulogic.com/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://www.zhihu.com/*
@@ -13,17 +13,22 @@
     'use strict';
 
     GM_addStyle('div.css-ybodb { display: none; }');
+    GM_addStyle('div.Popover18-toggle > div { display: none; }');
 
     const clean = () => {
-        document.body.querySelectorAll('div.PushNotifications, div.css-ybodb, div.AppHeader-messages, div.AppHeader-notifications, div.Banner-adsense, div.TopstoryItem--advertCard').forEach(v => {
+		/*
+        document.body.querySelectorAll('.Popover18-toggle > div').forEach(v => {
             v.style.display = 'none';
         });
 
         document.body.querySelectorAll('div.RelatedCommodities-title, a.Banner-link').forEach(v => {
             v.parentNode.parentNode.removeChild(v.parentNode);
         });
+		 */
 
         document.title = document.title.replace(/\(.+?\) /, '');
+
+		document.querySelectorAll('.ZVideoItem, .VideoAnswerPlayer').forEach(v => v?.parentNode?.remove());
     };
 
     clean();
