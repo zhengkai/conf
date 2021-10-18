@@ -16,6 +16,11 @@
     GM_addStyle('div.Popover18-toggle > div { display: none; }');
 
     const clean = () => {
+
+		if (document.hidden) {
+			return
+		}
+
 		/*
         document.body.querySelectorAll('.Popover18-toggle > div').forEach(v => {
             v.style.display = 'none';
@@ -28,7 +33,9 @@
 
         document.title = document.title.replace(/\(.+?\) /, '');
 
-		document.querySelectorAll('.Pc-feedAd-container, .ZVideoItem, .VideoAnswerPlayer').forEach(v => v?.parentNode?.remove());
+		document.querySelectorAll('.Pc-feedAd-container').forEach(v => v?.parentNode?.remove());
+		document.querySelectorAll('.VideoAnswerPlayer').forEach(v => v?.parentNode?.parentNode?.parentNode?.parentNode?.remove());
+		document.querySelectorAll('.ZVideoItem').forEach(v => v?.parentNode?.parentNode?.remove());
     };
 
     clean();
