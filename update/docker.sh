@@ -16,4 +16,4 @@ update golang
 update alpine
 
 wait
-sudo docker image prune --all --force
+#sudo docker image prune --all --force

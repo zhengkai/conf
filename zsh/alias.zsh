@@ -137,6 +137,7 @@ alias less='less -r --tabs=4'
 alias pss='ps aux | \grep'
 alias netss='sudo netstat -nap | grep'
 alias nss='nginx stop && nginx start || systemctl status nginx.service'
+alias tng='nginx configtest'
 
 alias vimn='vim -N -u NONE'
 alias :vs='vim'
@@ -190,6 +191,8 @@ alias nginx-reload='service nginx force-reload'
 alias re-nginx='nginx stop && nginx start'
 alias mysqld='service mysql'
 alias fpm='service php-fpm'
+alias firewall-cmd='sudo firewall-cmd'
+alias fail2ban-client='sudo fail2ban-client'
 
 alias logstash='/usr/share/logstash/bin/logstash'
 
