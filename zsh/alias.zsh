@@ -113,7 +113,8 @@ alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict -
 alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
 alias now="php -r '\$i = time(); echo \$i, \"\\n\", date(\"Y-m-d H:i:s\", \$i);'"
 
-alias ssh-keygen='ssh-keygen -N "" -b 4096 -t rsa'
+alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
+alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
 
 alias top="TERM=screen-256color htop"
 alias df="df -h"

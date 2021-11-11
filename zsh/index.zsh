@@ -61,3 +61,8 @@ fi
 if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then
 	. ~/google-cloud-sdk/completion.zsh.inc
 fi
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -e "/usr/local/src/kitty/shell-integration/kitty.zsh"; then source "/usr/local/src/kitty/shell-integration/kitty.zsh"; fi
+# END_KITTY_SHELL_INTEGRATION

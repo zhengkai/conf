@@ -16,6 +16,8 @@ elif [ -w "$PURE" ]; then
 fi
 
 youtube-dl -f bestvideo+bestaudio \
+	--external-downloader aria2c \
+	--external-downloader-args "-x 16 -k 1M" \
 	--merge-output-format mkv \
 	-o "${SAVE_PATH}/%(title)s-%(id)s.%(ext)s" \
 	"$@"

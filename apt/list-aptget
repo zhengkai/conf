@@ -1,5 +1,6 @@
 acl
 apache2-utils
+aria2
 asciinema
 autojump
 automake
