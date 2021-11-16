@@ -21,12 +21,7 @@ if [ -x "$CHN" ]; then
 	"$CHN" &
 fi
 
-if [ -w /go/tmp ]; then
-	find /go/tmp -mtime +10 -delete
-fi
-if [ -w ~/.tmp/vim-undo ]; then
-	find ~/.tmp/vim-undo -mtime +10 -delete
-fi
+./clean-tmp.sh &
 
 wait
 
