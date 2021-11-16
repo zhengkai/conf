@@ -9,9 +9,14 @@ if [ ! -s "$TMP_FILE" ]; then
 	exit 1
 fi
 
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
+
 FIND=$(grep -F 'This VM will expire on 11/14/21.' "$TMP_FILE")
 if [ -z "$FIND" ]; then
 	notify-send 'ms vbox found'
+	for _ in {0..10}; do
+		aplay ./mixkit-sci-fi-reject-notification-896.wav
+	done
 else
 	echo 'no change'
 fi
