@@ -137,8 +137,7 @@ alias less='less -r --tabs=4'
 
 alias pss='ps aux | \grep'
 alias netss='sudo netstat -nap | grep'
-alias nss='nginx stop && nginx start || systemctl status nginx.service'
-alias tng='nginx configtest'
+alias nss='nginx configtest && nginx stop && nginx start'
 
 alias vimn='vim -N -u NONE'
 alias :vs='vim'

@@ -2,9 +2,6 @@
 
 HOST="${1:-freya}"
 
-echo "$HOST"
-exit
-
 exec 200>"/tmp/rsync-${HOST}-tesla.lock"
 flock -x -n 200 || {
 	>&2 echo

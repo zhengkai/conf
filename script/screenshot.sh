@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 # 30	10,16	* * * ~/conf/script/screenshot.sh >/dev/null 2>&1
 
