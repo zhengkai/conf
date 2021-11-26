@@ -17,4 +17,5 @@ fi
 
 sudo ip -j a \
 	| jq ".[] | select (.ifname == \"${IF}\") | .addr_info[] | select (.family == \"inet\") | .local" \
+	| head -n 1 \
 	| sed 's#"##g'
