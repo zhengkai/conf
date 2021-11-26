@@ -51,7 +51,7 @@ fi
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-update-rc --no-fish --no-bash --completion --no-key-bindings
 
-CHECK_ZHENGKAI=$(grep ' zhengkai' ~/.ssh/id_rsa.pub || :)
+CHECK_ZHENGKAI=$(grep ' zhengkai' ~/.ssh/id_ecdsa.pub || :)
 if [ -n "$CHECK_ZHENGKAI" ]; then
 	if [ ! -e ~/hide ]; then
 		git clone --depth 1 git@github.com:zhengkai/hide.git ~/hide
@@ -59,6 +59,10 @@ if [ -n "$CHECK_ZHENGKAI" ]; then
 	if [ ! -e ~/build ]; then
 		git clone --depth 1 git@github.com:zhengkai/build.git ~/build
 	fi
+fi
+
+if [ ! -e /usr/bin/python ]; then
+	sudo ln -s /usr/bin/python3 /usr/bin/python
 fi
 
 # ../update/npm.sh
