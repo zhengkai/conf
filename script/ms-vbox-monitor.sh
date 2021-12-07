@@ -11,6 +11,8 @@ if [ ! -s "$TMP_FILE" ]; then
 	exit 1
 fi
 
+grep 'This VM will expire on' "$TMP_FILE" || exit
+
 cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
 TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'
