@@ -13,5 +13,5 @@ function checkip() {
 	fi
 }
 
-checkip "https://soulogic.com/ip"
+checkip "https://k.9farm.com/ip"
 checkip "https://ifconfig.io/ip"
