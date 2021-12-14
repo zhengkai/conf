@@ -26,5 +26,5 @@ function checkip() {
 	fi
 }
 
-checkip "http://9farm.com/ip" "$TUNNEL"
+checkip "http://k.9farm.com/ip" "$TUNNEL"
 checkip "http://ifconfig.io/ip"   "$TUNNEL"
