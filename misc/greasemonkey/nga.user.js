@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NGA 去广告
 // @namespace    https://soulogic.com/
-// @version      0.5
+// @version      0.6
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        http://bbs.nga.cn/*
@@ -10,6 +10,8 @@
 // @match        https://nga.178.com/*
 // @match        http://ngabbs.com/*
 // @match        https://ngabbs.com/*
+// @match        http://g.nga.cn/*
+// @match        https://g.nga.cn/*
 // @grant        none
 // ==/UserScript==
 
