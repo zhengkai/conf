@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHECK_TEXT='This VM will expire on 01/09/22.'
+CHECK_TEXT='This VM will expire on 03/04/2022.'
 
 TMP_FILE='/tmp/ms-vbox.html'
 
