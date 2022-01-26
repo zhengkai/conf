@@ -49,9 +49,6 @@ alias jour='journalctl -xe'
 
 alias rm="trash-put"
 
-alias /='cd /'
-alias '~/'='cd ~/'
-alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
