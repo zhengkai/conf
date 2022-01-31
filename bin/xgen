@@ -13,7 +13,7 @@ randomChar() {
 	< /dev/urandom tr -dc 'A-Za-z0-9' | head -c1
 }
 
-PASSWORD=$(pwgen -cnsy -r "\"'$|\\/" 13 1)
+PASSWORD="$(pwgen -cnsy -r "\"'$|\\/" 6 1),$(pwgen -cnsy -r "\"'$|\\/" 6 1)"
 
 PASSWORD="$(randomChar)${PASSWORD}$(randomChar)"
 
