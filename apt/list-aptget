@@ -55,6 +55,7 @@ python3-dev
 python3-pip
 python3-setuptools
 re2c
+rsync
 ruby
 ruby-dev
 screen
@@ -63,6 +64,7 @@ silversearcher-ag
 simple-obfs
 subversion
 sysstat
+telnet
 tig
 tmux
 toilet
