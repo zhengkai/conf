@@ -1,8 +1,8 @@
 #!/bin/bash
 DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
 
-if [ -f ~/.ssh/id_rsa.pub ] && [ ! -e ~/.ssh/authorized_keys ]; then
-	cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+if [ -f ~/.ssh/id_ecdsa.pub ] && [ ! -e ~/.ssh/authorized_keys ]; then
+	cp ~/.ssh/id_ecdsa.pub ~/.ssh/authorized_keys
 fi
 
 sudo chown -R "${USER}:${USER}" "$HOME"

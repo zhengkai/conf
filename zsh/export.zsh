@@ -9,6 +9,8 @@ export GO111MODULE=on
 
 export GOPRIVATE="gitlab.funplus.io"
 
+export HERMES_DEFAULT_SIZE="18x18"
+
 export EDITOR=/usr/bin/vim.basic
 export LC_ALL=en_US.UTF-8
 
