@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NGA 去广告
 // @namespace    https://soulogic.com/
-// @version      0.6
+// @version      0.7
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        http://bbs.nga.cn/*
@@ -39,6 +39,7 @@
 		st('toptopics').display = 'none';
 		st('bbs_ads9_add').display = 'none';
 		st('custombg').display = 'none';
+        document.querySelectorAll('#m_posts_c > span, #SG_GG_CONTAINER_200809').forEach(v => v?.remove());
 
 		try {
 			const list = document.body.querySelectorAll('img');
@@ -53,10 +54,6 @@
 	};
 
 	clearAD();
-	for (let i = 0; i < 10; i++) {
-		window.setTimeout(() => {
-			clearAD();
-		}, i * 1000);
-	}
+    setInterval(clearAD, 500);
 
 })();
