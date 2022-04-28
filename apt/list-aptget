@@ -38,6 +38,7 @@ ipset
 jq
 kitty-terminfo
 libtinfo-dev
+locales
 locate
 lolcat
 mingetty

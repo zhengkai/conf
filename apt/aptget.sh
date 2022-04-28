@@ -66,4 +66,4 @@ if [ ! -e /usr/bin/python ]; then
 fi
 
 # ../update/npm.sh
-../update/pip.sh
+# ../update/pip.sh
