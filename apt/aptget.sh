@@ -28,7 +28,7 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 sudo timedatectl set-timezone Asia/Shanghai
 
 mapfile -t list < <(cat list-aptget)
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq "${list[@]}"
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq "${list[@]}" || exit 1
 
 sudo systemctl disable webhook
 sudo systemctl disable shadowsocks-libev
