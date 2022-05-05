@@ -2,16 +2,17 @@
 
 list=(
 
-	protoc-gen-grpc-web
+	@angular/cli
+	@typescript-eslint/eslint-plugin
+	@typescript-eslint/parser
+	eslint
 	grpc-web
 	node-sass
-	@angular/cli
-	eslint
+	npm-check-updates
+	protoc-gen-grpc-web
 	tslint
-	wscat
 	typescript
-	@typescript-eslint/parser
-	@typescript-eslint/eslint-plugin
+	wscat
 
 )
 
