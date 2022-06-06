@@ -1,0 +1,8 @@
+#!/bin/bash
+
+go version || :
+git version || :
+echo node "$(node --version || :)"
+nginx -v || :
+sudo mysqld --version || :
+docker --version
