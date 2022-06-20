@@ -14,6 +14,8 @@ nohup.out
 /zsh/oh-my-zsh/
 /zsh/history.txt
 
+/bin/.port-save
+
 /nordvpn/config/
 /nordvpn/tmp-config/
 /nordvpn/openvpn.txt

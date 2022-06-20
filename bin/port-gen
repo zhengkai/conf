@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+FILE="$(dirname "$(readlink -f "$0")")/.port-save"
+
+PORT="$(cat "$FILE" 2>/dev/null || :)"
+
+PORT="$((PORT + 1))"
+
+echo "$PORT" | tee "$FILE"

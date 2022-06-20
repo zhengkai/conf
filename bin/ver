@@ -1,6 +1,8 @@
 #!/bin/bash
 
 go version || :
+protoc-gen-go --version || :
+protoc --version || :
 git version || :
 echo node "$(node --version || :)"
 nginx -v || :
