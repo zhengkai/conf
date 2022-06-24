@@ -17,7 +17,7 @@ setopt inc_append_history
 setopt autocd
 setopt ignoreeof
 
-alias -s {html,scss,css,go,json,yml,yaml}=vim
+alias -s {html,scss,css,go,json,yml,yaml}=nvim
 
 if [ -z "$(declare -f -F j)" ] && [ -f /usr/share/autojump/autojump.zsh ]; then
 
@@ -62,11 +62,9 @@ if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then
 	. ~/google-cloud-sdk/completion.zsh.inc
 fi
 
-
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -e "/usr/local/src/kitty/shell-integration/kitty.zsh"; then source "/usr/local/src/kitty/shell-integration/kitty.zsh"; fi
 # END_KITTY_SHELL_INTEGRATION
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

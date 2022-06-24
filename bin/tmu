@@ -34,4 +34,6 @@ if [ "$has_sesion" = false ]; then
 	"$tmux" select-window -t "$name:1"
 fi
 
+"$tmux" send -t "$name:1" "fortune-zh" ENTER
+
 "$tmux" -2 attach -t "$name"

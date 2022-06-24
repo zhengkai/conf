@@ -3,8 +3,10 @@
 list=(
 
 	@angular/cli
+	@angular/language-service
 	@typescript-eslint/eslint-plugin
 	@typescript-eslint/parser
+	dockerfile-language-server-nodejs
 	eslint
 	grpc-web
 	node-sass
@@ -31,6 +33,6 @@ fi
 
 for item in "${list[@]}"
 do
-	sudo "$BIN" install -g "${item}"
+	"$BIN" install --location=global "${item}"
 	hash -r
 done

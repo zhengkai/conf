@@ -136,9 +136,10 @@ alias pss='ps aux | \grep'
 alias netss='sudo netstat -nap | grep'
 alias nss='nginx configtest && nginx stop && nginx start'
 
-alias vimn='vim -N -u NONE'
-alias :vs='vim'
-alias vs='vim'
+alias vi='nvim'
+alias vim='nvim'
+alias :vs='nvim'
+alias vs='nvim'
 
 function fn_add_user_to_group() {
 

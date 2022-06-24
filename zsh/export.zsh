@@ -1,4 +1,5 @@
-export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/nvim
+export EDITOR=/usr/local/bin/nvim
 
 export GOROOT=/usr/local/go
 #export GOARCH=amd64
@@ -11,10 +12,9 @@ export GOPRIVATE="gitlab.funplus.io"
 
 export HERMES_DEFAULT_SIZE="18x18"
 
-export EDITOR=/usr/bin/vim.basic
 export LC_ALL=en_US.UTF-8
 
-export PATH="/home/zhengkai/.fzf/bin:/home/zhengkai/.local/bin:/usr/local/cuda/bin:$HOME/conf/bin:$HOME/.npm/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
+export PATH="/home/zhengkai/.fzf/bin:/home/zhengkai/.local/bin:/usr/local/cuda/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/conf/bin:$HOME/.npm/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
 
 # man color
 #export LESS_TERMCAP_mb=$'\E[01;31m'
