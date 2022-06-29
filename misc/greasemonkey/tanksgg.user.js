@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         tanks.gg 去广告
 // @namespace    https://soulogic.com/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://tanks.gg/*
@@ -20,6 +20,6 @@
 			x.style.display = 'none';
 		}
 
-		document.querySelectorAll('.ac-unit').forEach(o => o.remove())
+		document.querySelectorAll('.ac-unit, .wrecker').forEach(o => o.remove())
 	}, 500);
 })();
