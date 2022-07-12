@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHECK_TEXT='This VM will expire on July 10, 2022.'
+CHECK_TEXT='Expiration date: September 11, 2022'
 
 TMP_FILE='/tmp/ms-vbox.html'
 
@@ -11,7 +11,7 @@ if [ ! -s "$TMP_FILE" ]; then
 	exit 1
 fi
 
-grep 'This VM will expire on' "$TMP_FILE" || exit
+grep 'Expiration date:' "$TMP_FILE" || exit
 
 cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
