@@ -17,10 +17,9 @@ setopt inc_append_history
 setopt autocd
 setopt ignoreeof
 
-alias -s {html,scss,css,go,json,yml,yaml}=nvim
+alias -s {html,scss,css,go,ts,js,json,yml,yaml}=nvim
 
 if [ -z "$(declare -f -F j)" ] && [ -f /usr/share/autojump/autojump.zsh ]; then
-
 	. /usr/share/autojump/autojump.zsh
 fi
 
@@ -42,29 +41,15 @@ if [ -d /www ] && [ -r /www ]; then
 	cd /www
 fi
 
-tabs 4
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# exec 2>>( while read -r X; do print "\e[01;31m${X}\e[0m" > /dev/tty; done & )
 if [ -f /usr/local/lib/libstderred.so ]; then
 	export LD_PRELOAD="/usr/local/lib/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 	export STDERRED_ESC_CODE=$(echo -e '\e[38;2;255;45;45;48;2;10;10;10m')
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
+[ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
+[ -x "/usr/local/src/kitty/shell-integration/kitty.zsh" ] && source "/usr/local/src/kitty/shell-integration/kitty.zsh"
+[ -x "/usr/local/bin/ng" ] && source <(ng completion script)
 
-if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then
-	. ~/google-cloud-sdk/path.zsh.inc
-fi
-if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then
-	. ~/google-cloud-sdk/completion.zsh.inc
-fi
-
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -e "/usr/local/src/kitty/shell-integration/kitty.zsh"; then source "/usr/local/src/kitty/shell-integration/kitty.zsh"; fi
-# END_KITTY_SHELL_INTEGRATION
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+tabs 4
