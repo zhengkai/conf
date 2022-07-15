@@ -11,8 +11,8 @@ cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
 ./docker.sh &
 
-# ./npm.sh || : &
-# ./pip.sh || : &
+./npm.sh || : &
+./pip.sh || : &
 
 ./ubuntu.sh &
 
