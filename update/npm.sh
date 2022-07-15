@@ -10,6 +10,7 @@ list=(
 	eslint
 	grpc-web
 	node-sass
+	npm
 	npm-check-updates
 	protoc-gen-grpc-web
 	tslint
