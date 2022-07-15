@@ -14,6 +14,7 @@ list=(
 	protoc-gen-grpc-web
 	tslint
 	typescript
+	typescript-language-server
 	wscat
 
 )

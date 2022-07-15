@@ -66,5 +66,8 @@ if [ ! -e /usr/bin/python ]; then
 	sudo ln -s /usr/bin/python3 /usr/bin/python
 fi
 
+ln -s "/home/${USER}/.fzf/bin/fzf" "/home/${USER}/conf/bin/" || :
+ln -s "/home/${USER}/.fzf/bin/fzf-tmux" "/home/${USER}/conf/bin/" || :
+
 # ../update/npm.sh
 # ../update/pip.sh
