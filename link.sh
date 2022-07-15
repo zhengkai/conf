@@ -23,6 +23,8 @@ done
 
 if [ -z "$DISPLAY" ]; then
 	cp -R "${DIR}/dotfiles/moc" ~/.moc
+	chmod 600 ~/.moc/config
+	chmod 600 ~/.moc/keymap_vim
 fi
 
 ln -sf "${DIR}/zsh/index.zsh" "${HOME}/.zshrc"

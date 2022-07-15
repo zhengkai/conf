@@ -14,7 +14,7 @@ export HERMES_DEFAULT_SIZE="18x18"
 
 export LC_ALL=en_US.UTF-8
 
-export PATH="/home/zhengkai/.fzf/bin:/home/zhengkai/.local/bin:/usr/local/cuda/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/conf/bin:$HOME/.npm/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
+export PATH="$HOME/.local/bin:$HOME/conf/bin:$HOME/.npm/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
 
 # man color
 #export LESS_TERMCAP_mb=$'\E[01;31m'

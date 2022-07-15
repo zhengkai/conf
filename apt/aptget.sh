@@ -51,6 +51,8 @@ fi
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-update-rc --no-fish --no-bash --completion --no-key-bindings
+ln -s "/home/${USER}/.fzf/bin/fzf" "/home/${USER}/.local/bin/" || :
+ln -s "/home/${USER}/.fzf/bin/fzf-tmux" "/home/${USER}/.local/bin/" || :
 
 CHECK_ZHENGKAI=$(grep ' zhengkai' ~/.ssh/id_ecdsa.pub || :)
 if [ -n "$CHECK_ZHENGKAI" ]; then
@@ -65,9 +67,6 @@ fi
 if [ ! -e /usr/bin/python ]; then
 	sudo ln -s /usr/bin/python3 /usr/bin/python
 fi
-
-ln -s "/home/${USER}/.fzf/bin/fzf" "/home/${USER}/conf/bin/" || :
-ln -s "/home/${USER}/.fzf/bin/fzf-tmux" "/home/${USER}/conf/bin/" || :
 
 # ../update/npm.sh
 # ../update/pip.sh
