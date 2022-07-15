@@ -43,14 +43,14 @@ refresh =					^r
 reload =					r
 toggle_hidden_files =		^H
 go_to_music_directory =		m
-delete_from_playlist =		o
+delete_from_playlist =		d
 search_menu =				/
 save_playlist =				V
 toggle_show_time =			^t
 toggle_show_format =		M-f
 go_to_playing_file =		G
 go_to_a_directory =			g
-go_up =						y
+go_up =						y BACKSPACE
 cancel =					^x ESCAPE
 go_url =					^o
 volume_10 =					M-1
@@ -108,5 +108,3 @@ exec_command7 =				F7
 exec_command8 =				F8
 exec_command9 =				F9
 exec_command10 =			F10
-
-#  vim: ts=4 sw=4

@@ -1,6 +1,0 @@
-#!/bin/bash -e
-
-DIR="${2:-.}"
-
-sudo GREP_COLORS="mt=00:34" grep -n -I --color=always --exclude-dir=.hg --exclude-dir=.git --exclude-dir=.svn -o ".\{0,50\}$1.\{0,50\}" -R "$DIR" \
-	| grep --color=always "$1"
