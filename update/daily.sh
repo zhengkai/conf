@@ -8,6 +8,7 @@ cd "$(dirname "$(readlink -f "$0")")" || exit 1
 ~/conf/script/safe-git-pull.sh ~/conf &
 ~/conf/script/safe-git-pull.sh ~/build &
 ~/conf/script/safe-git-pull.sh ~/hide &
+~/conf/script/safe-git-pull.sh ~/.config/nvim &
 
 ./docker.sh &
 
@@ -16,7 +17,7 @@ cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
 ./ubuntu.sh &
 
-CHN="$HOME/hide/redir/chn/update.sh"
+CHN="${HOME}/hide/redir/chn/update.sh"
 if [ -x "$CHN" ]; then
 	"$CHN" &
 fi

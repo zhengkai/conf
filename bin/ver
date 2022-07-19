@@ -1,10 +1,11 @@
 #!/bin/bash
 
-go version || :
-protoc-gen-go --version || :
-protoc --version || :
-git version || :
+go version
+protoc-gen-go --version
+protoc --version
+git version
 echo node "$(node --version || :)"
-nginx -v || :
-sudo mysqld --version || :
+nginx -v
+sudo mysqld --version
 docker --version
+nvim -version | head -n 1
