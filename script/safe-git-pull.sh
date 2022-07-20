@@ -18,7 +18,7 @@ fi
 
 git fetch
 
-if git merge-base --is-ancestor "origin/${BRANCH}" "$BRANCH"; then
+if git merge-base --is-ancestor "$BRANCH" "origin/${BRANCH}"; then
 	git pull
 	git submodule update --init --recursive
 fi
