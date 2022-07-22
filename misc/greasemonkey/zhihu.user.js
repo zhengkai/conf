@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         知乎去提醒
 // @namespace    https://soulogic.com/
-// @version      0.8
+// @version      0.9
 // @description  try to take over the world!
 // @author       Zheng Kai
-// @match        https://www.zhihu.com/*
+// @match        https://*.zhihu.com/*
 // @match        https://zhihu.com/*
 // @grant        none
 // ==/UserScript==
