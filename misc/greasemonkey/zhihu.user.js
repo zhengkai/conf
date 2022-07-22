@@ -24,7 +24,7 @@
 		document.querySelectorAll('.VideoAnswerPlayer').forEach(v => v?.parentNode?.parentNode?.parentNode?.remove());
 		document.querySelectorAll('.ZVideoItem').forEach(v => v?.parentNode?.parentNode?.remove());
 
-		document.querySelectorAll('b').forEach(v => v.style.fontWeight = '400');
+		document.querySelectorAll('b').forEach(v => { v.style.fontWeight = '400' });
     };
 
     clean();
