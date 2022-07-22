@@ -6,6 +6,6 @@ protoc --version
 git version
 echo node "$(node --version || :)"
 nginx -v
-sudo mysqld --version
-docker --version
-nvim -version | head -n 1
+sudo mysqld --version | cut -d'-' -f1
+docker --version | cut -d',' -f1
+nvim -version | head -n 1 | awk '{print tolower($0)}'
