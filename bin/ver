@@ -7,5 +7,6 @@ git version
 echo node "$(node --version || :)"
 nginx -v
 sudo mysqld --version | cut -d'-' -f1
+ng version 2>/dev/null | grep 'Angular CLI'
 docker --version | cut -d',' -f1
 nvim -version | head -n 1 | awk '{print tolower($0)}'
