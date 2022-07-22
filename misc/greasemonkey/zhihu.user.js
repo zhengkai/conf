@@ -23,7 +23,6 @@
 		document.querySelectorAll('.Pc-feedAd-container').forEach(v => v?.parentNode?.remove());
 		document.querySelectorAll('.VideoAnswerPlayer').forEach(v => v?.parentNode?.parentNode?.parentNode?.remove());
 		document.querySelectorAll('.ZVideoItem').forEach(v => v?.parentNode?.parentNode?.remove());
-		document.querySelectorAll('.ZVideoItem').forEach(v => v?.parentNode?.parentNode?.remove());
 
 		document.querySelectorAll('b').forEach(v => v.style.fontWeight = '400');
     };
