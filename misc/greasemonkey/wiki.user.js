@@ -4,10 +4,8 @@
 // @version      0.2
 // @description  try to take over the world!
 // @author       Zheng Kai
-// @match        http://*.m.wikipedia.org/*
-// @match        https://*.m.wikipedia.org/*
-// @match        http://*.m.wikisource.org/*
-// @match        https://*.m.wikisource.org/*
+// @match        *://*.m.wikipedia.org/*
+// @match        *://*.m.wikisource.org/*
 // @grant        none
 // ==/UserScript==
 
@@ -19,7 +17,7 @@
 		return;
 	}
 	if (window.location.host.endsWith('.m.wikisource.org')) {
-		window.location.href = window.location.href.replace(/\.m\.wikipedia\.org/, '.wikisource.org')
+		window.location.href = window.location.href.replace(/\.m\.wikisource\.org/, '.wikisource.org')
 		return;
 	}
 })();
