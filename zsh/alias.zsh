@@ -31,6 +31,7 @@ alias lsb_release='sudo lsb_release'
 alias kitty='/usr/local/src/kitty/kitty/launcher/kitty'
 alias ytl="${HOME}/conf/script/youtube-dl.sh"
 alias psql='sudo -u postgres psql --dbname=fb'
+alias xjq='xclip -out | jq .'
 
 alias gkl="gpg2 --list-keys --keyid-format long 'Zheng Kai'"
 
