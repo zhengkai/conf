@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
 sudo ag --color --color-match "00:34" -o ".{0,50}$1.{0,50}" --silent -m 1 --stats \
-	| grep --color=always "$1"
+	| grep --text --color=always "$1"
