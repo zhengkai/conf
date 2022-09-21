@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHECK_TEXT='Expiration date: November 7, 2022'
+CHECK_TEXT='Expiration date: December 13, 2022'
 
 TMP_FILE='/tmp/ms-vbox.html'
 

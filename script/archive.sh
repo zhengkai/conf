@@ -13,4 +13,4 @@ function archive() {
 }
 
 archive "/home/zhengkai/Pictures" "/mnt/sdb/pic"
-# archive "/share" "/mnt/sdb/share"
+archive "/share" "/mnt/sdb/share"
