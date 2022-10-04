@@ -1,7 +1,7 @@
 [user]
 	email = zhengkai@gmail.com
 	name = Zheng Kai
-	signingkey = "EBD8332FC4CF046A"
+	signingKey = /home/zhengkai/.ssh/id_ecdsa.pub
 
 [init]
 	defaultBranch = master
@@ -10,7 +10,7 @@
 	version = 2
 
 [commit]
-#	gpgsign = true
+	gpgsign = true
 
 [alias]
 	who = shortlog -sn
@@ -75,3 +75,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = /home/zhengkai/.ssh/allowed_signers
+
+[tag]
+	gpgsign = true
