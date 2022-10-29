@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NGA 去广告
 // @namespace    https://soulogic.com/
-// @version      0.9
+// @version      1.0
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        http://bbs.nga.cn/*
@@ -18,8 +18,8 @@
 (() => {
 	'use strict';
 
-    // const mainDomain = 'bbs.nga.cn';
-    const mainDomain = 'nga.178.com';
+    const mainDomain = 'bbs.nga.cn';
+    // const mainDomain = 'nga.178.com';
 
 	__COOKIE.setMiscCookieInSecond('pv_count_for_insad', -300);
 
