@@ -1,11 +1,12 @@
 #!/bin/bash
 
-pip3 freeze --local \
+pip freeze --local \
 	| grep -v '^\-e' \
 	| cut -d = -f 1  \
 	| xargs -n1 pip3 install --upgrade --no-warn-script-location
 
-pip3 install --upgrade --no-warn-script-location httpie
-pip3 install --upgrade --no-warn-script-location qrcode
-pip3 install --upgrade --no-warn-script-location thefuck
-pip3 install --upgrade --no-warn-script-location pynvim
+pip install --upgrade --no-warn-script-location httpie
+pip install --upgrade --no-warn-script-location qrcode
+pip install --upgrade --no-warn-script-location thefuck
+pip install --upgrade --no-warn-script-location pynvim
+pip install --upgrade --no-warn-script-location yt-dlp
