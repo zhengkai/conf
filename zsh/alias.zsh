@@ -29,7 +29,7 @@ alias sha256sum='sudo sha256sum'
 alias lsof='sudo lsof'
 alias lsb_release='sudo lsb_release'
 alias kitty='/usr/local/src/kitty/kitty/launcher/kitty'
-alias youtube-dl='yt-dlp --no-prefer-free-formats -f "bestvideo*+bestaudio/best"'
+alias dl='yt-dlp --no-prefer-free-formats -f "bv+ba/b"'
 alias psql='sudo -u postgres psql --dbname=fb'
 alias xjq='xclip -out | jq .'
 
