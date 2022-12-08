@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎去提醒
 // @namespace    https://soulogic.com/
-// @version      0.10
+// @version      1.0
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://*.zhihu.com/*
@@ -26,8 +26,14 @@
 		document.querySelectorAll('.Banner-link').forEach(v => v?.remove())
 
 		document.querySelectorAll('b').forEach(v => { v.style.fontWeight = '400' });
-    };
 
-    clean();
-    setInterval(clean, 500);
+		document.querySelectorAll('.RichContent-EntityWord').forEach(a => {
+			const s = document.createTextNode(a.innerText);
+			a.after(s);
+			a.remove();
+		});
+	};
+
+	clean();
+	setInterval(clean, 500);
 })();
