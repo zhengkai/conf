@@ -9,7 +9,7 @@ cd "$(dirname "$(readlink -f "$0")")" || exit 1
 ~/conf/script/safe-git-pull.sh ~/build &
 ~/conf/script/safe-git-pull.sh ~/.config/nvim &
 
-~/conf/script/safe-git-pull.sh ~/hide
+~/conf/script/safe-git-pull.sh ~/hide || : &
 if [ -x ~/hide/pac/run.sh ]; then
 	~/hide/pac/run.sh &
 fi
