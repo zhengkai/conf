@@ -51,6 +51,7 @@ fi
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-update-rc --no-fish --no-bash --completion --no-key-bindings
+mkdir -p "/home/${USER}/.local/bin"
 ln -s "/home/${USER}/.fzf/bin/fzf" "/home/${USER}/.local/bin/" || :
 ln -s "/home/${USER}/.fzf/bin/fzf-tmux" "/home/${USER}/.local/bin/" || :
 

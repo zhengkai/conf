@@ -39,6 +39,7 @@ ipset
 jq
 kitty-terminfo
 landscape-common
+libssl-dev
 libtinfo-dev
 locales
 locate
