@@ -5,6 +5,7 @@ FILE=(
 	'10-help-text'
 	'50-motd-news'
 	'80-livepatch'
+	'88-esm-announce'
 )
 for F in "${FILE[@]}"; do
 	F="/etc/update-motd.d/${F}"

@@ -11,7 +11,5 @@ if [ -w ~/.tmp/vim-swap ]; then
 fi
 if [ -w ~/.config/nvim/backup ]; then
 	find ~/.config/nvim/backup -type f -mtime +10 -delete
+	find ~/.config/nvim/backup -type d -empty -delete
 fi
-
-echo "h $HOST"
-echo "h $HOSTNAME"
