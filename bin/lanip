@@ -4,7 +4,7 @@ IF="$1"
 if [ -z "$IF" ]; then
 	IF=$(sudo ip -j a \
 		| jq ".[] | .ifname" \
-		| grep -E '^"(eth|enp)' \
+		| grep -E '^"(eth|enp|ens)' \
 		| sort \
 		| head -n 1)
 fi
