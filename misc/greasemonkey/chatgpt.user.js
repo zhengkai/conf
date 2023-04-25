@@ -18,7 +18,6 @@
 		iframe.src = '/api/auth/session';
 		document.body.appendChild(iframe);
 		iframe.onload = function() {
-			console.log('Session data:', iframe.contentDocument.body.innerText);
 			document.body.removeChild(iframe);
 		};
 	}, 30000);
