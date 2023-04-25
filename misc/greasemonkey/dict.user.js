@@ -10,14 +10,12 @@
 // ==/UserScript==
 
 (() => {
-    'use strict';
+	'use strict';
 
-    const clean = () => {
-
+	const clean = () => {
 		if (document.hidden) {
-			return
+			return;
 		}
-
 		document.querySelectorAll('iframe').forEach(v => v?.remove());
 		document.getElementById('aswift_0_host')?.remove();
 		document.getElementById('aswift_1_host')?.remove();
