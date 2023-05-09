@@ -176,6 +176,8 @@ alias c7="awk '{print \$7}'"
 alias c8="awk '{print \$8}'"
 alias c9="awk '{print \$9}'"
 
+alias ifstat="~/conf/script/ifstat.sh"
+
 alias head='((L=$LINES-8)); ((L=L>10?L:10)); sudo \head -n $L'
 alias st='sudo \tail -n 10'
 alias tail='((L=$LINES-8)); ((L=L>10?L:10)); sudo \tail -n $L'
