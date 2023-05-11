@@ -1,6 +1,6 @@
 #! /bin/bash
 
-HOST="${1:-freya}"
+HOST="${1:-eirena}"
 
 exec 200>"/tmp/rsync-${HOST}-tesla.lock"
 flock -x -n 200 || {
@@ -11,6 +11,9 @@ flock -x -n 200 || {
 
 source_path="${HOST}:/log/"
 target_path="/backup/${HOST}/log"
+if [ -d /mnt/sdb ]; then
+	target_path="/mnt/sdb${target_path}"
+fi
 
 rsync --temp-dir=/tmp --min-size=10 --partial -vzrtopg -e ssh "$source_path" "$target_path"
 

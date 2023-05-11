@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Twitter Remove Promoted
 // @namespace    https://soulogic.com/
-// @version      0.6
+// @version      0.7
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://twitter.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
 // @grant        none
 // ==/UserScript==
 //
@@ -29,6 +30,10 @@
 		});
 
 		document.querySelector('a[aria-label="Twitter Blue"]')?.remove();
+
+		document.querySelectorAll('[data-testid=tweetText]').forEach(a => {
+			a.style.lineHeight = 1.75;
+		});
 
 		document.querySelectorAll('a').forEach(a => {
 			if (!a.href.endsWith('/analytics')) {
