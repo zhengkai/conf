@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Remove Promoted
 // @namespace    https://soulogic.com/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -13,10 +13,10 @@
 
 	const clean = () => {
 		document.querySelectorAll('span').forEach(a => {
-			if (!a.innerText.startsWith('Promoted')) {
+			if (!a?.innerText?.startsWith('Promoted')) {
 				return;
 			}
-			const b = a.closest('article');
+			const b = a?.closest('article');
 			if (!b) {
 				return;
 			}
@@ -25,7 +25,7 @@
 		});
 
 		document.querySelectorAll('video, iframe, div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(a => {
-			const b = a.closest('article');
+			const b = a?.closest('article');
 			if (!b) {
 				return;
 			}
@@ -34,10 +34,10 @@
 		});
 
 		document.querySelectorAll('div[data-testid=User-Name] a span').forEach(a => {
-			if (!a.innerText.includes('互fo')) {
+			if (!a?.innerText?.includes('互fo')) {
 				return;
 			}
-			const b = a.closest('article');
+			const b = a?.closest('article');
 			if (!b) {
 				return;
 			}
@@ -52,7 +52,7 @@
 		});
 
 		document.querySelectorAll('a').forEach(a => {
-			if (!a.href.endsWith('/analytics')) {
+			if (!a?.href?.endsWith('/analytics')) {
 				return;
 			}
 			const p = a?.parentNode;
