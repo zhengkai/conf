@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Remove Promoted
 // @namespace    https://soulogic.com/
-// @version      0.7
+// @version      0.8
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -27,6 +27,25 @@
 				p.style.display = 'none';
 			}
 			a?.remove();
+		});
+
+		document.querySelectorAll('div[data-testid=User-Name] img[title^="Flag of"]').forEach(a => {
+			const b = a.closest('article');
+			if (!b) {
+				return;
+			}
+			b.style.display = 'none';
+		});
+
+		document.querySelectorAll('div[data-testid=User-Name] a span').forEach(a => {
+			if (!a.innerText.includes('互fo')) {
+				return;
+			}
+			const b = a.closest('article');
+			if (!b) {
+				return;
+			}
+			b.style.display = 'none';
 		});
 
 		document.querySelector('a[aria-label="Twitter Blue"]')?.remove();
