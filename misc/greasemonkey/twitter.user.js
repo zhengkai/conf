@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Remove Promoted
 // @namespace    https://soulogic.com/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -11,38 +11,31 @@
 //
 (() => {
 
+	const hide = (a) => {
+		if (!a) {
+			return;
+		}
+		a.style.display = 'none';
+		// a?.remove();
+	};
+
 	const clean = () => {
 		document.querySelectorAll('span').forEach(a => {
 			if (!a?.innerText?.startsWith('Promoted')) {
 				return;
 			}
-			const b = a?.closest('article');
-			if (!b) {
-				return;
-			}
-			b.style.display = 'none';
-			b?.remove();
+			hide(a?.closest('article'));
 		});
 
 		document.querySelectorAll('video, iframe, div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(a => {
-			const b = a?.closest('article');
-			if (!b) {
-				return;
-			}
-			b.style.display = 'none';
-			b?.remove();
+			hide(a?.closest('article'));
 		});
 
 		document.querySelectorAll('div[data-testid=User-Name] a span').forEach(a => {
 			if (!a?.innerText?.includes('互fo')) {
 				return;
 			}
-			const b = a?.closest('article');
-			if (!b) {
-				return;
-			}
-			b.style.display = 'none';
-			b?.remove();
+			hide(a?.closest('article'));
 		});
 
 		document.querySelector('a[aria-label="Twitter Blue"]')?.remove();
@@ -57,7 +50,7 @@
 			}
 			const p = a?.parentNode;
 			if (p?.getAttribute('data-testid') !== 'Dropdown') {
-				p.style.display = 'none';
+				hide(p);
 			}
 		});
 	};
