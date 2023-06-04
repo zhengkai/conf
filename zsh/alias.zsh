@@ -15,6 +15,9 @@ alias iptables-restore='sudo iptables-restore'
 alias iptables-save='sudo iptables-save'
 alias systemctl='sudo systemctl'
 
+alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
+alias youtube-dl="yt-dlp -o '%(id)s.%(ext)s'"
+
 alias apt='sudo apt'
 alias apt-get='sudo apt-get'
 alias apt-cache='sudo apt-cache'

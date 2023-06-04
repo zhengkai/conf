@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Remove Promoted
 // @namespace    https://soulogic.com/
-// @version      1.2
+// @version      1.3
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -27,7 +27,7 @@
 			hide(a?.closest('article'));
 		});
 
-		document.querySelectorAll('video, iframe, div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(a => {
+		document.querySelectorAll('video, iframe, svg[aria-label="Verified account"], div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(a => {
 			hide(a?.closest('article'));
 		});
 
