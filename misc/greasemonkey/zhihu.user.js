@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎去提醒
 // @namespace    https://soulogic.com/
-// @version      1.1
+// @version      1.3
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://*.zhihu.com/*
@@ -10,27 +10,39 @@
 // ==/UserScript==
 
 (() => {
-    'use strict';
+	'use strict';
 
-    const clean = () => {
+	const hide = (a) => {
+		if (!a?.style) {
+			return;
+		}
+		a.style.display = 'none';
+	};
+
+	const clean = () => {
 
 		if (document.hidden) {
-			return
+			return;
 		}
 
-        document.title = document.title.replace(/\(.+?\) /, '');
+		document.title = document.title.replace(/\(.+?\) /, '');
 
-		document.querySelectorAll('.Pc-feedAd-container').forEach(v => v?.parentNode?.remove());
-		document.querySelectorAll('.VideoAnswerPlayer').forEach(v => v?.parentNode?.parentNode?.parentNode?.remove());
-		document.querySelectorAll('.ZVideoItem').forEach(v => v?.parentNode?.parentNode?.remove());
-		document.querySelectorAll('.Banner-link').forEach(v => v?.remove())
+		document.querySelectorAll('.Pc-feedAd-container').forEach(v => hide(v?.parentNode));
+		document.querySelectorAll('.VideoAnswerPlayer').forEach(v => hide(v?.parentNode?.parentNode?.parentNode));
+		document.querySelectorAll('.ZVideoItem').forEach(v => hide(v?.parentNode?.parentNode));
+		document.querySelectorAll('.Banner-link').forEach(hide);
 
-		document.querySelectorAll('b, strong').forEach(v => { v.style.fontWeight = '400' });
+		document.querySelectorAll('b, strong').forEach(v => {
+			v.style.fontWeight = '400';
+		});
 
 		document.querySelectorAll('.RichContent-EntityWord').forEach(a => {
+			if (a.style.display === 'none') {
+				return;
+			}
 			const s = document.createTextNode(a.innerText);
 			a.after(s);
-			a.remove();
+			hide(a);
 		});
 	};
 
