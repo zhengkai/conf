@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Remove Promoted
 // @namespace    https://soulogic.com/
-// @version      1.3
+// @version      1.4
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -38,7 +38,9 @@
 			hide(a?.closest('article'));
 		});
 
-		document.querySelector('a[aria-label="Twitter Blue"]')?.remove();
+		document.querySelectorAll('a[aria-label="Twitter Blue"], aside[aria-label="Get Verified"], a[aria-label="Verified"]').forEach(a => {
+			a?.remove();
+		});
 
 		document.querySelectorAll('[data-testid=tweetText]').forEach(a => {
 			a.style.lineHeight = 1.75;
