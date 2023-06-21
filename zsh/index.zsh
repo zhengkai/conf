@@ -51,8 +51,8 @@ if [ -f /usr/local/lib/libstderred.so ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
-[ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
+# [ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
+# [ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
 [ -x "/usr/local/src/kitty/shell-integration/kitty.zsh" ] && source "/usr/local/src/kitty/shell-integration/kitty.zsh"
 [ -x "/usr/local/bin/ng" ] && source <(ng completion script)
 
@@ -72,4 +72,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
