@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      1.6
+// @version      1.7
 // @description  屏蔽所有广告、视频、名字上带国旗、互fo、蓝标的推，你要懒得自己部署可以直接用 https://k.9farm.com/gm/twitter.user.js
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -62,14 +62,7 @@
 			a.style.lineHeight = 1.75;
 		});
 
-		document.querySelectorAll('a').forEach(a => {
-			if (!a.href.endsWith('/analytics')) {
-				return;
-			}
-			hide(a.parentNode);
-		});
-
-		document.querySelectorAll('div[aria-label$="Like"]').forEach(a => {
+		document.querySelectorAll('div[aria-label$="Like"], [aria-label$="View Tweet analytics"]').forEach(a => {
 			hide(a.parentNode);
 		});
 	};
