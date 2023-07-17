@@ -13,10 +13,17 @@
 
 	const hide = (a) => {
 		if (!a) {
-			return;
+			return false;
 		}
 		a.style.display = 'none';
+		return true;
 		// a?.remove();
+	};
+
+	const hideArticle = (a) => {
+		if (!a?.closest('div[role=link]')) {
+			hide(a?.closest('article'));
+		}
 	};
 
 	const whiteList = [
@@ -26,15 +33,14 @@
 
 	const clean = () => {
 		document.querySelectorAll('span').forEach(a => {
-			if (!a?.innerText?.startsWith('Promoted')) {
-				return;
+			if (a?.innerText?.startsWith('Promoted')) {
+				hideArticle(a);
 			}
-			hide(a?.closest('article'));
 		});
 
-		document.querySelectorAll('video, iframe, div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(a => {
-			hide(a?.closest('article'));
-		});
+		document.querySelectorAll('video, iframe').forEach(hide);
+
+		document.querySelectorAll('div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(hideArticle);
 
 		document.querySelectorAll('svg[aria-label="Verified account"]').forEach(icon => {
 			const a = icon.closest('[data-testid="User-Name"]');
@@ -46,14 +52,13 @@
 					return;
 				}
 			}
-			hide(a?.closest('article'));
+			hideArticle(a);
 		});
 
 		document.querySelectorAll('div[data-testid=User-Name] a span').forEach(a => {
-			if (!a.innerText.includes('互fo')) {
-				return;
+			if (a.innerText.includes('互fo')) {
+				hideArticle(a);
 			}
-			hide(a?.closest('article'));
 		});
 
 		document.querySelectorAll('a[aria-label="Twitter Blue"], a[aria-label="Communities"], aside[aria-label="Get Verified"], a[aria-label="Verified"]').forEach(hide);
@@ -62,7 +67,7 @@
 			a.style.lineHeight = 1.75;
 		});
 
-		document.querySelectorAll('div[aria-label$="Like"], [aria-label$="View Tweet analytics"]').forEach(a => {
+		document.querySelectorAll('[aria-label$="View Tweet analytics"]').forEach(a => {
 			hide(a.parentNode);
 		});
 	};
