@@ -38,7 +38,10 @@
 			}
 		});
 
-		document.querySelectorAll('video, iframe').forEach(hide);
+		document.querySelectorAll('video, iframe').forEach((a) => {
+			hide(a?.closest('div[data-testid="tweetPhoto"]'));
+			hide(a);
+		});
 
 		document.querySelectorAll('div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(hideArticle);
 
