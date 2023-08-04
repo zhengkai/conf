@@ -113,7 +113,7 @@ alias naf="npm audit fix"
 alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict --inline-style --directory client"
 
 alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
-alias now="php -r '\$i = time(); echo \$i, \"\\n\", date(\"Y-m-d H:i:s\", \$i);'"
+alias now='i=$(\date +%s); echo "$i"; echo "$(date -d @"$i")"'
 
 alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
@@ -185,7 +185,6 @@ alias head='((L=$LINES-8)); ((L=L>10?L:10)); sudo \head -n $L'
 alias st='sudo \tail -n 10'
 alias tail='((L=$LINES-8)); ((L=L>10?L:10)); sudo \tail -n $L'
 alias f='((L=$LINES-3)); ((L=L>10?L:10)); sudo \tail -n $L -f'
-alias terror="sudo touch /tmp/php-error.txt; sudo chmod 666 /tmp/php-error.txt; f /tmp/php-error.txt"
 
 alias mocp="TERM=screen-256color /usr/bin/mocp"
 
@@ -195,7 +194,6 @@ alias nginx='service nginx'
 alias nginx-reload='service nginx force-reload'
 alias re-nginx='nginx stop && nginx start'
 alias mysqld='service mysql'
-alias fpm='service php-fpm'
 alias firewall-cmd='sudo firewall-cmd'
 alias fail2ban-client='sudo fail2ban-client'
 
