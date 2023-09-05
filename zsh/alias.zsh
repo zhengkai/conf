@@ -16,7 +16,8 @@ alias iptables-save='sudo iptables-save'
 alias systemctl='sudo systemctl'
 
 alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
-alias youtube-dl="yt-dlp -o '%(id)s.%(ext)s'"
+alias youtube-dl="yt-dlp"
+alias twitter-dl="yt-dlp --cookies-from-browser chrome+gnomekeyring"
 
 alias apt='sudo apt'
 alias apt-get='sudo apt-get'
