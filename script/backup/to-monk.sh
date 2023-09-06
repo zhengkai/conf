@@ -11,8 +11,24 @@ flock -x -n 200 || {
 
 source_path="${HOST}:/log/"
 target_path="/backup/${HOST}/log"
-rsync --temp-dir=/tmp --min-size=10 --partial -vzrtopg -e ssh "$source_path" "$target_path"
+rsync \
+	--temp-dir=/tmp \
+	--min-size=10 \
+	--remove-source-files \
+	--exclude="access.log" \
+	--exclude="error.log" \
+	--partial \
+	-vzrtopg \
+	-e ssh \
+	"$source_path" "$target_path"
 
 source_path="${HOST}:/backup/${HOST}/"
 target_path="/backup/${HOST}/db"
-rsync --temp-dir=/tmp --min-size=10 --remove-source-files --partial -vzrtopg -e ssh "$source_path" "$target_path"
+rsync \
+	--temp-dir=/tmp \
+	--min-size=10 \
+	--remove-source-files \
+	--partial \
+	-vzrtopg \
+	-e ssh \
+	"$source_path" "$target_path"
