@@ -9,7 +9,7 @@ fi
 
 chmod 600 "$FILE"
 
-PASSWORD=$(pwgen -s 15 1)
+PASSWORD=$(pwgen -cns 15 1)
 
 echo -n -E "$PASSWORD" > "$FILE"
 echo -E "$PASSWORD"

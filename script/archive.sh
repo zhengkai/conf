@@ -1,16 +1,22 @@
 #!/bin/bash
 
 DATE=$(TZ="Asia/Shanghai" date "+%Y%m")
-echo "$DATE"
 
 function archive() {
-	DST="$2/${DATE}"
-	# mkdir -p "$DST"
-	# mv "${SRC}/"* "${DST}/"
+
+	DST="${2%/}/${DATE}"
+
+	echo
+	echo "$1 -> $DST"
+	echo
+
 	cd "$1" || exit 1
-	find . -type d -exec mkdir -p {} "${DST}"/{} \;
-	find . -type f -exec mv {} "${DST}"/{} \;
+	cd "$2" || exit 1
+
+	find "$1" -name "Thumbs.db*" -delete
+	rsync --partial -vzrtopg --remove-source-files "${1%/}/" "$DST" || exit 1
+	find "$1" -mindepth 1 -type d -empty -delete
 }
 
-archive "/home/zhengkai/Pictures" "/mnt/sdb/pic"
+archive "${HOME}/Pictures/Screenshots" "/mnt/sdb/pic"
 archive "/share" "/mnt/sdb/share"
