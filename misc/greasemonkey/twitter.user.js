@@ -29,8 +29,9 @@
 	const whiteList = [
 		'iamshaynez',
 		'PenngXiao',
-		'PlayStation',
 		'salonbus1024',
+		'PlayStation',
+		'armoredcore',
 	];
 
 	const clean = () => {
