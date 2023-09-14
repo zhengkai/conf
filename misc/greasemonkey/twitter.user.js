@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      1.7
+// @version      1.8
 // @description  屏蔽所有广告、视频、名字上带国旗、互fo、蓝标的推，你要懒得自己部署可以直接用 https://k.9farm.com/gm/twitter.user.js
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -30,6 +30,7 @@
 		'iamshaynez',
 		'PenngXiao',
 		'PlayStation',
+		'salonbus1024',
 	];
 
 	const clean = () => {
@@ -46,18 +47,20 @@
 
 		document.querySelectorAll('div[data-testid=User-Name] img[title^="Flag of"], div[data-testid=User-Name] img[title="🇺🇦"]').forEach(hideArticle);
 
-		document.querySelectorAll('svg[aria-label="Verified account"]').forEach(icon => {
-			const a = icon.closest('[data-testid="User-Name"]');
-			if (!a) {
-				return;
-			}
-			for (const s of whiteList) {
-				if (a.innerText.includes(s)) {
+		if (!document.querySelector('[data-testid="UserName"] svg[aria-label="Verified account"]')) {
+			document.querySelectorAll('svg[aria-label="Verified account"]').forEach(icon => {
+				const a = icon.closest('[data-testid="User-Name"]');
+				if (!a) {
 					return;
 				}
-			}
-			hideArticle(a);
-		});
+				for (const s of whiteList) {
+					if (a.innerText.includes(s)) {
+						return;
+					}
+				}
+				hideArticle(a);
+			});
+		}
 
 		document.querySelectorAll('div[data-testid=User-Name] a span').forEach(a => {
 			if (a.innerText.includes('互fo')) {
