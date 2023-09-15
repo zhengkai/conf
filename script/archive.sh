@@ -13,7 +13,7 @@ function archive() {
 	cd "$1" || exit 1
 	cd "$2" || exit 1
 
-	find "$1" -name "Thumbs.db*" -delete
+	find "$1" -type f -name "Thumbs.db*" -delete
 	rsync --partial -vzrtopg --remove-source-files "${1%/}/" "$DST" || exit 1
 	find "$1" -mindepth 1 -type d -empty -delete
 }

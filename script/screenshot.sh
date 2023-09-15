@@ -6,7 +6,8 @@ FORMAT="${1:-%Y-%m-%d-%H%M%S}"
 
 if [ -z "$DISPLAY" ]; then
 	>&2 echo no desktop found
-	exit 1
+	export DISPLAY=:0
+	# exit 1
 fi
 
 SAVE_DIR="${HOME}/Pictures/"

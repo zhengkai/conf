@@ -32,6 +32,7 @@
 		'salonbus1024',
 		'PlayStation',
 		'armoredcore',
+		'salonbus1024',
 	];
 
 	const clean = () => {
