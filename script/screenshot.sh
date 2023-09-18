@@ -1,25 +1,27 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
-# 30	10,16	* * * ~/conf/script/screenshot.sh >/dev/null 2>&1
-
-FORMAT="${1:-%Y-%m-%d-%H%M%S}"
+FILENAME="$1"
+if [ -z "$FILENAME" ]; then
+	FILENAME=$(mktemp --suffix="-$(date "+%Y%m%d-%H%M%S").png")
+fi
 
 if [ -z "$DISPLAY" ]; then
-	>&2 echo no desktop found
-	export DISPLAY=:0
-	# exit 1
+	D=$(who | grep '(:' |awk '{ print $2 }')
+	if [ -z "$D" ]; then
+		>&2 echo no desktop found
+		exit 1
+	fi
+	export DISPLAY="$D"
 fi
 
-SAVE_DIR="${HOME}/Pictures/"
-SUB_DIR=$(date "+$FORMAT")
-FILENAME="${SAVE_DIR}${SUB_DIR}.png"
+# meta 信息可以用 identify -verbose 命令查看 Properties -> comment
+COMMENT="screenshot at $(date "+%Y-%m-%d %H:%M:%S") by $(whoami)"
+import -set comment "$COMMENT" -window root "${FILENAME}"
 
-DIR=$(dirname "$FILENAME")
-mkdir -p "$DIR"
-
-import -window root "$FILENAME"
-
-FILESIZE=$(ls -l "$FILENAME" | awk '{ print $5 }' | tail -1)
+FILESIZE=$(stat -c "%s" "$FILENAME")
 if [ "$FILESIZE" -lt 400 ]; then
 	rm "$FILENAME"
+	>&2 echo screenshot failed
+	exit 1
 fi
+echo "$FILENAME"

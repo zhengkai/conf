@@ -114,7 +114,7 @@ alias naf="npm audit fix"
 alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict --inline-style --directory client"
 
 alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
-alias now='i=$(\date +%s); echo "$i"; echo "$(date -d @"$i")"'
+alias now='i=$(\date +%s); echo "$i"; date -d @"$i"'
 
 alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
@@ -127,7 +127,8 @@ alias vimcat="$HOME/.vim/bundle/vimpager/vimcat"
 alias du1="sudo du --max-depth=1 -h"
 alias dus="sudo du --max-depth=0 -h"
 
-alias sshsync='rsync --partial -vzrtopg -e ssh'
+alias rsync='rsync --partial -vzrtopg'
+alias sshsync='rsync -e ssh'
 alias ssltime='curl -w "TCP handshake: %{time_connect}, SSL handshake: %{time_appconnect}\n" -so /dev/null'
 alias sslview='sudo openssl x509 -noout -text -in'
 
