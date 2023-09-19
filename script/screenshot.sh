@@ -19,7 +19,7 @@ COMMENT="screenshot at $(date "+%Y-%m-%d %H:%M:%S") by $(whoami)"
 import -set comment "$COMMENT" -window root "${FILENAME}"
 
 FILESIZE=$(stat -c "%s" "$FILENAME")
-if [ "$FILESIZE" -lt 400 ]; then
+if [ "$FILESIZE" -lt 4000 ]; then
 	rm "$FILENAME"
 	>&2 echo screenshot failed
 	exit 1
