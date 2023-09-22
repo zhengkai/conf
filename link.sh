@@ -13,11 +13,12 @@ for FILE in *; do
 
 	TARGET="${HOME}/.${FILE}"
 
-	if [ "$FILE" == "gitconfig" ] && [ ! -e "${HOME}/.ssh/id_rsa.pub" ]; then
+	if [ "$FILE" == "gitconfig" ] && [ ! -e "${HOME}/.ssh/id_ecdsa.pub" ]; then
 		grep -E -v '\[url|insteadOf' "$SRC" > "$TARGET"
 		continue
 	fi
 
+	echo "$TARGET"
 	ln -sf "$SRC" "$TARGET"
 done
 

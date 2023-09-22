@@ -8,7 +8,7 @@ if [ -n "$ID" ]; then
 fi
 
 if [ -z "$ID" ]; then
-	KITTY_DISABLE_WAYLAND=1 GLFW_IM_MODULE=ibus /usr/local/bin/kitty --start-as=fullscreen -o "shell=/home/zhengkai/conf/script/tmux-tilda.sh" &
+	KITTY_DISABLE_WAYLAND=1 GLFW_IM_MODULE=ibus /usr/local/bin/kitty/bin/kitty --start-as=fullscreen -o "shell=/home/zhengkai/conf/script/tmux-tilda.sh" &
 	PID="$!"
 	while true; do
 		ID=$(xdotool search --pid "$PID" || :)
