@@ -30,6 +30,8 @@ fi
 
 ./clean-tmp.sh &
 
+/usr/bin/trash-empty 30
+
 wait
 
 sudo chown -R zhengkai:zhengkai /home/zhengkai

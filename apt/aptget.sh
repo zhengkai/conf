@@ -69,5 +69,9 @@ if [ ! -e /usr/bin/python ]; then
 	sudo ln -s /usr/bin/python3 /usr/bin/python
 fi
 
+sudo mkdir --parent /.Trash
+sudo chmod a+rw /.Trash
+sudo chmod +t /.Trash
+
 # ../update/npm.sh
 # ../update/pip.sh
