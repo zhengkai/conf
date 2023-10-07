@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      1.8
+// @version      1.9
 // @description  屏蔽所有广告、视频、名字上带国旗、互fo、蓝标的推，你要懒得自己部署可以直接用 https://k.9farm.com/gm/twitter.user.js
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -10,6 +10,8 @@
 // ==/UserScript==
 //
 (() => {
+
+	let tweetPage = false;
 
 	const hide = (a) => {
 		if (!a) {
@@ -21,7 +23,7 @@
 	};
 
 	const hideArticle = (a) => {
-		if (!a?.closest('div[role=link]')) {
+		if (!tweetPage && !a?.closest('div[role=link]')) {
 			hide(a?.closest('article'));
 		}
 	};
@@ -36,6 +38,9 @@
 	];
 
 	const clean = () => {
+
+		tweetPage = /\/status\/\d+$/.test(window.location.pathname);
+
 		document.querySelectorAll('span').forEach(a => {
 			if (a?.innerText?.startsWith('Promoted')) {
 				hideArticle(a);

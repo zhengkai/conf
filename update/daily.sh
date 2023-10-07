@@ -32,6 +32,9 @@ fi
 
 /usr/bin/trash-empty 30
 
+rm ~/.local/xgen || :
+rm ~/.local/pgen || :
+
 wait
 
 sudo chown -R zhengkai:zhengkai /home/zhengkai
