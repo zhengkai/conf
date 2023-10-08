@@ -5,15 +5,15 @@ cd "$(dirname "$(readlink -f "$0")")" || exit 1
 #~/conf/script/safe-git-pull.sh ~/.vim &
 #~/.vim/update.sh || : &
 
-sudo find /var/log/journal -name '*@*' -type f -ctime +10 -delete &
-
 ~/conf/script/safe-git-pull.sh ~/conf &
 ~/conf/script/safe-git-pull.sh ~/build &
 ~/conf/script/safe-git-pull.sh ~/.config/nvim &
 
-~/conf/script/safe-git-pull.sh ~/hide || : &
 if [ -x ~/hide/pac/run.sh ]; then
-	~/hide/pac/run.sh &
+	(
+		~/conf/script/safe-git-pull.sh ~/hide || :
+		~/hide/pac/run.sh
+	) &
 fi
 
 ./docker.sh &
@@ -28,17 +28,13 @@ if [ -x "$CHN" ]; then
 	"$CHN" &
 fi
 
-./clean-tmp.sh &
+./clean.sh &
 
-/usr/bin/trash-empty 30
-
-rm ~/.local/xgen || :
-rm ~/.local/pgen || :
+if [ "$USER" == 'zhengkai' ]; then
+	sudo chown -R zhengkai:zhengkai /home/zhengkai &
+fi
 
 wait
 
-sudo chown -R zhengkai:zhengkai /home/zhengkai
-
-./clean-motd.sh || :
 ./before-reboot.sh || :
 ./reboot-check.sh
