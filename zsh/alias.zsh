@@ -124,7 +124,7 @@ alias df="df -h"
 
 alias vimcat="$HOME/.vim/bundle/vimpager/vimcat"
 
-alias du1="sudo du --max-depth=1 -h | expand -t 8"
+alias du1="sudo du --max-depth=1 -h | sort -h | expand -t 8"
 alias dus="sudo du --max-depth=0 -h | expand -t 8"
 
 alias rsync='rsync --partial -vzrtopg'
