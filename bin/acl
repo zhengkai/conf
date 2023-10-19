@@ -1,16 +1,11 @@
 #!/bin/bash -e
 
-if [ "$UID" -ne 0 ]; then
-	sudo "$0" "$@"
-	exit
-fi
-
 if [ -z "$1" ]; then
 	>&2 echo no group name
 	exit 1
 fi
 
-GROUP=$(getent group "$1" || :)
+GROUP=$(sudo getent group "$1" || :)
 if [ -z "$GROUP" ]; then
 	>&2 echo "no group \"${1}\""
 	exit 1
@@ -29,17 +24,15 @@ fi
 if [ ! -d "$2" ]; then
 	echo -e "\n\tset acl\n\n\tgroup: ${1}\n\t file: ${2}\n\n"
 	set -x
-	setfacl -m "g:${1}:rwX" "$2"
+	sudo setfacl -m "g:${1}:rwX" "$2"
 	{ set +x; } 2>/dev/null
 	exit
 fi
 
 echo -e "\n\tset acl\n\n\tgroup: ${1}\n\t  dir: ${2}\n"
 
-cd "$2"
-pwd
-echo
+echo "$2"
 
 set -x
-setfacl -d -R -m "g:${1}:rwx" "$2"
-setfacl    -R -m "g:${1}:rwX" "$2"
+# sudo find . -type d -exec setfacl "-d" "-m" "g:${1}:rwx" {} \;
+sudo setfacl -R -m "g:${1}:rwX" "$2"
