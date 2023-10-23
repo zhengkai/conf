@@ -54,7 +54,7 @@ alias jour='journalctl -xe'
 
 alias rm="trash-put"
 
-alias ..='cd $(dirname $(pwd))'
+alias ..='cd $(dirname "$(pwd)")'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
