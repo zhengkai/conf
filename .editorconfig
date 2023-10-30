@@ -12,6 +12,9 @@ spaces_around_operators = true
 tab_width = 4
 trim_trailing_whitespace = true
 
+[*.ts]
+quote_type = single
+
 [*.py]
 indent_style = space
 

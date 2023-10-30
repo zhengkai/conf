@@ -98,7 +98,7 @@ alias gl='git log --abbrev=12 --date="format:%Y-%m-%d %H:%M:%S" --pretty=format:
 alias git-delete-all-local-branch='git br | \grep -v "^*" | sed "s#  ##" | xargs -L 1 git br -D | tee -a ./`git rev-parse --show-cdup 2>/dev/null`.git/deleted-brnach'
 
 # 从整个仓库的所有历史里搜索某个关键词
-alias git_all_search='git rev-list --all | xargs git grep -F'
+alias git-all-search='git rev-list --all | xargs git grep -F'
 
 alias d='colordiff -u'
 
@@ -207,7 +207,7 @@ alias easy_install='sudo easy_install'
 alias easy_install3='sudo easy_install3'
 
 alias pl="echo 'show processlist;' | mysql"
-alias pc='echo `grep -c "^processor" /proc/cpuinfo`'
+alias pc='grep -c "^processor" /proc/cpuinfo'
 
 alias cleanacl="sudo setfacl -b -R ."
 
