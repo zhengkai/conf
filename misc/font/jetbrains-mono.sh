@@ -3,7 +3,7 @@
 cd /usr/local/src
 
 if [ ! -d JetBrainsMono ]; then
-	git clone --depth 1 git@github.com:JetBrains/JetBrainsMono.git
+	git clone --depth 1 https://github.com/JetBrains/JetBrainsMono.git
 fi
 
 cd JetBrainsMono/fonts/ttf
