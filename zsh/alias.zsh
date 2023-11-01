@@ -64,6 +64,8 @@ alias cd....='....'
 alias cd.....='.....'
 alias 'cd-'='cd -'
 
+alias lanip="sudo ip -j a | jq -r '.[] | select(.ifname != \"lo\") | select(.ifname | startswith(\"docker\") | not) | .addr_info[] | select(.family == \"inet\").local'"
+
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
