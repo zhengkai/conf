@@ -33,6 +33,11 @@
 [color]
 	ui = true
 
+[color "diff"]
+	new = 118
+	old = 208
+	meta = 222
+
 [push]
 	default = upstream
 
