@@ -2,19 +2,24 @@
 
 git status >/dev/null
 
-let height=`tput lines`-3
+((height=$(tput lines)-3))
 
-count=`git diff --no-ext-diff -b -w -z --color=never $@ 2>/dev/null | ~/conf/script/git_diff.php | head -n $height | wc -l`
+count=$(git diff --no-ext-diff -b -w -z --color=never "$@" 2>/dev/null | ~/conf/script/git_diff.php | head -n $height | wc -l)
+if [ "$count" -le 0 ] && [ -z "$*" ]; then
+	count=$(git diff --no-ext-diff -b -w -z --color=never HEAD 2>/dev/null | ~/conf/script/git_diff.php | head -n $height | wc -l)
+	# 如果 gd 结果为空（比方说所有改动已 add 但没有 commit），则尝试 gd HEAD
+	set -- "HEAD"
+fi
 
-if [ $count -le 0 ]; then
+if [ "$count" -le 0 ]; then
 	echo
 	echo '    git diff: nothing has changed'
 	echo
 	exit
 fi
 
-if [ $count -ge $height ]; then
-	git diff --no-ext-diff -b -w -z --color=never $@ | ~/conf/script/git_diff.php | less -r
+if [ "$count" -ge "$height" ]; then
+	git diff --no-ext-diff -b -w -z --color=never "$@" | ~/conf/script/git_diff.php | less -r
 else
-	git diff --no-ext-diff -b -w -z --color=never $@ | ~/conf/script/git_diff.php
+	git diff --no-ext-diff -b -w -z --color=never "$@" | ~/conf/script/git_diff.php
 fi
