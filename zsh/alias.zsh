@@ -121,7 +121,7 @@ alias now='i=$(\date +%s); echo "$i"; date -d @"$i"'
 alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
 
-alias top="TERM=screen-256color htop"
+alias top="btop"
 alias df="df -h"
 
 alias vimcat="$HOME/.vim/bundle/vimpager/vimcat"
