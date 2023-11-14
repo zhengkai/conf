@@ -8,6 +8,7 @@ autossh
 axel
 bison
 brotli
+btop
 build-essential
 cloc
 cmake
