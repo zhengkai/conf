@@ -64,7 +64,7 @@ alias cd....='....'
 alias cd.....='.....'
 alias 'cd-'='cd -'
 
-alias lanip="sudo ip -j a | jq -r '.[] | select(.ifname != \"lo\") | select(.ifname | startswith(\"docker\") | not) | .addr_info[] | select(.family == \"inet\").local'"
+alias lanip="sudo ip -j a | jq -r '.[] | select(.ifname != \"lo\") | select(.ifname | startswith(\"docker\") | not) | select(.ifname | contains(\"-\") | not) | .addr_info[] | select(.family == \"inet\").local'"
 
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
@@ -137,7 +137,7 @@ alias sslview='sudo openssl x509 -noout -text -in'
 alias pwgen='((L=$LINES-8)); ((L=L>10?L:10)); ((W=$COLUMNS)); ((W=W>80?W:80)); pwgen -cns $W $L'
 alias pwgens='((L=$LINES-8)); ((L=L>10?L:10)); ((W=$COLUMNS)); ((W=W>80?W:80)); pwgen -cnsy $W $L'
 
-alias grep='sudo grep -n -I --color=always --exclude-dir=.hg --exclude-dir=.git --exclude-dir=.svn'
+alias gp='sudo grep -n -I --color=always --exclude-dir=.git --exclude-dir=.svn'
 alias grpe='grep'
 alias less='less -r --tabs=4'
 
@@ -257,3 +257,7 @@ alias wake-tesla='wakeonlan "fc:aa:14:ad:25:d5" && wakeonlan -i "10.0.31.16"    
 alias wake-molly='wakeonlan "d8:50:e6:ba:43:df" && wakeonlan -i "10.0.31.14"    "d8:50:e6:ba:43:df"'
 alias wake-lydia='wakeonlan "e0:d5:5e:16:08:a0" && wakeonlan -i "192.168.1.225" "e0:d5:5e:16:08:a0"'
 alias wake-rpi='  wakeonlan "b8:27:eb:c1:83:2a" && wakeonlan -i "192.168.1.224" "b8:27:eb:c1:83:2a"'
+
+trimaudio() {
+	ffmpeg -i "$1" -an -c:v copy "$2"
+}
