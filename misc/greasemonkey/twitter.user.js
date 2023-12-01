@@ -84,7 +84,7 @@
 			}
 		});
 
-		document.querySelectorAll('aside[aria-label="Subscribe to Premium"], a[aria-label="Twitter Blue"], a[aria-label="Communities"], aside[aria-label="Get Verified"], a[aria-label="Verified"]').forEach(forceHide);
+		document.querySelectorAll('aside[aria-label="Subscribe to Premium"], a[aria-label="Twitter Blue"], a[aria-label="Communities"], a[aria-label="Premium"], a[aria-label="Lists"], aside[aria-label="Get Verified"], a[aria-label="Verified"]').forEach(forceHide);
 
 		document.querySelectorAll('[data-testid=tweetText]').forEach(a => {
 			a.style.lineHeight = 1.75;
