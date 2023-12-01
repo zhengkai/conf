@@ -1,5 +1,10 @@
 #!/bin/bash
 
+MAX_DAY=23
+if [[ "$1" =~ ^[0-9]+$ ]] && [ "$1" -ge 3 ] && [ "$1" -le 10000 ]; then
+    MAX_DAY="$1"
+fi
+
 ds() {
   if [ "${OSTYPE:0:6}" = "darwin" ]; then
     date "-v-${1}d +%Y-%m-%d"
@@ -9,7 +14,8 @@ ds() {
 }
 
 echo "GIT changes stat: Date, Total lines modified (new, changed)"
-for day in {23..1}; do
+
+for ((day="$MAX_DAY"; day>=1; day--)); do
   lines_all=$(git --no-pager log --after="$(ds "$day")" --before="$(ds $(("$day" - 1)))" --format=format: --numstat | awk '{s+=$1; s+=$2} END {print s/1}')
   lines_chg=$(git --no-pager log --after="$(ds "$day")" --before="$(ds $(("$day" - 1)))" --format=format: --numstat | awk '{s+=$1;} END {print s/1}')
   lines_new=$(git --no-pager log --after="$(ds "$day")" --before="$(ds $(("$day" - 1)))" --format=format: --numstat | awk '{s+=$2}  END {print s/1}')
