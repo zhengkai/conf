@@ -1,30 +1,42 @@
 #!/bin/bash
 
+# 指定目标主机
+target="${1:-registry.npmjs.org}"
+
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
+
+while :; do
+	ping -c 1 "$target" > /dev/null 2>&1
+	#shellcheck disable=SC2181
+	if [ $? -eq 0 ]; then
+		break
+	fi
+	sleep 3
+done
+
+echo "start montage $target"
+
 # 初始化计数器
 count=0
 total=0
 
-# 指定目标主机
-target="${1:-registry.npmjs.org}"
-
 while :; do
-  # 使用ping命令测试网络连接，只发送一个包
-  ((total++))
-  ping -c 1 "$target" > /dev/null 2>&1
-  #shellcheck disable=SC2181
-  if [ $? -ne 0 ]; then
-    ((count++))
-	DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
-	echo "$DATE fail, total count $total"
-  else
-    count=0 # 如果ping成功，则重置计数器
-  fi
+	((total++))
+	ping -c 1 "$target" > /dev/null 2>&1
+	#shellcheck disable=SC2181
+	if [ $? -ne 0 ]; then
+		((count++))
+		DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+		echo "$DATE fail, total count $total"
+	else
+		count=0
+	fi
 
-  # 如果连续三次PING失败
-  if [ $count -eq 3 ]; then
-    echo "Alarm: $target not reachable 3 times in a row."
-  fi
+	if [ $count -eq 3 ]; then
+		XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send "网络异常，连续三次出现 ping $target 失败"
+		sleep 3600
+		count=0
+	fi
 
-  # 等待1秒钟再进行下一次ping
-  sleep 1
+	sleep 1
 done
