@@ -33,7 +33,9 @@ while :; do
 	fi
 
 	if [ $count -eq 3 ]; then
-		XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send "网络异常，连续三次出现 ping $target 失败"
+		MSG="网络异常，连续三次出现 ping $target 失败"
+		XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send "$MSG"
+		echo "$MSG"
 		sleep 3600
 		count=0
 	fi
