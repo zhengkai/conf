@@ -2,7 +2,7 @@
 
 CHECK_TEXT='Expiration date: November 07, 2023'
 
-TMP_FILE='/tmp/ms-vbox.html'
+TMP_FILE='/tmp/.ms-vbox.html'
 
 # 傻逼微软的 win10 镜像老是过期了才更新，着急用，写个脚本监视新镜像出来没
 

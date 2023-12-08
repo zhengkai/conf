@@ -22,5 +22,5 @@ echo -E "$PASSWORD"
 
 XCLIP=$(command -v xclip)
 if [ -n "$XCLIP" ]; then
-	echo -n -E "$PASSWORD" | xclip -selection clipboard
+	echo -n -E "$PASSWORD" | xclip -selection clipboard 2>/dev/null
 fi
