@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+# 本地 nginx log 目录
+LOG_DIR="${1:-/log}"
+
 DIR="$(dirname "$(readlink -f "$0")")" && cd "$DIR" || exit 1
 # "$DIR/fpm-cut-log.sh" 2>&1 || : &
 
@@ -9,7 +12,7 @@ if [ ! -e "$NGINX" ]; then
 	exit
 fi
 
-cd /log || exit 1
+cd "$LOG_DIR" || exit 1
 
 DATE=$(date --date='TZ="Asia/Shanghai" now' +'%Y%m/%d')
 
