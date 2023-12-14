@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      2.0
+// @version      2.1
 // @description  屏蔽所有广告、视频、名字上带国旗、互fo、蓝标的推，你要懒得自己部署可以直接用 https://k.9farm.com/gm/twitter.user.js
 // @author       Zheng Kai
 // @match        https://twitter.com/*
@@ -12,6 +12,18 @@
 (() => {
 
 	let tweetPage = false;
+
+	const hideItem = [
+		'aside[aria-label="Subscribe to Premium"]',
+		'aside[aria-label="Get Verified"]',
+		'a[aria-label="Twitter Blue"]',
+		'a[aria-label="Communities"]',
+		'a[aria-label="Premium"]',
+		'a[aria-label="Lists"]',
+		'a[aria-label="Lists"]',
+		'a[aria-label="Grok"]',
+		'a[aria-label="Verified"]',
+	].join(', ')
 
 	const forceHide = (a) => {
 		if (!a) {
@@ -84,7 +96,7 @@
 			}
 		});
 
-		document.querySelectorAll('aside[aria-label="Subscribe to Premium"], a[aria-label="Twitter Blue"], a[aria-label="Communities"], a[aria-label="Premium"], a[aria-label="Lists"], aside[aria-label="Get Verified"], a[aria-label="Verified"]').forEach(forceHide);
+		document.querySelectorAll(hideItem).forEach(forceHide);
 
 		document.querySelectorAll('[data-testid=tweetText]').forEach(a => {
 			a.style.lineHeight = 1.75;
