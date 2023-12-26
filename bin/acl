@@ -35,4 +35,4 @@ echo "$2"
 
 set -x
 # sudo find . -type d -exec setfacl "-d" "-m" "g:${1}:rwx" {} \;
-sudo setfacl -R -m "g:${1}:rwX" "$2"
+sudo setfacl -R -m "g:${1}:rwX,d:g:${1}:rwX" "$2"

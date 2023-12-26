@@ -71,6 +71,8 @@ alias FUCK='fuck'
 
 alias ag='sudo ag --ignore node_modules'
 
+alias s3='aws s3'
+
 alias g='go run'
 alias t='go test -v'
 alias tt='go test -v -test.benchmem -cover -covermode=atomic -coverprofile=coverage.out'
@@ -115,8 +117,10 @@ alias free="free -h"
 alias naf="npm audit fix"
 alias nng="ng new --skip-git --skip-tests --style=scss --routing=true --strict --inline-style --directory client"
 
+alias utc="TZ='UTC' \date '+%Y-%m-%d %H:%M:%S'"
 alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
 alias now='i=$(\date +%s); echo "$i"; date -d @"$i"'
+alias utcnow='i=$(\date +%s); echo "$i"; utc -d @"$i"'
 
 alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
@@ -143,7 +147,6 @@ alias less='less -r --tabs=4'
 
 alias pss='ps aux | \grep'
 alias netss='sudo netstat -nap | grep'
-alias nss='nginx configtest && nginx stop && nginx start'
 
 alias vi='nvim -O'
 alias vim='nvim -O'
@@ -193,10 +196,10 @@ alias f='((L=$LINES-3)); ((L=L>10?L:10)); sudo \tail -n $L -f'
 alias mocp="TERM=screen-256color /usr/bin/mocp"
 
 alias mount='sudo mount'
+alias journalctl='sudo journalctl'
 alias service='sudo service'
 alias nginx='service nginx'
-alias nginx-reload='service nginx force-reload'
-alias re-nginx='nginx stop && nginx start'
+alias nss='nginx configtest && nginx stop && nginx start'
 alias mysqld='service mysql'
 alias firewall-cmd='sudo firewall-cmd'
 alias fail2ban-client='sudo fail2ban-client'
