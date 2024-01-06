@@ -13,6 +13,8 @@ list=(
 	npm
 	npm-check-updates
 	protoc-gen-grpc-web
+	tree-sitter
+	tree-sitter-cli
 	tslint
 	typescript
 	typescript-language-server
