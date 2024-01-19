@@ -2,6 +2,10 @@ if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
 	~/conf/bin/tmu
 fi
 
+if [ -f $HOME/conf/zsh/env.zsh ]; then
+	source $HOME/conf/zsh/env.zsh
+fi
+
 source $HOME/conf/zsh/prompt.zsh
 source $HOME/conf/zsh/vi.zsh
 source $HOME/conf/zsh/export.zsh
@@ -41,8 +45,10 @@ if [ -f ~/.config/.env ]; then
 	source ~/.config/.env
 fi
 
-if [ -d /www ] && [ -r /www ]; then
-	cd /www
+if [ -n "$WORK_ROOT" ]; then
+	if [ -d "$WORK_ROOT" ] && [ -r "$WORK_ROOT" ]; then
+		cd "$WORK_ROOT"
+	fi
 fi
 
 if [ -f /usr/local/lib/libstderred.so ]; then
