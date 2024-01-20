@@ -2,10 +2,6 @@ if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
 	~/conf/bin/tmu
 fi
 
-if [ -f $HOME/conf/zsh/env.zsh ]; then
-	source $HOME/conf/zsh/env.zsh
-fi
-
 source $HOME/conf/zsh/prompt.zsh
 source $HOME/conf/zsh/vi.zsh
 source $HOME/conf/zsh/export.zsh
@@ -41,14 +37,15 @@ if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 	ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=199,bold'
 fi
 
-if [ -f ~/.config/.env ]; then
-	source ~/.config/.env
+if [ -f ~/.config/env ]; then
+	source ~/.config/env
 fi
 
-if [ -n "$WORK_ROOT" ]; then
-	if [ -d "$WORK_ROOT" ] && [ -r "$WORK_ROOT" ]; then
-		cd "$WORK_ROOT"
-	fi
+if [ -z "$WORK_ROOT" ]; then
+	WORK_ROOT="/www"
+fi
+if [ -d "$WORK_ROOT" ] && [ -r "$WORK_ROOT" ]; then
+	cd "$WORK_ROOT"
 fi
 
 if [ -f /usr/local/lib/libstderred.so ]; then
