@@ -37,12 +37,9 @@ if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 	ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=199,bold'
 fi
 
+WORK_ROOT="/www"
 if [ -f ~/.config/env ]; then
 	source ~/.config/env
-fi
-
-if [ -z "$WORK_ROOT" ]; then
-	WORK_ROOT="/www"
 fi
 if [ -d "$WORK_ROOT" ] && [ -r "$WORK_ROOT" ]; then
 	cd "$WORK_ROOT"
