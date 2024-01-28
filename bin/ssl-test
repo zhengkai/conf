@@ -1,11 +1,12 @@
 #!/bin/bash
 
 NAME="${1:-soulogic.com}"
+PORT="${2:-443}"
 
-openssl s_client -connect "${NAME}:443" -servername "$NAME" -tls1_3 < /dev/null 2>/dev/null
+openssl s_client -connect "${NAME}:${PORT}" -servername "$NAME" -tls1_3 < /dev/null 2>/dev/null
 
 echo
-openssl s_client -connect "${NAME}:443" -servername "$NAME" -tls1_3 < /dev/null 2>/dev/null | openssl x509 -noout -dates
+openssl s_client -connect "${NAME}:${PORT}" -servername "$NAME" -tls1_3 < /dev/null 2>/dev/null | openssl x509 -noout -dates
 
 echo
 echo "https://ssllabs.com/ssltest/analyze.html?d=${NAME}"
