@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 NAME="${1:-soulogic.com}"
 PORT="${2:-443}"
