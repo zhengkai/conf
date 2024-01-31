@@ -1,5 +1,9 @@
 #!/bin/bash
 
+TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' >> /log/clean-autojump.log
+
+exit
+
 DIR=${1:-/www/}
 
 # 清理 autojump 数据里的特定目录，要从 / 起始
