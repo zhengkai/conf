@@ -22,6 +22,10 @@ for FILE in *; do
 	ln -sf "$SRC" "$TARGET"
 done
 
+if [ ! -e "${HOME}/.npmrc" ]; then
+	echo "prefix=${HOME}/.npm" > "${HOME}/.npmrc"
+fi
+
 if [ -z "$DISPLAY" ]; then
 	cp -R "${DIR}/dotfiles/moc" ~/.moc
 	chmod 600 ~/.moc/config
