@@ -6,6 +6,7 @@ list=(
 	@angular/language-service
 	@typescript-eslint/eslint-plugin
 	@typescript-eslint/parser
+	bash-language-server
 	dockerfile-language-server-nodejs
 	eslint
 	grpc-web
