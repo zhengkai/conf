@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NGA 去广告
 // @namespace    https://soulogic.com/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        http://bbs.nga.cn/*
@@ -23,10 +23,8 @@
 
 	__COOKIE.setMiscCookieInSecond('pv_count_for_insad', -300);
 
-	if (window.location.host !== mainDomain) {
-		if (!window.location.pathname.includes('misc/adpage')) {
-			window.location.href = 'https://' + mainDomain + window.location.pathname + window.location.search;
-		}
+	if ((window.location.host !== mainDomain || window.location.protocol != 'https:') && !window.location.pathname.includes('misc/adpage')) {
+		window.location.href = 'https://' + mainDomain + window.location.pathname + window.location.search;
 		return;
 	}
 
