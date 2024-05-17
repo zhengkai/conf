@@ -42,6 +42,8 @@ alias gkl="gpg2 --list-keys --keyid-format long 'Zheng Kai'"
 alias adduser='sudo adduser'
 alias groupadd='sudo groupadd'
 
+alias iostatk="iostat -x 1 -k | awk '{printf \"%15s %6s %6s\\n\", $1,$6,$7}'"
+
 alias ip='sudo ip'
 alias wg='sudo wg'
 alias docker='sudo docker'
