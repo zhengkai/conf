@@ -187,6 +187,7 @@ alias c6="awk '{print \$6}'"
 alias c7="awk '{print \$7}'"
 alias c8="awk '{print \$8}'"
 alias c9="awk '{print \$9}'"
+alias uniqc="sort | uniq -c | sort -nr"
 
 alias ifstat="~/conf/script/ifstat.sh"
 
