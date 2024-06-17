@@ -42,8 +42,6 @@ alias gkl="gpg2 --list-keys --keyid-format long 'Zheng Kai'"
 alias adduser='sudo adduser'
 alias groupadd='sudo groupadd'
 
-alias iostatk="iostat -x 1 -k | awk '{printf \"%15s %6s %6s\\n\", $1,$6,$7}'"
-
 alias ip='sudo ip'
 alias wg='sudo wg'
 alias docker='sudo docker'
@@ -223,6 +221,8 @@ alias set644="(find . -type d -exec sudo chmod 755 {} \;) && (find . -not -type 
 alias set664="(find . -type d -exec sudo chmod 775 {} \;) && (find . -not -type d -exec sudo chmod 664 {} \;)"
 alias set666="(find . -type d -exec sudo chmod 777 {} \;) && (find . -not -type d -exec sudo chmod 666 {} \;)"
 alias set600="(find . -type d -exec sudo chmod 700 {} \;) && (find . -not -type d -exec sudo chmod 600 {} \;)"
+
+alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v "loop"'
 
 #alias flushmc="echo 'flush_all' | nc localhost 11211"
 
