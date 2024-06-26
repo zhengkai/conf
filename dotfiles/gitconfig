@@ -41,6 +41,9 @@
 [push]
 	default = upstream
 
+[blame]
+	color-lines = true
+
 [pull]
 	rebase = true
 
@@ -48,7 +51,7 @@
 	autostash = true
 
 [diff]
-    # external = ~/conf/script/git_diff_vim.sh
+	# external = ~/conf/script/git_diff_vim.sh
 	algorithm = patience
 
 [pager]
@@ -72,8 +75,8 @@
 [url "git@github.com:"]
 	insteadOf = "https://github.com/"
 
-[url "git@gitlab.funplus.io:"]
-	insteadOf = "https://gitlab.funplus.io/"
+[lfs]
+	largefilewarning = false
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
