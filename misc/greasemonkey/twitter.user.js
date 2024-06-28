@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      2.2
+// @version      2.3
 // @description  屏蔽所有广告、视频、名字上带国旗、互fo、蓝标的推，你要懒得自己部署可以直接用 https://k.9farm.com/gm/twitter.user.js
 // @author       Zheng Kai
 // @match        https://x.com/*
@@ -19,6 +19,7 @@
 		'aside[aria-label="Get Verified"]',
 		'a[aria-label="Twitter Blue"]',
 		'a[aria-label="Communities"]',
+		'a[aria-label="Verified Orgs"]',
 		'a[aria-label="Premium"]',
 		'a[aria-label="Lists"]',
 		'a[aria-label="Lists"]',
