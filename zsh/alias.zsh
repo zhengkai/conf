@@ -48,7 +48,6 @@ alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
 # alias try='docker run --rm=true -t -i'
 
-alias ifstat='ifstat -t'
 alias cpuinfo='less /proc/cpuinfo'
 alias jour='journalctl -xe'
 
@@ -125,7 +124,7 @@ alias utcnow='i=$(\date +%s); echo "$i"; utc -d @"$i"'
 alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
 
-alias top="btop 2>/dev/null || htop"
+alias top="htop"
 alias df="df -h"
 
 alias vimcat="$HOME/.vim/bundle/vimpager/vimcat"
