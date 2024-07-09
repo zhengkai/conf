@@ -14,7 +14,7 @@ export HERMES_DEFAULT_SIZE="18x18"
 
 export LC_ALL=en_US.UTF-8
 
-export PATH="$HOME/.local/bin:$HOME/conf/bin:$HOME/.npm/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
+export PATH="$HOME/.venvs/default/bin:$HOME/.local/bin:$HOME/conf/bin:$HOME/.npm/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
 
 export JQ_COLORS="48;5;237:48;5;52:48;5;22:38;5;80:38;5;214:1;39:1;39"
 
