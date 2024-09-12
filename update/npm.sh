@@ -10,6 +10,7 @@ list=(
 	dockerfile-language-server-nodejs
 	eslint
 	grpc-web
+	neovim
 	node-sass
 	npm
 	npm-check-updates

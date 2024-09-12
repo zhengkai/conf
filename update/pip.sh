@@ -7,6 +7,8 @@ if [ ! -e ~/.venvs/default/bin/python ]; then
 	hash -r
 fi
 
+pip install --upgrade pip
+
 pip freeze --local \
 	| grep -v '^\-e' \
 	| cut -d = -f 1  \
@@ -14,6 +16,5 @@ pip freeze --local \
 
 pip install --upgrade httpie
 pip install --upgrade qrcode
-pip install --upgrade thefuck
 pip install --upgrade pynvim
 pip install --upgrade yt-dlp
