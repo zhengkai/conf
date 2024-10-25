@@ -18,6 +18,10 @@ fi
 
 ./docker.sh
 
+if [ -d /go/pkg ]; then
+	nvim --headless -c "GoUpdateBinaries" -c "qa" || :
+fi
+
 ./npm.sh || :
 ./pip.sh || :
 
