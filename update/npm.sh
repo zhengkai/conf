@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! command -v npm &>/dev/null; then
+	>&2 echo "npm is not installed"
+	exit 1
+fi
+
 list=(
 
 	@angular/cli
