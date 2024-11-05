@@ -37,6 +37,7 @@ sudo chown zhengkai:zhengkai -R ~/.npm
 
 for item in "${list[@]}"
 do
-	npm install --location=global "${item}"
+	echo "$item"
+	npm install --location=global "$item"
 	hash -r
 done
