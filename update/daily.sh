@@ -16,6 +16,10 @@ if [ -x ~/hide/pac/run.sh ]; then
 	)
 fi
 
+if [ -x ~/hide/backup/run.sh ]; then
+	~/hide/backup/run.sh || :
+fi
+
 ./docker.sh
 
 if [ -d /go/pkg ]; then

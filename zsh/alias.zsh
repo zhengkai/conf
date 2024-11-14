@@ -19,6 +19,8 @@ alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
 alias youtube-dl="yt-dlp"
 alias twitter-dl="yt-dlp --cookies-from-browser chrome+gnomekeyring"
 
+alias from="echo ${SSH_CLIENT%% *}"
+
 alias apt='sudo apt'
 alias apt-get='sudo apt-get'
 alias apt-cache='sudo apt-cache'
