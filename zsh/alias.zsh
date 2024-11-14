@@ -16,7 +16,7 @@ alias iptables-save='sudo iptables-save'
 alias systemctl='sudo systemctl'
 
 alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
-alias youtube-dl="yt-dlp"
+alias youtube-dl="proxychains yt-dlp -o '%(id)s.%(ext)s'"
 alias twitter-dl="yt-dlp --cookies-from-browser chrome+gnomekeyring"
 
 alias from="echo ${SSH_CLIENT%% *}"
