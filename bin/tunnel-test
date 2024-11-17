@@ -9,8 +9,8 @@ fi
 
 TUNNEL="$1"
 if [[ "$TUNNEL" =~ ^[0-9]+$ ]]; then
-	if [ "$TUNNEL" -le 999 ]; then
-		TUNNEL=$(printf "55%03d" "$TUNNEL")
+	if [ "$TUNNEL" -le 99 ]; then
+		TUNNEL=$(printf "530%02d" "$TUNNEL")
 	fi
 	TUNNEL="127.0.0.1:$TUNNEL"
 fi
