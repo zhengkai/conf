@@ -53,6 +53,7 @@ net-tools
 node-ws
 ntp
 openssh-server
+parallel
 php-cli
 php-mbstring
 protobuf-compiler
