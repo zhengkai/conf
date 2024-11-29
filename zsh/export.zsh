@@ -1,6 +1,8 @@
 export VISUAL=/usr/local/bin/nvim
 export EDITOR=/usr/local/bin/nvim
 
+export TMPDIR=/tmp/nvim
+
 export GOROOT=/usr/local/go
 #export GOARCH=amd64
 export GOOS=linux
