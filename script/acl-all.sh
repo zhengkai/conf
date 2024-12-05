@@ -6,6 +6,7 @@ acl sudo /etc/passwd
 acl sudo /etc/rc.local
 acl sudo /etc/resolv.conf
 acl sudo /etc/apt/sources.list.d
+acl sudo /etc/tmpfiles.d
 
 if [ -d /etc/nginx ]; then
 	acl sudo /etc/nginx/nginx.conf
