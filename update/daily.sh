@@ -22,6 +22,7 @@ fi
 
 ./docker.sh
 
+mkdir -p /tmp/zhengkai
 if [ -d /go/pkg ]; then
 	nvim --headless -c "GoUpdateBinaries" -c "qa" || :
 fi

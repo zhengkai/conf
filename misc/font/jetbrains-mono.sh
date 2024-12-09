@@ -6,8 +6,8 @@ if [ ! -d JetBrainsMono ]; then
 	git clone --depth 1 https://github.com/JetBrains/JetBrainsMono.git
 fi
 
-cd JetBrainsMono/fonts/ttf
+cd JetBrainsMono/fonts/otf
 
 git pull
 
-sudo cp ./*.ttf /usr/local/share/fonts
+sudo cp ./*.otf /usr/local/share/fonts
