@@ -33,7 +33,7 @@ list=(
 export NG_CLI_ANALYTICS=ci
 
 mkdir -p ~/.npm
-sudo chown zhengkai:zhengkai -R ~/.npm
+sudo chown "${USER}:${USER}" -R ~/.npm
 
 for item in "${list[@]}"
 do
