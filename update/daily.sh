@@ -24,6 +24,9 @@ fi
 
 mkdir -p /tmp/zhengkai
 if [ -d /go/pkg ]; then
+	if [ -d "/tmp/${USER}" ]; then
+		export TMPDIR="/tmp/${USER}"
+	fi
 	nvim --headless -c "GoUpdateBinaries" -c "qa" || :
 fi
 
@@ -39,8 +42,8 @@ fi
 
 ./clean.sh
 
-if [ "$USER" == 'zhengkai' ]; then
-	sudo chown -R zhengkai:zhengkai /home/zhengkai
+if [ -d "/home/${USER}" ]; then
+	sudo chown -R "${USER}:${USER}" "/home/${USER}"
 fi
 
 wait
