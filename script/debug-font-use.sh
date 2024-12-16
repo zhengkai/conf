@@ -4,7 +4,7 @@
 #
 # 用来验证 fonts.conf 的实际效果
 
-CHARS=("A" "中" "體" "の" "안" "😊" "م" "स्" "и")
+CHARS=("" "中" "體" "の" "안" "😊" "م" "स्" "и")
 FAMILY=("sans-serif" "serif" "monospace")
 
 tabs 4
@@ -12,7 +12,7 @@ for F in "${FAMILY[@]}"; do
 	echo
 	for CHAR in "${CHARS[@]}"; do
 		CODE=$(printf "%04X" "'${CHAR}'")
-		echo -en " $CHAR\t"
+		printf " %s\t%6s " "$CHAR" "$CODE"
 		fc-match --format="%{file} %{family}\n" "${F}:charset=${CODE}"
 	done
 done
