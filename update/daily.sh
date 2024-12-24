@@ -28,6 +28,7 @@ if [ -d /go/pkg ]; then
 		export TMPDIR="/tmp/${USER}"
 	fi
 	nvim --headless -c "GoUpdateBinaries" -c "qa" || :
+	rm -rf /tmp/vim-go*
 fi
 
 ./npm.sh || :
