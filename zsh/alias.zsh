@@ -218,10 +218,10 @@ alias pc='grep -c "^processor" /proc/cpuinfo'
 
 alias cleanacl="sudo setfacl -b -R ."
 
-alias set644="(find . -type d -exec sudo chmod 755 {} \;) && (find . -not -type d -exec sudo chmod 644 {} \;)"
-alias set664="(find . -type d -exec sudo chmod 775 {} \;) && (find . -not -type d -exec sudo chmod 664 {} \;)"
-alias set666="(find . -type d -exec sudo chmod 777 {} \;) && (find . -not -type d -exec sudo chmod 666 {} \;)"
-alias set600="(find . -type d -exec sudo chmod 700 {} \;) && (find . -not -type d -exec sudo chmod 600 {} \;)"
+alias set644="(sudo find . -type d -exec sudo chmod 755 {} \;) && (sudo find . -type f -exec sudo chmod 644 {} \;)"
+alias set664="(sudo find . -type d -exec sudo chmod 775 {} \;) && (sudo find . -type f -exec sudo chmod 664 {} \;)"
+alias set666="(sudo find . -type d -exec sudo chmod 777 {} \;) && (sudo find . -type f -exec sudo chmod 666 {} \;)"
+alias set600="(sudo find . -type d -exec sudo chmod 700 {} \;) && (sudo find . -type f -exec sudo chmod 600 {} \;)"
 
 alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v "loop"'
 

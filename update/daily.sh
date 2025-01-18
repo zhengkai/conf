@@ -2,6 +2,9 @@
 
 cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
+mkdir -p "/tmp/${USER}"
+export TMPDIR="/tmp/${USER}"
+
 #~/conf/script/safe-git-pull.sh ~/.vim &
 #~/.vim/update.sh || : &
 
@@ -22,11 +25,7 @@ fi
 
 ./docker.sh
 
-mkdir -p /tmp/zhengkai
 if [ -d /go/pkg ]; then
-	if [ -d "/tmp/${USER}" ]; then
-		export TMPDIR="/tmp/${USER}"
-	fi
 	nvim --headless -c "GoUpdateBinaries" -c "qa" || :
 	rm -rf /tmp/vim-go*
 fi
