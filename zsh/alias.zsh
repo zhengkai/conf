@@ -15,6 +15,8 @@ alias iptables-restore='sudo iptables-restore'
 alias iptables-save='sudo iptables-save'
 alias systemctl='sudo systemctl'
 
+alias mj='make -j$(nproc)'
+
 alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
 alias youtube-dl="proxychains yt-dlp -o '%(id)s.%(ext)s'"
 alias twitter-dl="yt-dlp --cookies-from-browser chrome+gnomekeyring"
@@ -127,7 +129,7 @@ alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
 
 alias top="htop"
-alias df="df -h"
+alias df="df -h -x overlay"
 
 alias vimcat="$HOME/.vim/bundle/vimpager/vimcat"
 
