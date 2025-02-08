@@ -225,7 +225,7 @@ alias set664="(sudo find . -type d -exec sudo chmod 775 {} \;) && (sudo find . -
 alias set666="(sudo find . -type d -exec sudo chmod 777 {} \;) && (sudo find . -type f -exec sudo chmod 666 {} \;)"
 alias set600="(sudo find . -type d -exec sudo chmod 700 {} \;) && (sudo find . -type f -exec sudo chmod 600 {} \;)"
 
-alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v "loop"'
+alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v -E "loop|dm\-"'
 
 #alias flushmc="echo 'flush_all' | nc localhost 11211"
 
