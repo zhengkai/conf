@@ -9,8 +9,8 @@ if [ -d "/media/move/bt" ]; then
 	exit
 fi
 
-UPSEC=$(cat /proc/uptime | cut -d. -f1)
-if [ "$UPSEC" -lt 1000 ]; then
+UPSEC=$(cut -d. -f1 < /proc/uptime)
+if [ "$UPSEC" -lt 600 ]; then
 	exit 1
 fi
 
