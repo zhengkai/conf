@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -x
 
 cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
@@ -26,8 +26,8 @@ fi
 ./docker.sh
 
 if [ -d /go/pkg ]; then
-	nvim --headless -c "GoUpdateBinaries" -c "qa" || :
-	rm -rf /tmp/vim-go*
+	./nvim.sh
+	rm -rf /tmp/vim-go* || :
 fi
 
 ./npm.sh || :
