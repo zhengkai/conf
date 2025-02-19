@@ -1,6 +1,6 @@
 #! /bin/bash -e
 
-if [ "${HOST,,}" != "decima" ]; then
+if [ "${HOSTNAME,,}" != "decima" ]; then
 	echo "decima only"
 	exit 1
 fi
