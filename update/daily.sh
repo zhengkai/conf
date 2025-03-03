@@ -25,11 +25,6 @@ fi
 
 ./docker.sh
 
-if [ -d /go/pkg ]; then
-	./nvim.sh
-	rm -rf /tmp/vim-go* || :
-fi
-
 ./npm.sh || :
 ./pip.sh || :
 
