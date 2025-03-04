@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [ -w /go/tmp ]; then
-	find /go/tmp -type f -mtime +10 -delete
+	find /go/tmp -type f -mtime +2 -delete
+	rm -rf /go/tmp/go-build* 2>/dev/null || :
 fi
 if [ -w ~/.tmp/vim-undo ]; then
 	find ~/.tmp/vim-undo -type f -mtime +10 -delete
@@ -18,8 +19,10 @@ sudo find /var/log/journal -name '*@*' -type f -ctime +10 -delete
 
 /usr/bin/trash-empty 30
 
-rm ~/.local/xgen || :
-rm ~/.local/pgen || :
+rm ~/.local/xgen 2>/dev/null || :
+rm ~/.local/pgen 2>/dev/null || :
+
+rm -rf /tmp/pip-uninstall-* 2>/dev/null || :
 
 FILE=(
 	'00-header'
