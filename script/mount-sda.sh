@@ -1,5 +1,7 @@
 #! /bin/bash -e
 
+DISK="/dev/disk/by-uuid/5e9a7f92-143a-41dd-9fab-82743af6f145"
+
 if [ "${HOSTNAME,,}" != "decima" ]; then
 	echo "decima only"
 	exit 1
@@ -14,6 +16,6 @@ if [ "$UPSEC" -lt 600 ]; then
 	exit 1
 fi
 
-sudo ls /dev/sda1 || exit
+sudo ls "$DISK" || exit
 
-sudo mount /dev/sda1 /media/move
+sudo mount "$DISK" /media/move
