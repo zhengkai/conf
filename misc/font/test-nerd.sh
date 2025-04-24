@@ -58,7 +58,7 @@ COLOR_NAMES=(
 )
 
 # 测试文本
-TEXT="Hello, Terminal! ultra suffix == != >="
+TEXT="Ultra Suffix == != >= [TODO]  \\ #{ -> ~@ |> 0x12 ~!@#$%^&* {} [] () I1l O0o"
 
 # 打印标题
 echo -e "=== Terminal Font Test ===\n"
