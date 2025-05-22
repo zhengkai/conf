@@ -5,6 +5,8 @@ if ! command -v npm &>/dev/null; then
 	exit 1
 fi
 
+export PATH="${HOME}/.venvs/default/bin:${HOME}/.local/bin:${HOME}/.npm/bin:/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/snap/bin"
+
 list=(
 
 	@angular/cli
