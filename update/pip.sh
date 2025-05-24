@@ -14,6 +14,7 @@ pip freeze --local \
 	| cut -d = -f 1  \
 	| xargs -n1 pip install --upgrade
 
+pip install --upgrade jinja2
 pip install --upgrade httpie
 pip install --upgrade qrcode
 pip install --upgrade pynvim

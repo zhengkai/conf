@@ -20,6 +20,7 @@ dnsutils
 editorconfig
 exif
 exuberant-ctags
+fd-find
 fdupes
 figlet
 fortunes-zh
@@ -63,6 +64,7 @@ python3-pip
 python3-setuptools
 python3-venv
 re2c
+ripgrep
 rsync
 ruby
 ruby-dev
