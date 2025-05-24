@@ -10,6 +10,7 @@ bison
 brotli
 btop
 build-essential
+clang
 cloc
 cmake
 colordiff
