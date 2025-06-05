@@ -18,10 +18,10 @@ list=(
 	eslint
 	grpc-web
 	neovim
-	node-sass
 	npm
 	npm-check-updates
 	protoc-gen-grpc-web
+	sass
 	tree-sitter
 	tree-sitter-cli
 	typescript
