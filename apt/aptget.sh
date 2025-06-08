@@ -14,7 +14,6 @@ mkdir -p ~/.tmp/vim-swap
 mkdir -p ~/.tmp/ssh-mux
 mkdir -p ~/.Trash
 
-touch ~/.tmp/yankring_history_v2.txt
 touch ~/conf/store/wget-cookie
 touch ~/conf/store/wget-hsts
 touch ~/conf/store/curl-cookie

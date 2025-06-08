@@ -2,21 +2,29 @@
 
 DATE=$(TZ="Asia/Shanghai" date "+%Y%m")
 
+shopt -s dotglob
+
 function archive() {
 
 	DST="${2%/}/${DATE}"
 
-	echo
-	echo "$1 -> $DST"
-	echo
+	if [ -d "$DST" ]; then
+		return
+	fi
 
 	cd "$1" || exit 1
-	cd "$2" || exit 1
 
-	find "$1" -type f -name "Thumbs.db*" -delete
-	rsync --partial -vzrtopg --remove-source-files "${1%/}/" "$DST" || exit 1
-	find "$1" -mindepth 1 -type d -empty -delete
+	find "$1" -type f -name "Thumbs.db" -delete
+	if [[ -z "$(find "$1" -maxdepth 1 -mindepth 1 -print -quit)" ]]; then
+		echo "no files in $1"
+        return
+	fi
+
+	mkdir -p "$DST" || exit 1
+
+	echo "archiving $1 to $DST"
+	mv "${1%/}/"* "$DST"
 }
 
-archive "${HOME}/Pictures/Screenshots" "/mnt/sdb/pic"
-archive "/share" "/mnt/sdb/share"
+archive "${HOME}/Pictures" "/archive/pic"
+archive "${HOME}/Downloads" "/archive/download"
