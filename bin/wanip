@@ -3,7 +3,7 @@
 function checkip() {
 	echo
 	echo "check $1"
-	IP=$(curl -s --max-time 10 --ipv4 "$1")
+	IP=$(curl -s --max-time 10 --noproxy --ipv4 "$1")
 	IP=${IP##::ffff:}
 	echo
 	echo "  ip: $IP"
@@ -14,4 +14,4 @@ function checkip() {
 }
 
 checkip "https://ifconfig.io/ip"
-checkip "https://k.9farm.com/ip"
+checkip "https://doll.9farm.com/ip"
