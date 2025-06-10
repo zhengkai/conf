@@ -43,4 +43,7 @@ if [ -n "$DISPLAY" ]; then
 
 	mkdir -p ~/.config/fontconfig
 	ln -sf "${DIR}/dotfiles/other/fonts.conf" ~/.config/fontconfig
+
+	mkdir -p ~/.config/wezterm
+	ln -sf "${DIR}/dotfiles/other/wezterm.lua" ~/.config/wezterm
 fi
