@@ -3,10 +3,10 @@
 # 显示一些 Nerd Font 图标
 echo -e "\uf489  Terminal"
 echo -e "\ue795  Folder"
-echo -e "\uf7c2  GitHub"
+echo -e "\uf408  GitHub"
 echo -e "\uf121  Code"
 echo -e "\uf1e6  HTML"
-echo -e "\uf3df  JavaScript"
+echo -e "\ue781  JavaScript"
 echo -e "\uf41e  Docker"
 echo -e "\uf313  Kubernetes"
 

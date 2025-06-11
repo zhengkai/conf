@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-VER="3.3.0"
+VER="3.4.0"
 
 FILE_BASE="/usr/local/src/nerd-fonts-symbols-only-v${VER}"
 FILE="${FILE_BASE}.tar.xz"

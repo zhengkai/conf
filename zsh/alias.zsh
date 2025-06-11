@@ -15,6 +15,8 @@ alias iptables-restore='sudo iptables-restore'
 alias iptables-save='sudo iptables-save'
 alias systemctl='sudo systemctl'
 
+alias fname='fc-query --format="family: %{family}\nstyle: %{style}\nfullname: %{fullname}\npostscriptname: %{postscriptname}\n"'
+
 alias mj='make -j$(nproc)'
 
 alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
