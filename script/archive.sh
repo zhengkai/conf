@@ -26,5 +26,7 @@ function archive() {
 	mv "${1%/}/"* "$DST"
 }
 
-archive "${HOME}/Pictures" "/archive/pic"
-archive "${HOME}/Downloads" "/archive/download"
+# archive "${HOME}/Pictures" "/archive/pic"
+archive "${HOME}/gnome/pic" "/archive/pic"
+archive "${HOME}/gnome/download" "/archive/download"
+archive "/share" "/archive/share"

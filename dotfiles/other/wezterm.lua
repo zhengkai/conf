@@ -4,55 +4,58 @@ local config = {}
 config.font_size = 14
 
 config.font = wezterm.font_with_fallback({
-	{ family = 'JetBrains Mono', },
+	{ family = 'JetBrains Mono NL', },
 	{ family = 'Source Han Sans SC', },
+	{ family = 'Symbols Nerd Font', }
 })
 config.font_rules = {
 	{
 		intensity = 'Half',
 		italic = false,
 		font = wezterm.font_with_fallback({
-			{ family = 'JetBrains Mono ExtraLight', },
+			{ family = 'JetBrains Mono NL ExtraLight', },
 			{ family = 'Source Han Sans SC ExtraLight', },
+			{ family = 'Symbols Nerd Font', }
 		}),
 	},
 	{
 		intensity = 'Half',
 		italic = true,
 		font = wezterm.font_with_fallback({
-			{ family = 'JetBrains Mono ExtraLight',     italic = true, },
+			{ family = 'JetBrains Mono NL ExtraLight',  italic = true, },
 			{ family = 'Source Han Sans SC ExtraLight', italic = true, },
+			{ family = 'Symbols Nerd Font', }
 		}),
 	},
 	{
 		intensity = 'Bold',
 		italic = false,
 		font = wezterm.font_with_fallback({
-			{ family = 'JetBrains Mono ExtraBold', },
+			{ family = 'JetBrains Mono NL ExtraBold', },
 			{ family = 'Source Han Sans SC Heavy', },
+			{ family = 'Symbols Nerd Font', }
 		}),
 	},
 	{
 		intensity = 'Bold',
 		italic = true,
 		font = wezterm.font_with_fallback({
-			{ family = 'JetBrains Mono ExtraBold', italic = true, },
-			{ family = 'Source Han Sans SC Heavy', italic = true, },
+			{ family = 'JetBrains Mono NL ExtraBold', italic = true, },
+			{ family = 'Source Han Sans SC Heavy',    italic = true, },
+			{ family = 'Symbols Nerd Font', }
 		}),
 	},
 	{
 		intensity = 'Normal',
 		italic = true,
 		font = wezterm.font_with_fallback({
-			{ family = 'JetBrains Mono',     italic = true, },
+			{ family = 'JetBrains Mono NL',  italic = true, },
 			{ family = 'Source Han Sans SC', italic = true, },
+			{ family = 'Symbols Nerd Font', }
 		}),
 	},
 }
-config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
-config.fallback_fonts = {
-	'Symbols Nerd Font',
-}
+-- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 config.enable_wayland = false
 
@@ -70,11 +73,11 @@ if fullscreen == '1' then
 	config.default_prog = { '/home/zhengkai/conf/script/tmux-tilda.sh' }
 end
 
-config.color_scheme = 'Apple System Colors'
-
+-- https://wezterm.org/colorschemes/index.html
+config.color_scheme = 'Tango (terminal.sexy)'
 config.color_schemes = {
-	['Apple System Colors'] = {
-		background = '#000000',
+	['Tango (terminal.sexy)'] = {
+		-- background = '#000000',
 	},
 }
 
