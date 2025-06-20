@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+config.warn_about_missing_glyphs = false
 config.font_size = 14
 
 config.font = wezterm.font_with_fallback({

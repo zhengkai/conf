@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(TZ="Asia/Shanghai" date "+%Y%m")
+DATE=$(TZ="Asia/Shanghai" date -d 'yesterday' "+%Y%m%d")
 
 shopt -s dotglob
 
