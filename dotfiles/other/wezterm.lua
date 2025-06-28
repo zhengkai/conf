@@ -102,4 +102,6 @@ config.show_new_tab_button_in_tab_bar = false
 config.tab_max_width = 0
 config.hide_tab_bar_if_only_one_tab = true
 
+config.disable_default_key_bindings = true
+
 return config
