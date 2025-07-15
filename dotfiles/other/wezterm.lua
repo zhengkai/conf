@@ -103,5 +103,7 @@ config.tab_max_width = 0
 config.hide_tab_bar_if_only_one_tab = true
 
 config.disable_default_key_bindings = true
-
+config.keys = {
+	{ key = 'v', mods = 'SHIFT|CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+}
 return config

@@ -1,4 +1,7 @@
 #!/bin/bash
+
+export DEBIAN_FRONTEND=noninteractive
+
 DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
 
 if [ -f ~/.ssh/id_ecdsa.pub ] && [ ! -e ~/.ssh/authorized_keys ]; then
@@ -18,9 +21,9 @@ touch ~/conf/store/wget-cookie
 touch ~/conf/store/wget-hsts
 touch ~/conf/store/curl-cookie
 
-sudo apt-get update
+sudo apt update
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq vim
+sudo apt install -yq vim
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
 # sudo sh -c 'echo "Asia/Shanghai" > /etc/timezone'
@@ -28,7 +31,7 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 sudo timedatectl set-timezone Asia/Shanghai
 
 mapfile -t list < <(cat list-aptget)
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq "${list[@]}" || exit 1
+sudo apt install -yq "${list[@]}" || exit 1
 
 sudo systemctl disable webhook
 sudo systemctl disable shadowsocks-libev
