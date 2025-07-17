@@ -2,13 +2,14 @@ chrome-gnome-shell
 compizconfig-settings-manager
 exe-thumbnailer
 exfat-fuse
+fcitx5
+fcitx5-rime
 ffmpegthumbnailer
 gnome-shell-extensions
 gnome-tweaks
 gnupg-agent
 gparted
 gthumb
-ibus-pinyin
 imwheel
 mkvtoolnix
 mkvtoolnix-gui
