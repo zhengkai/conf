@@ -60,6 +60,14 @@ config.font_rules = {
 
 config.enable_wayland = false
 
+config.set_environment_variables = {
+	GTK_IM_MODULE = "fcitx",
+	QT_IM_MODULE = "fcitx",
+	XMODIFIERS = "@im=fcitx",
+	GLFW_IM_MODULE = "fcitx",
+	INPUT_METHOD = "fcitx",
+}
+
 config.initial_cols = 96
 config.initial_rows = 32
 
@@ -102,8 +110,11 @@ config.show_new_tab_button_in_tab_bar = false
 config.tab_max_width = 0
 config.hide_tab_bar_if_only_one_tab = true
 
+-- config.debug_key_events = true
+
 config.disable_default_key_bindings = true
 config.keys = {
-	{ key = 'v', mods = 'SHIFT|CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+	{ key = 'v',     mods = 'SHIFT|CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+	{ key = "Space", mods = "CTRL",       action = 'Nop' },
 }
 return config

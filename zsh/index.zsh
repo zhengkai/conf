@@ -9,6 +9,12 @@ source $HOME/conf/zsh/alias.zsh
 source $HOME/conf/zsh/timer.zsh
 source $HOME/conf/zsh/fzf.zsh
 
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
+export GLFW_IM_MODULE="fcitx"
+export INPUT_METHOD="fcitx"
+
 HISTFILE=$HOME/conf/zsh/history.txt
 HISTSIZE=1000
 SAVEHIST=1000
