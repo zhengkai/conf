@@ -25,6 +25,8 @@ while true; do
 
 		TOP=$(ps -eo pid,ppid,args,%mem,%cpu --sort=-%mem | head -n 5)
 
+		echo "$TOP"
+
 		export MEM_USED
 		export TOP
 		echo "$BOT_SCRIPT"
