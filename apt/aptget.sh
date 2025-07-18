@@ -76,4 +76,4 @@ sudo chmod a+rw /.Trash
 sudo chmod +t /.Trash
 
 # ../update/npm.sh
-../update/pip.sh
+# ../update/pip.sh
