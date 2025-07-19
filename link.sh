@@ -12,6 +12,9 @@ for FILE in *; do
 	fi
 
 	TARGET="${HOME}/.${FILE}"
+	if [ -e "$TARGET" ]; then
+		continue
+	fi
 
 	if [ "$FILE" == "gitconfig" ] && [ ! -e "${HOME}/.ssh/id_ecdsa.pub" ]; then
 		grep -E -v '\[url|insteadOf' "$SRC" > "$TARGET"
