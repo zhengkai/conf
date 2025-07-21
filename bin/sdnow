@@ -5,9 +5,17 @@ if [ -z "$DISPLAY" ]; then
 	exit 1
 fi
 
-DIR=$(readlink -f "$0") && DIR=$(dirname "$DIR") && cd "$DIR" || exit 1
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
-set +x
-../update/ubuntu.sh
+mkdir -p /log/update || exit 1
+
+FILE="/log/update/$(date "+%Y-%m-%d").txt"
+
+if [ ! -f "$FILE" ]; then
+	(
+		../update/ubuntu.sh || exit 1
+		touch "$FILE"
+	)
+fi
 
 sudo shutdown -P 0
