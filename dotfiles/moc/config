@@ -3,7 +3,6 @@ SetXtermTitle		= no
 SetScreenTitle		= no
 InputBuffer		= 2048
 
-XTerms = xterm
-XTerms += screen-256color
+XTerms = tmux-256color
 
 Keymap = keymap_vim

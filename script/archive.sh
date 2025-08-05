@@ -27,6 +27,6 @@ function archive() {
 }
 
 # archive "${HOME}/Pictures" "/archive/pic"
-archive "${HOME}/gnome/pic" "/archive/pic"
-archive "${HOME}/gnome/download" "/archive/download"
+# archive "${HOME}/gnome/pic" "/archive/pic"
+# archive "${HOME}/gnome/download" "/archive/download"
 archive "/share" "/archive/share"

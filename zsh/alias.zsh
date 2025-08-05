@@ -201,8 +201,6 @@ alias st='sudo \tail -n 10'
 alias tail='((L=$LINES-8)); ((L=L>10?L:10)); sudo \tail -n $L'
 alias f='((L=$LINES-3)); ((L=L>10?L:10)); sudo \tail -n $L -f'
 
-alias mocp="TERM=screen-256color /usr/bin/mocp"
-
 alias mount='sudo mount'
 alias journalctl='sudo journalctl'
 alias service='sudo service'
