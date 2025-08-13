@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [[ -n "$TMUX" || -n "$TERMCAP" ]]; then
-	>&2 echo ERROR: already in tmux, exit
-	sleep 10
+if [ "$TERM" == "tmux-256color" ]; then
 	exit
 fi
 

@@ -17,12 +17,12 @@ fi
 
 sudo find /var/log/journal -name '*@*' -type f -ctime +10 -delete
 
-/usr/bin/trash-empty 30
+/usr/bin/trash-empty -f 30
 
-rm ~/.local/xgen 2>/dev/null || :
-rm ~/.local/pgen 2>/dev/null || :
+rm -f ~/.local/xgen || :
+rm -f ~/.local/pgen || :
 
-rm -rf /tmp/pip-uninstall-* 2>/dev/null || :
+rm -rf /tmp/pip-uninstall-* || :
 
 FILE=(
 	'00-header'

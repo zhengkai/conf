@@ -20,7 +20,7 @@ alias fname='fc-query --format="family: %{family}\nstyle: %{style}\nfullname: %{
 alias mj='make -j$(nproc)'
 
 alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
-alias youtube-dl="proxychains yt-dlp -o '%(id)s.%(ext)s'"
+alias youtube-dl="yt-dlp"
 alias twitter-dl="yt-dlp --cookies-from-browser chrome+gnomekeyring"
 
 alias from="echo ${SSH_CLIENT%% *}"
@@ -141,7 +141,7 @@ alias du1="sudo du --max-depth=1 -h | sort -h | expand -t 8"
 alias dus="sudo du --max-depth=0 -h | expand -t 8"
 
 alias rsync='rsync --partial -vzrtopg'
-alias sshsync='rsync -e ssh'
+alias rcp="rsync --no-owner --no-group --exclude='@eaDir' --exclude='@eaDir/**' --exclude='.DS_Store'"
 alias ssltime='curl -w "TCP handshake: %{time_connect}, SSL handshake: %{time_appconnect}\n" -so /dev/null'
 alias sslview='sudo openssl x509 -noout -text -in'
 
