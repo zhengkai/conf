@@ -139,7 +139,7 @@ alias vimcat="$HOME/.vim/bundle/vimpager/vimcat"
 
 alias du1o="sudo du --max-depth=1 -h"
 alias du1="du1o | sort -h | expand -t 8"
-alias du1n="du1o | LC_ALL=C sort -k2 | expand -t 8"
+alias du1n="du1o | LC_ALL=C sort -k2,2 | expand -t 8"
 alias dus="sudo du --max-depth=0 -h | expand -t 8"
 
 alias rsync='rsync --partial -vzrtopg'
