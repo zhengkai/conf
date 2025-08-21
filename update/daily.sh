@@ -25,6 +25,10 @@ fi
 
 ./docker.sh
 
+if [ -e /usr/bin/docker ]; then
+	sudo docker system prune -f || :
+fi
+
 ./npm.sh || :
 ./pip.sh || :
 
