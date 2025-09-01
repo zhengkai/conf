@@ -219,7 +219,7 @@ alias logstash='/usr/share/logstash/bin/logstash'
 alias easy_install='sudo easy_install'
 alias easy_install3='sudo easy_install3'
 
-alias pl="echo 'show processlist;' | mysql"
+alias pl="echo 'SHOW FULL PROCESSLIST;' | mysql"
 alias pc='grep -c "^processor" /proc/cpuinfo'
 
 alias cleanacl="sudo setfacl -b -R ."

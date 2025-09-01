@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ "$TERM" == "tmux-256color" ]; then
+	>&2 echo "already in a tmux session."
 	exit
 fi
 
