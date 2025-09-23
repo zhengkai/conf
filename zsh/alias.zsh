@@ -131,6 +131,7 @@ alias utcnow='i=$(\date +%s); echo "$i"; utc -d @"$i"'
 
 alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
+alias check-ssh-pass='sudo sshd -T | \grep passwordauthentication'
 
 alias top="htop"
 alias df="df -h -x overlay"
