@@ -23,6 +23,10 @@ if [ -x ~/hide/backup/run.sh ]; then
 	~/hide/backup/run.sh || :
 fi
 
+if [ -x ~/cert/run.sh ]; then
+	~/cert/run.sh || :
+fi
+
 ./docker.sh
 
 if [ -e /usr/bin/docker ]; then
