@@ -133,6 +133,8 @@ alias ssh-keygen-rsa='ssh-keygen -N "" -b 4096 -t rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
 alias check-ssh-pass='sudo sshd -T | \grep passwordauthentication'
 
+alias pssh="parallel-ssh -h ~/.ssh/h20.txt"
+
 alias top="htop"
 alias df="df -h -x overlay"
 
