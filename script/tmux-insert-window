@@ -1,0 +1,23 @@
+#! /bin/bash
+
+ID="$(tmux display-message -p "#{window_index}")"
+MAX_ID="$(tmux list-windows | awk -F: '{print $1}' | sort -n | tail -1)"
+NEW_ID="$(tmux new-window -P -F "#{window_index}")"
+
+if [ "$NEW_ID" -lt "$MAX_ID" ] || [ "$ID" -eq "$MAX_ID" ]; then
+	exit 0
+fi
+
+PREV=""
+tmux list-windows | awk -F: '{print $1}' | tac | while IFS= read -r line; do
+	if [ -z "$PREV" ]; then
+		PREV="$line"
+		continue
+	fi
+	if [ "$line" == "$ID" ]; then
+		tmux select-window -t "$PREV"
+		break
+	fi
+	tmux swap-window -s "$line" -t "$PREV"
+	PREV="$line"
+done
