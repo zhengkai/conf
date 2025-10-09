@@ -49,6 +49,10 @@ if [ -d "/home/${USER}" ]; then
 	sudo chown -R "${USER}:${USER}" "/home/${USER}"
 fi
 
+if [ "$1" == "no-reboot" ]; then
+	exit
+fi
+
 wait
 
 ./before-reboot.sh || :
