@@ -165,29 +165,6 @@ alias vim='nvim -O'
 alias :vs='nvim -O'
 alias vs='nvim -O'
 
-function fn_add_user_to_group() {
-
-	# 这个函数存在的意义在于，有些下等 Linux 发行版只有 useradd 没有 adduser
-
-	user=`\id "$1" 2>/dev/null`
-
-	if [[ ! $user =~ ^uid=.* ]]; then
-		echo "user not exists: $1"
-		return;
-	fi
-	echo "add user: $1"
-
-	group=`\grep "^$2" /etc/group`
-	if [ -z "$group" ]; then
-		echo "group not exists: $2"
-		return;
-	fi
-	echo "to group: $2"
-
-	sudo usermod -a -G $2 $1
-}
-alias add_user_to_group=fn_add_user_to_group
-
 alias c1="awk '{print \$1}'"
 alias c2="awk '{print \$2}'"
 alias c3="awk '{print \$3}'"
@@ -217,11 +194,6 @@ alias fail2ban-client='sudo fail2ban-client'
 
 alias logstash='/usr/share/logstash/bin/logstash'
 
-# alias pip='sudo -H pip3'
-# alias pip3='sudo -H pip3'
-alias easy_install='sudo easy_install'
-alias easy_install3='sudo easy_install3'
-
 alias pl="echo 'SHOW FULL PROCESSLIST;' | mysql"
 alias pc='grep -c "^processor" /proc/cpuinfo'
 
@@ -236,17 +208,10 @@ alias chmy="sudo chown -R '${USER}:${USER}' ."
 
 alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v -E "loop|dm\-"'
 
-#alias flushmc="echo 'flush_all' | nc localhost 11211"
-
-alias pwdcp='echo -n "`pwd`" | xclip -selection c'
-
 alias nping='TIME="%E" \time nc -w 5 -vz'
-alias iptest="curl https://ifconfig.io/ip --socks5-hostname"
 
 alias -g xx='| tr -d "\\n" xt'
 alias -g xt='| tee /dev/tty | xclip -selection clipboard'
-
-alias ms='sudo mongosniff --source NET lo 27017'
 
 ex () {
 	if [ -f $1 ] ; then
@@ -270,11 +235,6 @@ ex () {
 		echo "'$1' is not a valid file"
 	fi
 }
-
-alias wake-tesla='wakeonlan "fc:aa:14:ad:25:d5" && wakeonlan -i "10.0.31.16"    "fc:aa:14:ad:25:d5"'
-alias wake-molly='wakeonlan "d8:50:e6:ba:43:df" && wakeonlan -i "10.0.31.14"    "d8:50:e6:ba:43:df"'
-alias wake-lydia='wakeonlan "e0:d5:5e:16:08:a0" && wakeonlan -i "192.168.1.225" "e0:d5:5e:16:08:a0"'
-alias wake-rpi='  wakeonlan "b8:27:eb:c1:83:2a" && wakeonlan -i "192.168.1.224" "b8:27:eb:c1:83:2a"'
 
 trimaudio() {
 	ffmpeg -i "$1" -an -c:v copy "$2"
