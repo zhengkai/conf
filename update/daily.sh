@@ -36,7 +36,11 @@ fi
 ./npm.sh || :
 ./pip.sh || :
 
-./ubuntu.sh
+# 周六日不更新 ubuntu
+dow=$(date +%u)
+if [[ $dow -lt 6 ]]; then
+	./ubuntu.sh
+fi
 
 CHN="${HOME}/hide/redir/chn/update.sh"
 if [ -x "$CHN" ]; then

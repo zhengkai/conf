@@ -30,6 +30,7 @@ alias ts="ts '%H:%M:%S'"
 alias apt='sudo apt'
 alias apt-get='sudo apt-get'
 alias apt-cache='sudo apt-cache'
+alias apt-where='dpkg -S'
 alias wondershaper='sudo wondershaper'
 alias iotop='sudo iotop'
 alias iftop='sudo iftop'
