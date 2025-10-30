@@ -36,10 +36,17 @@ fi
 ./npm.sh || :
 ./pip.sh || :
 
-# 周六日不更新 ubuntu
-dow=$(date +%u)
-if [[ $dow -lt 6 ]]; then
-	./ubuntu.sh
+DOW="$(date +%u)"
+if [ -d /www/luigi ]; then
+	# 生产机只在周二更新 ubuntu
+	if [ "$DOW" -eq 2 ]; then
+		./ubuntu.sh
+	fi
+else
+	# 周六日不更新 ubuntu
+	if [[ "$DOW" -lt 6 ]]; then
+		./ubuntu.sh
+	fi
 fi
 
 CHN="${HOME}/hide/redir/chn/update.sh"
