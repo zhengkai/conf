@@ -66,5 +66,9 @@ fi
 
 wait
 
+if [ -d /www/luigi ] && [ "$DOW" -ne 2 ]; then
+    exit
+fi
+
 ./before-reboot.sh || :
 ./reboot-check.sh
