@@ -19,6 +19,8 @@ alias fname='fc-query --format="family: %{family}\nstyle: %{style}\nfullname: %{
 
 alias mj='make -j$(nproc)'
 
+alias uuid='\cat /proc/sys/kernel/random/uuid'
+
 alias yt-dlp="yt-dlp -o '%(id)s.%(ext)s'"
 alias youtube-dl="yt-dlp"
 alias twitter-dl="yt-dlp --cookies-from-browser chrome+gnomekeyring"
