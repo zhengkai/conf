@@ -4,7 +4,7 @@ local config = {}
 config.warn_about_missing_glyphs = false
 config.font_size = 14
 
-config.dpi = 192.0
+-- config.dpi = 192.0
 
 config.font = wezterm.font_with_fallback({
 	{ family = 'JetBrains Mono NL', },
