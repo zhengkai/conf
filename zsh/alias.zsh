@@ -57,6 +57,7 @@ alias ip='sudo ip'
 alias wg='sudo wg'
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
+alias dof='docker logs --tail 100  -f'
 # alias try='docker run --rm=true -t -i'
 
 alias cpuinfo='less /proc/cpuinfo'
