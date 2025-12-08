@@ -133,7 +133,7 @@ alias date="TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S'"
 alias now='i=$(\date +%s); echo "$i"; date -d @"$i"'
 alias utcnow='i=$(\date +%s); echo "$i"; utc -d @"$i"'
 
-alias rsa4096='[ ! -f ~/.ssh/id_rsa ] && \ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa'
+alias rsa4096='[ ! -f ~/.ssh/id_rsa ] && \ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa'
 alias ssh-keygen='ssh-keygen -N "" -b 384 -t ecdsa'
 alias check-ssh-pass='sudo sshd -T | \grep passwordauthentication'
 
