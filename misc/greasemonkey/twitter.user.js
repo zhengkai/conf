@@ -13,6 +13,9 @@
 GM_addStyle(`
 a[aria-label="社群"],
 a[aria-label="Premium"],
+a[href="/i/premium_sign_up"],
+div[data-testid="super-upsell-UpsellCardRenderProperties"],
+div[data-testid="analytics-preview"],
 div.mark-container {
 	display: none !important;
 }
