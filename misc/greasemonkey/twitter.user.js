@@ -17,6 +17,7 @@ a[href="/i/premium_sign_up"],
 div[data-testid="super-upsell-UpsellCardRenderProperties"],
 div[data-testid="verified_profile_visitor_upsell"],
 div[data-testid="analytics-preview"],
+div[style*="background-color: rgb(0, 67, 41)"],
 div.mark-container {
 	display: none !important;
 }
