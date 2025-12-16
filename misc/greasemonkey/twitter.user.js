@@ -14,6 +14,7 @@ GM_addStyle(`
 a[aria-label="社群"],
 a[aria-label="Premium"],
 a[href="/i/premium_sign_up"],
+a[href="/i/premium-business"],
 div[data-testid="super-upsell-UpsellCardRenderProperties"],
 div[data-testid="verified_profile_visitor_upsell"],
 div[data-testid="analytics-preview"],
