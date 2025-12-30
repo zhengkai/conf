@@ -1,0 +1,8 @@
+Host tt
+	HostName tt
+    Port 22
+    ExitOnForwardFailure yes
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+    TCPKeepAlive yes
+    Compression yes
