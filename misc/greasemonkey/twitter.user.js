@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      2.4
+// @version      2.5
 // @description  hide twitter link
 // @author       Zheng Kai
 // @match        https://x.com/*
@@ -19,6 +19,10 @@ div[data-testid="super-upsell-UpsellCardRenderProperties"],
 div[data-testid="verified_profile_visitor_upsell"],
 div[data-testid="analytics-preview"],
 div[style*="background-color: rgb(0, 67, 41)"],
+div[data-testid="chat-drawer-main"],
+div[data-testid="GrokDrawerHeader"],
+div#twitter-bird-shield-content,
+a[href="/i/premium-business"],
 div.mark-container {
 	display: none !important;
 }
