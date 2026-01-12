@@ -23,6 +23,7 @@ div[data-testid="chat-drawer-main"],
 div[data-testid="GrokDrawerHeader"],
 div#twitter-bird-shield-content,
 a[href="/i/premium-business"],
+a[href="/i/jf/creators/studio"],
 div.mark-container {
 	display: none !important;
 }
