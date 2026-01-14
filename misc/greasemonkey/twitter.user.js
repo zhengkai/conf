@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Cleaner
 // @namespace    https://soulogic.com/
-// @version      2.5
+// @version      2.6
 // @description  hide twitter link
 // @author       Zheng Kai
 // @match        https://x.com/*
@@ -28,3 +28,17 @@ div.mark-container {
 	display: none !important;
 }
 `);
+
+(() => {
+	const clean = (o) => {
+		o.classList.add('ignore');
+		if (o.innerHTML === "广告") {
+			console.log('delete', o);
+			o.closest('article').style.display = "none";
+		};
+	};
+	const loop = () => {
+		document.querySelectorAll('*:not(a) > div[style*="color: rgb(113, 118, 123)"]:not(:has(a)):has(> span:only-child) > span:not(.ignore)').forEach(clean);
+	};
+	setInterval(loop, 100);
+})();
