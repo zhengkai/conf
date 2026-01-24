@@ -6,8 +6,14 @@
 // @author       Zheng Kai
 // @match        https://*.zhihu.com/*
 // @match        https://zhihu.com/*
-// @grant        none
+// @grant        GM_addStyle
 // ==/UserScript==
+
+GM_addStyle(`
+.highlight-wrap {
+	border-bottom-width: 0 !important;
+}
+`);
 
 (() => {
 	'use strict';
