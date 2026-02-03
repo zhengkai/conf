@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+	echo "usage: $0 <目标> [ping 参数...]"
+	exit 1
+fi
+
+target="$1"
+shift || true
+
+# 如果包含协议头，提取域名
+if [[ "$target" =~ ^[a-zA-Z][a-zA-Z0-9+.-]*:// ]]; then
+	# 去掉协议
+	rest="${target#*://}"
+	# 去掉路径、查询、片段
+	host="${rest%%/*}"
+	# 去掉端口
+	host="${host%%:*}"
+	echo "(ping $host)"
+else
+	host="$target"
+fi
+
+/usr/bin/ping "$host" "$@"
