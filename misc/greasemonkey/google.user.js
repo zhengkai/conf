@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hide Google Box
 // @namespace    http://tampermonkey.net/
-// @version      2025-12-11
+// @version      1.0
 // @description  Hide that dumbass Google AI answer box.
 // @author       Soulogic
 // @match        https://www.google.com/*
