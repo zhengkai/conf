@@ -13,6 +13,12 @@ GM_addStyle(`
 .highlight-wrap {
 	border-bottom-width: 0 !important;
 }
+
+div.ShareMenu-toggler,
+button[aria-label="喜欢"],
+button.VoteButton {
+	display: none !important;
+}
 `);
 
 (() => {
