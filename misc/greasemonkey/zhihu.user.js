@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎去提醒
 // @namespace    https://soulogic.com/
-// @version      1.4
+// @version      1.5
 // @description  try to take over the world!
 // @author       Zheng Kai
 // @match        https://*.zhihu.com/*
@@ -17,6 +17,10 @@ GM_addStyle(`
 div.ShareMenu-toggler,
 button[aria-label="喜欢"],
 button.VoteButton {
+	display: none !important;
+}
+
+div:has(> svg.ZDI.ZDI--AgreeFill24) {
 	display: none !important;
 }
 `);
