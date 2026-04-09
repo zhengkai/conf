@@ -75,13 +75,17 @@ config.initial_rows = 32
 
 -- fullscreen
 local fullscreen = os.getenv('WEZTERM_FULLSCREEN')
-if fullscreen == '1' then
+if fullscreen and fullscreen ~= '' then
 	local mux = wezterm.mux
 	wezterm.on('gui-startup', function()
 		local _, _, window = mux.spawn_window {}
 		window:gui_window():toggle_fullscreen()
 	end)
-	config.default_prog = { '/home/zhengkai/conf/script/tmux-tilda.sh' }
+	if fullscreen == 'tmu' then
+		config.default_prog = { '/home/zhengkai/conf/bin/tmu' }
+	else
+		config.default_prog = { '/home/zhengkai/conf/script/tmux-tilda.sh' }
+	end
 end
 
 -- https://wezterm.org/colorschemes/index.html
