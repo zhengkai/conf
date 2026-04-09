@@ -33,9 +33,6 @@ sudo timedatectl set-timezone Asia/Shanghai
 mapfile -t list < <(cat list-aptget)
 sudo apt install -yq "${list[@]}" || exit 1
 
-# sudo systemctl disable webhook
-# sudo systemctl disable shadowsocks-libev
-
 sudo adduser "$USER" www-data
 
 if [ -d ~/.vim ]; then
