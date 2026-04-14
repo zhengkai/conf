@@ -76,7 +76,6 @@ subversion
 sysstat
 telnet
 tig
-tldr
 tmux
 toilet
 traceroute
@@ -85,7 +84,6 @@ tree
 vim
 webp
 whois
-wondershaper
 zsh
 zsh-doc
 zsh-syntax-highlighting
