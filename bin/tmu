@@ -8,7 +8,7 @@ fi
 name=${1:-default}
 window_num=${2:-3}
 
-tmux='/usr/bin/tmux'
+tmux='tmux'
 
 "$tmux" has-session -t "$name" 2>/dev/null || has_sesion=false
 

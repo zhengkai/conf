@@ -51,15 +51,4 @@ if [ -d "$WORK_ROOT" ] && [ -r "$WORK_ROOT" ]; then
 	cd "$WORK_ROOT"
 fi
 
-# if [ -f /usr/local/lib/libstderred.so ]; then
-	# export LD_PRELOAD="/usr/local/lib/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
-	# export STDERRED_ESC_CODE=$(echo -e '\e[38;2;255;45;45;48;2;10;10;10m')
-# fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# [ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
-# [ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
-[ -x "/usr/local/src/kitty/shell-integration/kitty.zsh" ] && source "/usr/local/src/kitty/shell-integration/kitty.zsh"
-[ -x "/usr/local/bin/ng" ] && source <(ng completion script)
-
 tabs 4
