@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 for DIR in $(sudo ls -d /tmp/systemd-private-*); do
 	NAME="${DIR:54}"

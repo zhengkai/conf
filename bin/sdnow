@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$DISPLAY" ]; then
 	>&2 echo only run in X11

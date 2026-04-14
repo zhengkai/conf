@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 PID=$(pgrep -f /opt/QQ/qq | sort | head -n 1)
 

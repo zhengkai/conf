@@ -1,4 +1,5 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+set -ex
 
 if [ "$(which acl)" != "${HOME}/conf/bin/acl" ]; then
 	>&2 echo not yet

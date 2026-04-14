@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 T=$(nvidia-smi -q --display=TEMPERATURE | grep 'GPU Current Temp' | cut -d':' -f2 | grep -o -P '\d+')
 

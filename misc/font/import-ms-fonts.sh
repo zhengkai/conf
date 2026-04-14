@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SOURCE="${1:-/media/zhengkai/System/Windows/Fonts}"
 

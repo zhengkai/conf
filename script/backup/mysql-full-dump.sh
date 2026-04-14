@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TARGET_DIR="/backup/${HOSTNAME,,}"
 

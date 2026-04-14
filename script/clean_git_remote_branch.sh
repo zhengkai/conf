@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "The following remote branches are fully merged into master and will be removed:"
 echo
 git branch -r --merged master | sed 's/ *origin\///' | grep -v 'master$'

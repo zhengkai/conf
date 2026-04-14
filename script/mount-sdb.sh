@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DISK="/dev/disk/by-uuid/14E0-E609"
 

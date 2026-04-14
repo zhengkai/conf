@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CHECK_TEXT='Expiration date: April 9, 2024'
 

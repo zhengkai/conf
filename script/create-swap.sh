@@ -1,4 +1,5 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+set -ex
 
 if [ "$EUID" -ne 0 ]; then
 	sudo "$0"

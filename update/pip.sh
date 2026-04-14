@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export PATH="${HOME}/.venvs/default/bin:${HOME}/.local/bin:${HOME}/.npm/bin:/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/snap/bin"
 

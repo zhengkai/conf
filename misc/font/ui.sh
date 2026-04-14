@@ -1,4 +1,5 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+set -ex
 
 gsettings get org.gnome.desktop.interface document-font-name
 gsettings get org.gnome.desktop.interface font-name

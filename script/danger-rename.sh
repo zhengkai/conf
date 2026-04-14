@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # rename.sh - 将当前目录及子目录下的文件名转换为小写，空格和下划线替换为连字符
 

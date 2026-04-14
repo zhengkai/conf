@@ -1,4 +1,5 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+set -ex
 
 # require: imagemagick
 # combine gif: convert -delay 10 *.png -resize 200x113 -loop 0 1.gif

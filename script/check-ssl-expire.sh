@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DOMAIN="${1:-soulogic.com}"
 PORT="${2:-443}"

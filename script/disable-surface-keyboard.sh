@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 禁止所有usb 设备（其实只是为了禁键盘，但始终无法精确定位）
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 给定 Google Webfont 字体名，下载相应 css/woff2 文件用于本地自架
 #

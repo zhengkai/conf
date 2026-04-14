@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' >> /log/clean-autojump.log
 

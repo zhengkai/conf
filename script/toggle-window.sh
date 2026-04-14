@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TOGGLE_WIN_FILE="${HOME}/.config/toggle-win"
 ID=$(< "$TOGGLE_WIN_FILE")

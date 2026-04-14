@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 KITTY_DISABLE_WAYLAND=1 GLFW_IM_MODULE=ibus /usr/local/bin/kitty

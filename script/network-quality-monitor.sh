@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 指定目标主机
 target="${1:-registry.npmjs.org}"

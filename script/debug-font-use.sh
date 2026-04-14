@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 检查每个字按系统顺序都实际用的哪个字体
 #

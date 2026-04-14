@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CHECK="/var/run/reboot-required"
 if [ ! -e "$CHECK" ]; then

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 MAX_DAY=23
 if [[ "$1" =~ ^[0-9]+$ ]] && [ "$1" -ge 3 ] && [ "$1" -le 10000 ]; then

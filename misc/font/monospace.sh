@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # https://unix.stackexchange.com/questions/154736/what-is-the-gnome-classic-monospace-font
 

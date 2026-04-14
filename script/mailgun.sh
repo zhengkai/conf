@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$MAILGUN_KEY" ]; then
 	>&2 echo "Error: MAILGUN_KEY is not set"

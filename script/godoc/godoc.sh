@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export GOROOT=/usr/local/go
 export GOARCH=amd64

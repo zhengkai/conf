@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 acl sudo /etc/hosts
 acl sudo /etc/fstab

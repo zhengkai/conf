@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 指定目录和最小空间阈值（单位为MB）
 DIR="${1:-/}"

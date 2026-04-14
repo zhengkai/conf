@@ -1,4 +1,5 @@
-#!/bin/bash -x
+#!/usr/bin/env bash
+set -x
 
 if [ "$1" == "week" ]; then
 	WEEK_DAY=$(date '+%u')

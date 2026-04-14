@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # DOMAIN="edge-chat.messenger.com"
 DOMAIN="${1:-edge-chat.facebook.com}"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DATE=$(TZ="Asia/Shanghai" date -d 'yesterday' "+%Y%m%d")
 

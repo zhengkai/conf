@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 session=tilda
 
 for line in `tmux list-windows -F "#{window_index}:#{window_name}" -t $session`; do

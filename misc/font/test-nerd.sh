@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 显示一些 Nerd Font 图标
 echo -e "\uf489  Terminal"

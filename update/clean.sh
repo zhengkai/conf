@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -w /go/tmp ]; then
 	find /go/tmp -type f -mtime +2 -delete

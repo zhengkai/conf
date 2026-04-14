@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 # 本地 nginx log 目录
 LOG_DIR="${1:-/log}"

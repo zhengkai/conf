@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 LIST=$(find . -type f | sed 's/.*\.//' | grep -v '/' | sort | uniq)
 

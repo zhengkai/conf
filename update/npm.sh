@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if ! command -v npm &>/dev/null; then
 	>&2 echo "npm is not installed"

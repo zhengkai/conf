@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 裁剪 mkv 文件，只保留指定的 stream id
 

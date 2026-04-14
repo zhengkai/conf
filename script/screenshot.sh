@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 FILENAME="$1"
 if [ -z "$FILENAME" ]; then

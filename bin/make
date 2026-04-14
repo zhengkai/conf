@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 # 不断往上递归，看哪个目录有 Makefile 可以 make
 

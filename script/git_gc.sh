@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 pathList=`locate '.git' | grep -e '\.git$'`
 

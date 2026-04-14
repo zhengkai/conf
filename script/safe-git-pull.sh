@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$1" ] || [ ! -d "$1" ]; then
 	>&2 echo input an path for git pull

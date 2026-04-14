@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 __zk_fsel() {
   if [ -z "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then

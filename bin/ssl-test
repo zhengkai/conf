@@ -1,4 +1,5 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+set -ex
 
 NAME="${1:-soulogic.com}"
 PORT="${2:-443}"

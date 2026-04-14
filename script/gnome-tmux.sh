@@ -1,4 +1,5 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+set -ex
 
 gnome-terminal -- "/bin/bash" "$HOME/conf/script/tmux.sh" 2>/dev/null &
 

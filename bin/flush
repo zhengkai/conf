@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 REDIS=`pgrep redis-server`
 if [ -n "$REDIS" ]; then

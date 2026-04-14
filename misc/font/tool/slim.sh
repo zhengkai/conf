@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DST_DIR="${HOME}/.local/share/fonts"
 
