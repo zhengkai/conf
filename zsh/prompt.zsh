@@ -81,7 +81,7 @@ function git_propmt_dirty() {
 
 setopt PROMPT_SUBST
 
-local input_color="%F{15}"
+local input_color="%F{252}"
 
 PROMPT='
 ${time} $(show_host) $(show_url) $(git_propmt)
