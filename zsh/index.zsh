@@ -9,25 +9,14 @@ source $HOME/conf/zsh/alias.zsh
 source $HOME/conf/zsh/timer.zsh
 source $HOME/conf/zsh/fzf.zsh
 
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx"
-export XMODIFIERS="@im=fcitx"
-export GLFW_IM_MODULE="fcitx"
-export INPUT_METHOD="fcitx"
+export FIGNORE=".lock .example"
 
-HISTFILE=$HOME/conf/zsh/history.txt
-HISTSIZE=1000
-SAVEHIST=1000
 setopt share_history
 setopt inc_append_history
 setopt autocd
 setopt ignoreeof
 
 alias -s {html,scss,css,go,ts,json,yml,yaml}=nvim
-
-if [ -z "$(declare -f -F j)" ] && [ -f /usr/share/autojump/autojump.zsh ]; then
-	. /usr/share/autojump/autojump.zsh
-fi
 
 if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 
