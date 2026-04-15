@@ -9,8 +9,6 @@ export PATH="${HOME}/.venvs/default/bin:${HOME}/.local/bin:${HOME}/.npm/bin:/go/
 
 list=(
 
-	@angular/cli
-	@angular/language-service
 	@typescript-eslint/eslint-plugin
 	@typescript-eslint/parser
 	bash-language-server
@@ -20,7 +18,6 @@ list=(
 	neovim
 	npm
 	npm-check-updates
-	protoc-gen-grpc-web
 	sass
 	tree-sitter
 	tree-sitter-cli

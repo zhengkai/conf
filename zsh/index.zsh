@@ -1,4 +1,4 @@
-if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
+if [ "$LC_TMUX" = "yes" ] && [ -z "$TMUX" ]; then
 	~/conf/bin/tmu
 fi
 
@@ -14,6 +14,8 @@ export QT_IM_MODULE="fcitx"
 export XMODIFIERS="@im=fcitx"
 export GLFW_IM_MODULE="fcitx"
 export INPUT_METHOD="fcitx"
+
+export FIGNORE=".lock .example"
 
 HISTFILE=$HOME/conf/zsh/history.txt
 HISTSIZE=1000
