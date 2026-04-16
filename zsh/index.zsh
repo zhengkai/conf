@@ -9,14 +9,14 @@ source $HOME/conf/zsh/alias.zsh
 source $HOME/conf/zsh/timer.zsh
 source $HOME/conf/zsh/fzf.zsh
 
-export FIGNORE=".lock .example"
+export FIGNORE=".lock:.example"
 
 setopt share_history
 setopt inc_append_history
 setopt autocd
 setopt ignoreeof
 
-alias -s {html,scss,css,go,ts,json,yml,yaml}=nvim
+alias -s {html,scss,css,go,ts,json,nix,ini,yml,yaml}=nvim
 
 if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 
