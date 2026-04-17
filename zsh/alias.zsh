@@ -1,6 +1,6 @@
 setopt aliases
 
-alias nbuild = 'sudo nixos-rebuild switch --flake ~/nix'
+alias nbuild='sudo nixos-rebuild switch --flake ~/nix'
 
 alias todo='vi ~/TODO'
 
