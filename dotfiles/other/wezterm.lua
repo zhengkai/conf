@@ -62,14 +62,6 @@ config.font_rules = {
 
 config.enable_wayland = false
 
-config.set_environment_variables = {
-	GTK_IM_MODULE = "fcitx",
-	QT_IM_MODULE = "fcitx",
-	XMODIFIERS = "@im=fcitx",
-	GLFW_IM_MODULE = "fcitx",
-	INPUT_METHOD = "fcitx",
-}
-
 config.initial_cols = 96
 config.initial_rows = 32
 

@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
+CMD="/run/current-system/sw/bin/make"
+if [ ! -x "$CMD" ]; then
+	CMD="/usr/bin/make"
+fi
+
+echo "$CMD"
+
 # 不断往上递归，看哪个目录有 Makefile 可以 make
 
 DIR=$(pwd)
@@ -22,7 +29,7 @@ do
 		fi
 
 		cd "$DIR" || exit
-		/usr/bin/make "$@"
+		"$CMD" "$@"
 		break
 	fi
 
