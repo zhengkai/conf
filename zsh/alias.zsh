@@ -17,6 +17,8 @@ alias systemctl='sudo systemctl'
 
 alias fname='fc-query --format="family: %{family}\nstyle: %{style}\nfullname: %{fullname}\npostscriptname: %{postscriptname}\n"'
 
+alias 10s='sleep 10 && systemctl suspend'
+
 alias mj='make -j$(nproc)'
 
 alias uuid='\cat /proc/sys/kernel/random/uuid'
