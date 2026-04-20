@@ -1,0 +1,116 @@
+# ============================================
+# 版本控制
+# ============================================
+.git
+.svn
+.hg
+
+*.iso
+
+# ============================================
+# 缓存（通常体积大、可再生）
+# ============================================
+.cache
+.ccache
+.thumbnails
+__pycache__
+*.pyc
+.pytest_cache
+
+# ============================================
+# 包管理器 / 依赖
+# ============================================
+.npm
+.yarn
+.pnpm-store
+node_modules
+.cargo
+.rustup
+.gradle
+.m2/repository
+.nuget
+.local/share/gem
+.cpan
+.conda/pkgs
+pip-cache
+
+# ============================================
+# 垃圾桶 / 临时文件
+# ============================================
+.Trash
+.Trash-*
+.tmp
+tmp
+*.tmp
+*.swp
+*.swo
+*~
+
+# ============================================
+# 游戏 / 大型运行时
+# ============================================
+.steam
+.local/share/Steam
+.wine
+
+# ============================================
+# 虚拟机 / 容器
+# ============================================
+.docker
+.local/share/docker
+.vagrant.d/boxes
+VirtualBox VMs
+.local/share/libvirt
+
+# ============================================
+# 浏览器数据（缓存大、含敏感 session）
+# ============================================
+.mozilla/firefox
+.config/google-chrome
+.config/chromium
+
+# ============================================
+# 编辑器 / IDE（缓存和索引可再生）
+# ============================================
+.vscode/extensions
+.vscode-server
+.local/share/JetBrains
+.config/Code
+
+# ============================================
+# 系统 / 桌面环境可再生数据
+# ============================================
+.local/share/Trash
+.local/share/baloo         # KDE 文件索引
+.local/share/akonadi       # KDE PIM 数据库
+.local/share/gvfs-metadata
+.xsession-errors
+.xsession-errors.old
+
+# ============================================
+# 日志 / 运行时
+# ============================================
+.local/state
+.local/share/recently-used.xbel
+.dbus
+.gvfs
+
+# ============================================
+# Python / Node / Go 构建产物
+# ============================================
+.local/share/virtualenvs
+.virtualenvs
+.tox
+dist
+build
+*.egg-info
+.go/pkg
+
+# ============================================
+# 其他杂项
+# ============================================
+.ansible/tmp
+.terraform.d/plugin-cache
+snap/*/common/.cache
+.local/share/flatpak
+lost+found
