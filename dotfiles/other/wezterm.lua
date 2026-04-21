@@ -4,7 +4,7 @@ local config = {}
 config.warn_about_missing_glyphs = false
 config.font_size = 14
 
-config.dpi = 192.0
+-- config.dpi = 192.0
 
 config.font = wezterm.font_with_fallback({
 	{ family = 'JetBrains Mono NL', },
@@ -60,7 +60,7 @@ config.font_rules = {
 }
 -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
-config.enable_wayland = false
+config.enable_wayland = true
 
 config.initial_cols = 96
 config.initial_rows = 32

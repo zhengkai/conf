@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 ID="$(tmux display-message -p "#{window_index}")"
 MAX_ID="$(tmux list-windows | awk -F: '{print $1}' | sort -n | tail -1)"

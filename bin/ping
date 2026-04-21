@@ -17,4 +17,10 @@ for arg in "$@"; do
 	fi
 done
 
-/usr/bin/ping "${args[@]}"
+
+CMD="/run/current-system/sw/bin/ping"
+if [ ! -x "$CMD" ]; then
+	CMD="/usr/bin/ping"
+fi
+
+"$CMD" "${args[@]}"
