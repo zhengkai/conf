@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+if [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+	exit
+fi
+
+hyprctl clients -j | jq -r '.[].address' | while read addr; do
+	hyprctl dispatch closewindow "address:${addr}";
+done

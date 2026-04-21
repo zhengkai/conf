@@ -6,4 +6,4 @@ flock -n 200 || exit
 
 set -x
 
-hyprctl dispatch exec "[workspace 20000 silent; fullscreen] wezterm start --always-new-process -- ${HOME}/conf/script/tmux-tilda.sh"
+hyprctl dispatch exec "[workspace name:wezterm silent; fullscreen] wezterm start --always-new-process -- ${HOME}/conf/script/tmux-tilda.sh"

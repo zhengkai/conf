@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+hypr-close-all-window
+
+sleep 5
+
+echo /run/current-system/sw/bin/shutdown "$@"
