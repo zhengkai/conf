@@ -12,10 +12,10 @@ current=$(hyprctl activeworkspace -j | jq '.id')
 if [ "$current" = "$TARGET" ]; then
     if [ -f "$PREV_FILE" ]; then
         prev="$(cat "$PREV_FILE")"
-		notify-send -t 1000 "prev $prev"
+		# notify-send -t 1000 "prev $prev"
         hyprctl dispatch workspace "$prev"
     else
-		notify-send -t 1000 "prev fallback"
+		# notify-send -t 1000 "prev fallback"
         hyprctl dispatch workspace "$FALLBACK"
     fi
 	exit
@@ -25,7 +25,7 @@ echo "$current" > "$PREV_FILE"
 hyprctl dispatch workspace "$TARGET"
 has=$(hyprctl clients -j | jq "[.[] | select(.workspace.id == $TARGET and .class == \"org.wezfurlong.wezterm\")] | length")
 if [ "$has" -gt 0 ]; then
-	notify-send -t 1000 "target $TARGET $has, exit"
+	# notify-send -t 1000 "target $TARGET $has, exit"
 	exit
 fi
 
