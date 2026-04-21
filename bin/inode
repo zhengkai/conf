@@ -1,0 +1,22 @@
+#! /usr/bin/env bash
+
+# 统计目录 inode 占用，类似 du --max-depth
+# 用法: ./inode [目录] [深度]
+
+TARGET="${1:-.}"
+DEPTH="${2:-1}"
+
+cd "$TARGET" || {
+	>&2 echo "can not enter dir: $TARGET"
+	exit 1
+}
+
+PWD="$(pwd)"
+
+find "$PWD" -maxdepth "$DEPTH" -mindepth 1 -type d 2>/dev/null | while read -r dir; do
+    count=$(find "$dir" 2>/dev/null | wc -l)
+    echo -e "${count}\t${dir}"
+done | sort -rn
+
+total=$(find "$PWD" 2>/dev/null | wc -l)
+echo -e "\n${total}\t(total)"
