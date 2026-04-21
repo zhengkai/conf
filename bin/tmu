@@ -34,7 +34,7 @@ if [ "$has_sesion" = false ]; then
 fi
 
 if [ "$name" == "tilda" ]; then
-	"$tmux" send -t "$name:1" "fortune-zh" ENTER
+	"$tmux" send -t "$name:1" "fortune" ENTER
 fi
 
 "$tmux" -2 attach -t "$name"
