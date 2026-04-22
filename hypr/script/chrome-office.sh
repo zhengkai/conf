@@ -1,13 +1,7 @@
 #! /usr/bin/env bash
 
-WORKSPACE="chrome-pad"
-PROFILE="Profile 2"
-
-current=$(hyprctl activeworkspace -j | jq -r '.name')
-if [ "$current" == "$WORKSPACE" ]; then
-	hyprctl dispatch workspace previous
-	exit
-fi
+WORKSPACE="chrome-office"
+PROFILE="Profile 5"
 
 hyprctl dispatch workspace "name:${WORKSPACE}"
 has=$(hyprctl clients -j | jq --arg ws "$WORKSPACE" '[.[] | select(.workspace.name == $ws)] | length')

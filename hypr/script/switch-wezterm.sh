@@ -1,36 +1,19 @@
 #! /usr/bin/env bash
 
-TARGET="wezterm"
-FALLBACK=1
-PREV_FILE="${HOME}/dev/hypr/prev-workspace.txt"
-if [ ! -f "$PREV_FILE" ]; then
-	mkdir -p "$(dirname "$PREV_FILE")"
-fi
+WORKSPACE="wezterm"
+CLASS="org.wezfurlong.wezterm"
 
 current=$(hyprctl activeworkspace -j | jq -r '.name')
-
-if [ "$current" = "$TARGET" ]; then
-	if [ -f "$PREV_FILE" ]; then
-		prev="$(cat "$PREV_FILE")"
-		# notify-send -t 1000 "prev $prev"
-		hyprctl dispatch workspace "$prev"
-	else
-		# notify-send -t 1000 "prev fallback"
-		hyprctl dispatch workspace "$FALLBACK"
-	fi
+if [ "$current" == "$WORKSPACE" ]; then
+	hyprctl dispatch workspace previous
 	exit
 fi
 
-echo "$current" > "$PREV_FILE"
-
-set -x
-
-hyprctl dispatch workspace "name:${TARGET}"
-has=$(hyprctl clients -j | jq "[.[] | select(.workspace.name == \"${TARGET}\" and .class == \"org.wezfurlong.wezterm\")] | length")
+hyprctl dispatch workspace "name:${WORKSPACE}"
+has=$(hyprctl clients -j | jq --arg ws "$WORKSPACE" --arg class "$CLASS" '[.[] | select(.workspace.name == $ws and .class == $class)] | length')
 if [ "$has" -gt 0 ]; then
 	# notify-send -t 1000 "target $TARGET $has, exit"
 	exit
 fi
 
-cd "$(dirname "$(readlink -f "$0")")" || exit 1
-./start-wezterm.sh
+"$(dirname "$(readlink -f "$0")")/start-wezterm.sh"

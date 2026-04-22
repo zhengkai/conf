@@ -1,3 +1,5 @@
 #! /usr/bin/env bash
 
-hyprctl dispatch exec "[workspace 20002 silent] qq"
+hyprctl dispatch workspace name:qq
+
+qq  --ozone-platform=wayland --high-dpi-support=1 &

@@ -2,6 +2,10 @@
 
 hypr-close-all-window
 
-sleep 5
+sleep 1
 
-echo /run/current-system/sw/bin/shutdown "$@"
+if [ $# -eq 0 ]; then
+	set -- -P 0
+fi
+
+sudo /run/current-system/sw/bin/shutdown "$@"
