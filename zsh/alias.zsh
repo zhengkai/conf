@@ -215,7 +215,7 @@ alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v -E "loop|dm
 alias nping='TIME="%E" \time nc -w 5 -vz'
 
 alias -g xx='| tr -d "\\n" xt'
-alias -g xt='| tee /dev/tty | xclip -selection clipboard'
+alias -g xt='| tee /dev/tty | wl-copy'
 
 ex () {
 	if [ -f $1 ] ; then

@@ -25,6 +25,9 @@ indent_style = space
 [Makefile]
 indent_style = tab
 
+[*.zsh]
+indent_style = tab
+
 [*.json]
 indent_style = space
 indent_size = 2

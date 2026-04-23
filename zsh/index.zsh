@@ -1,4 +1,4 @@
-if [ -n "$LC_RPG" ] && [ -z "$TMUX" ]; then
+if [ -n "$LC_TMUX" ] && [ -z "$TMUX" ]; then
 	~/conf/bin/tmu
 fi
 
@@ -7,9 +7,7 @@ source $HOME/conf/zsh/vi.zsh
 source $HOME/conf/zsh/export.zsh
 source $HOME/conf/zsh/alias.zsh
 source $HOME/conf/zsh/timer.zsh
-# source $HOME/conf/zsh/fzf.zsh
-
-export FIGNORE=".lock:.example"
+source $HOME/conf/zsh/fzf.zsh
 
 setopt share_history
 setopt inc_append_history

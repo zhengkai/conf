@@ -5,8 +5,7 @@ export HERMES_DEFAULT_SIZE="18x18"
 
 export LC_ALL=en_US.UTF-8
 
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --base-directory "$(git rev-parse --show-toplevel 2>/dev/null || echo .)"'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FIGNORE=".lock:.example"
 
 #export PATH="$HOME/.venvs/default/bin:$HOME/.local/bin:$HOME/conf/bin:$HOME/.npm/bin:$GOBIN:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
 
@@ -24,7 +23,7 @@ export LESS_TERMCAP_us=$'\E[38;5;117m'
 export ANDROID_SDK_ROOT=/mnt/sdb/android/sdk
 
 if [ -n "$TMUX" ]; then
-	export LC_RPG=""
+	export LC_TMUX=""
 fi
 
 if [ -z "$LC_SSH_FROM" ]; then

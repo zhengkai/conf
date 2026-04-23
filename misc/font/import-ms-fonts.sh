@@ -20,7 +20,7 @@ FONT=(
 	msjhl.ttc
 	msjh.ttc
 
-	msgothic.ttc
+	# msgothic.ttc
 
 	malgunsl.ttf
 	malgunbd.ttf
