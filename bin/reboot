@@ -2,6 +2,6 @@
 
 hypr-close-all-window
 
-sleep 5
+sleep 2
 
 /run/current-system/sw/bin/reboot "$@"

@@ -324,6 +324,7 @@ color "    Tested-by"		222	default
 color "    Reviewed-by"		222	default
 color default			default	default	normal
 color cursor			white	024	bold
+color cursor-blur		white	023 bold
 color status			118	default
 color delimiter			222	default
 color date			blue	default
@@ -337,8 +338,8 @@ color file			default	default
 color grep.file			blue	default
 color file-size			default	default
 color line-number		cyan	default
-color title-blur		white	blue
-color title-focus		white	blue	bold
+color title-blur		252	234
+color title-focus		255	024
 color main-commit		default	default
 color main-tag			222	default	bold
 color main-local-tag		222	default
