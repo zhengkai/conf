@@ -7,7 +7,7 @@ if [ ! -d "$SOURCE" ]; then
 	exit
 fi
 
-TARGET="/usr/local/share/fonts"
+TARGET="/home/zhengkai/.local/share/fonts"
 
 cd "$SOURCE" || exit 1
 
