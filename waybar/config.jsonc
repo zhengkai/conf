@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
 
-	"output": "HDMI-A-5",
+	// "output": "HDMI-A-5",
 
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
