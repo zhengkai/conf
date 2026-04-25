@@ -4,6 +4,8 @@ alias nbuild='sudo nixos-rebuild switch --flake ~/nix'
 
 alias todo='vi ~/TODO'
 
+alias ns="nix-shell"
+
 alias cat='sudo cat -v'
 alias vms='vmstat 1'
 alias dmidecode='sudo dmidecode'

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC1090
+
+if [[ -n "$1" ]]; then
+	source "$2"
+fi
+# unset stdenv
+# exec zsh -i

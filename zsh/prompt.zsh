@@ -45,6 +45,14 @@ function vi_prompt_color() {
 	echo "${${KEYMAP/vicmd/$insert_color}/(main|viins)/$normal_color}"
 }
 
+function nix_propmt() {
+	if [ -z "$IN_NIX_SHELL" ]; then
+		echo ' '
+		return
+	fi
+	echo " %F{098}Nix[%B${IN_NIX_SHELL}%b]%f"
+}
+
 function git_propmt() {
 	local branch=$(git branch --show-current 2>/dev/null)
 	if [ -z "$branch" ]; then
@@ -84,5 +92,5 @@ setopt PROMPT_SUBST
 local input_color="%F{252}"
 
 PROMPT='
-${time} $(show_host) $(show_url) $(git_propmt)
+${time} $(show_host)$(nix_propmt) $(show_url) $(git_propmt)
 $(vi_prompt_color) »${input_color} '

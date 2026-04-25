@@ -8,3 +8,7 @@ if [ "$current" == "$WORKSPACE" ]; then
 	exit
 fi
 hyprctl dispatch workspace "name:${WORKSPACE}"
+
+pgrep -x qq && exit 1
+
+"$(dirname "$(readlink -f "$0")")/start-qq.sh" > /tmp/qq.txt

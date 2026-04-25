@@ -5,9 +5,11 @@ export HERMES_DEFAULT_SIZE="18x18"
 
 export LC_ALL=en_US.UTF-8
 
+export NIXPKGS_ALLOW_UNFREE=1
+
 export FIGNORE=".lock:.example"
 
-#export PATH="$HOME/.venvs/default/bin:$HOME/.local/bin:$HOME/conf/bin:$HOME/.npm/bin:$GOBIN:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/snap/bin"
+# export NIX_BUILD_SHELL="${HOME}/conf/script/nix-shell-wrapper"
 
 export JQ_COLORS="48;5;237:48;5;52:48;5;22:38;5;80:38;5;214:1;39:1;39"
 
