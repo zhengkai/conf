@@ -1,28 +1,26 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 set -e
 
-CMD="/run/current-system/sw/bin/make"
-if [ ! -x "$CMD" ]; then
-	CMD="/usr/bin/make"
-fi
+CMD="/run/current-system/sw/bin/nix-shell"
 
 # 不断往上递归，看哪个目录有 Makefile 可以 make
 
 DIR=$(pwd)
 CURRENT=1
 FOUND=''
+FILE_BASE="shell.nix"
 
 while [ "$DIR" != '/' ]
 do
 
-	FILE="${DIR}/Makefile"
+	FILE="${DIR}/${FILE_BASE}"
 
 	if [ -e "$FILE" ]; then
 
 		FOUND='true'
 
 		if [ "$CURRENT" != 1 ]; then
-			echo "$FILE"
+			echo "nix-shell with $FILE"
 			echo
 		fi
 
@@ -36,6 +34,6 @@ do
 done
 
 if [ -z "$FOUND" ]; then
-	>&2 echo Makefile not found
+	>&2 echo "$FILE_BASE not found"
 	exit 1
 fi

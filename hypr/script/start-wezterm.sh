@@ -4,4 +4,4 @@ hyprctl dispatch exec "[workspace name:wezterm silent; fullscreen] wezterm start
 
 sleep 3
 
-hyprctl dispatch exec "[workspace name:log; fullscreen] wezterm start --always-new-process -- ~/conf/bin/tmu"
+hyprctl dispatch exec "[workspace name:log; maximize] wezterm start --always-new-process -- ~/conf/bin/tmu"
