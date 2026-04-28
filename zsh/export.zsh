@@ -8,6 +8,7 @@ export LC_ALL=en_US.UTF-8
 export NIXPKGS_ALLOW_UNFREE=1
 
 export FIGNORE=".lock:.example"
+export AUTOJUMP_IGNORE="/nix/store:node_modules:.git"
 
 # export NIX_BUILD_SHELL="${HOME}/conf/script/nix-shell-wrapper"
 

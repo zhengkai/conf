@@ -35,19 +35,3 @@ if [ -z "$DISPLAY" ]; then
 	chmod 600 ~/.moc/config
 	chmod 600 ~/.moc/keymap_vim
 fi
-
-ln -sf "${DIR}/zsh/index.zsh" "${HOME}/.zshrc"
-
-mkdir -p ~/.config/tig
-ln -sf "${DIR}/dotfiles/other/tigrc" ~/.config/tig/config
-
-if [ -n "$DISPLAY" ]; then
-	mkdir -p ~/.config/kitty
-	ln -sf "${DIR}/dotfiles/other/kitty.conf" ~/.config/kitty
-
-	mkdir -p ~/.config/fontconfig
-	ln -sf "${DIR}/dotfiles/other/fonts.conf" ~/.config/fontconfig
-
-	mkdir -p ~/.config/wezterm
-	ln -sf "${DIR}/dotfiles/other/wezterm.lua" ~/.config/wezterm
-fi

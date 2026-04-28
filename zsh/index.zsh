@@ -2,12 +2,17 @@ if [ -n "$LC_TMUX" ] && [ -z "$TMUX" ]; then
 	~/conf/bin/tmu
 fi
 
-source $HOME/conf/zsh/prompt.zsh
-source $HOME/conf/zsh/vi.zsh
-source $HOME/conf/zsh/export.zsh
-source $HOME/conf/zsh/alias.zsh
-source $HOME/conf/zsh/timer.zsh
-source $HOME/conf/zsh/fzf.zsh
+WORK_ROOT="/www"
+if [ -f ~/.config/env ]; then
+	source ~/.config/env
+fi
+
+source ~/conf/zsh/prompt.zsh
+source ~/conf/zsh/vi.zsh
+source ~/conf/zsh/export.zsh
+source ~/conf/zsh/alias.zsh
+source ~/conf/zsh/timer.zsh
+source ~/conf/zsh/fzf.zsh
 
 setopt share_history
 setopt inc_append_history
@@ -30,10 +35,6 @@ if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 	ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=199,bold'
 fi
 
-WORK_ROOT="/www"
-if [ -f ~/.config/env ]; then
-	source ~/.config/env
-fi
 if [ -d "$WORK_ROOT" ] && [ -r "$WORK_ROOT" ]; then
 	cd "$WORK_ROOT"
 fi

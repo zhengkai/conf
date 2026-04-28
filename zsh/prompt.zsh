@@ -1,6 +1,14 @@
 # autoload -U colors && colors
 # autoload -U promptinit && promptinit
 
+if [ -z "$ZSH_DEFAULT_USER" ]; then
+	ZSH_DEFAULT_USER="zhengkai"
+fi
+
+if [ -z "$ZSH_FORCE_HOST" ]; then
+	ZSH_FORCE_HOST="%m"
+fi
+
 local time="%D{%X}"
 time="%F{39} - ${time} -"
 
@@ -19,7 +27,7 @@ function show_url() {
 function show_host() {
 
 	local same_user=true
-	if [ "$USER" != 'zhengkai' ]; then
+	if [ "$USER" != "$ZSH_DEFAULT_USER" ]; then
 		same_user=false
 	fi
 
@@ -29,13 +37,13 @@ function show_host() {
 	fi
 
 	if [[ $same_user = false && $same_host = false ]]; then
-		echo "%F{214}%n@%m%F{39}"
+		echo "%F{214}%n@${ZSH_FORCE_HOST}%F{39}"
 	elif [ $same_host = false ]; then
-		echo "%n%F{214}@%m%F{39}"
+		echo "%n%F{214}@${ZSH_FORCE_HOST}%F{39}"
 	elif [ $same_user = false ]; then
-		echo "%F{214}%n@%F{39}%m"
+		echo "%F{214}%n@%F{39}${ZSH_FORCE_HOST}"
 	else
-		echo "%n@%m"
+		echo "%n@${ZSH_FORCE_HOST}"
 	fi
 }
 

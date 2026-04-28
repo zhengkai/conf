@@ -1,0 +1,26 @@
+#! /usr/bin/env bash
+
+VM_NAME="win11"
+
+for i in {3..1}; do
+	printf '\r\e[K⏳ %02d' "$i"
+	sleep 1
+done
+echo
+
+if command -v virsh &>/dev/null; then
+	if virsh list --state-running --name | grep -q "^${VM_NAME}$"; then
+		set -x
+		virsh suspend "$VM_NAME"
+		{ set +x; } 2>/dev/null
+		for _ in {1..30}; do
+			if virsh domstate "$VM_NAME" | grep -q "pmsuspended"; then
+				break
+			fi
+			sleep 0.5
+		done
+	fi
+fi
+
+set -x
+systemctl suspend
