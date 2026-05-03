@@ -75,7 +75,9 @@ function git_propmt_dirty() {
 		return
 	fi
 
-	untracked="$(git ls-files --others --exclude-standard | wc -l)"
+	root="$(git rev-parse --show-cdup 2>/dev/null)"
+
+	untracked="$(git ls-files --others --exclude-standard "${root:-.}" | wc -l)"
 
 	git diff -b --numstat HEAD | awk -v u="$untracked" '{
 		if ($1 != "-") add += $1
