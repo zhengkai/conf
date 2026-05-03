@@ -71,28 +71,23 @@ function git_propmt() {
 
 function git_propmt_dirty() {
 
-	file=`(git status -s | wc -l) 2> /dev/null`
-	if [ $file -lt 1 ]; then
-		return
-	fi
+	git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
+	git diff --quiet --ignore-submodules HEAD -- && return
 
-	s=`git diff -b --shortstat 2> /dev/null`
-	if [ -z "$s" ]; then
-		echo " ] [ $file"
-		return
-	fi
+	untracked="$(git ls-files --others --exclude-standard | wc -l)"
 
-	addline=`echo $s | \grep -o '[0-9]\+ insertion' | \grep -o '[0-9]\+'`
-	if [ -z "$addline" ]; then
-		addline=0
-	fi
-	subline=`echo $s | \grep -o '[0-9]\+ deletion' | \grep -o '[0-9]\+'`
-	if [ -z "$subline" ]; then
-		subline=0
-	fi
-
-	let count="$addline+$subline"
-	echo " ] [ $file / $count"
+	git diff -b --numstat | awk -v u="$untracked" '{
+		if ($1 != "-") add += $1
+		if ($2 != "-") del += $2
+		files++
+	} END {
+		out = " ] [ %F{250}" files "%F{39}"
+		diff = ""
+		if (u > 0) out = out " %F{237}" u "%F{39}"
+		if (add > 0) diff = diff " %F{118}" add "+%F{39}"
+		if (del > 0) diff = diff " %F{208}" del "-%F{39}"
+		print out
+	}'
 }
 
 setopt PROMPT_SUBST

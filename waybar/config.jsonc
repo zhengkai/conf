@@ -19,12 +19,10 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "mpd",
-        "pulseaudio",
-        "cpu",
-        "memory",
+        // "cpu",
+        // "memory",
         "clock",
-        "tray",
+        "tray"
     ],
     // Modules configuration
     // "sway/workspaces": {

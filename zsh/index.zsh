@@ -2,6 +2,8 @@ if [ -n "$LC_TMUX" ] && [ -z "$TMUX" ]; then
 	~/conf/bin/tmu
 fi
 
+source ~/conf/zsh/alias.zsh
+
 WORK_ROOT="/www"
 if [ -f ~/.config/env ]; then
 	source ~/.config/env
@@ -10,7 +12,6 @@ fi
 source ~/conf/zsh/prompt.zsh
 source ~/conf/zsh/vi.zsh
 source ~/conf/zsh/export.zsh
-source ~/conf/zsh/alias.zsh
 source ~/conf/zsh/timer.zsh
 source ~/conf/zsh/fzf.zsh
 
