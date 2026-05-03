@@ -71,12 +71,13 @@ function git_propmt() {
 
 function git_propmt_dirty() {
 
-	git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
-	git diff --quiet --ignore-submodules HEAD -- && return
+	if [ -z "$(git status --short 2>/dev/null)" ]; then
+		return
+	fi
 
 	untracked="$(git ls-files --others --exclude-standard | wc -l)"
 
-	git diff -b --numstat | awk -v u="$untracked" '{
+	git diff -b --numstat HEAD | awk -v u="$untracked" '{
 		if ($1 != "-") add += $1
 		if ($2 != "-") del += $2
 		files++
@@ -84,8 +85,8 @@ function git_propmt_dirty() {
 		out = " ] [ %F{250}" files "%F{39}"
 		diff = ""
 		if (u > 0) out = out " %F{237}" u "%F{39}"
-		if (add > 0) diff = diff " %F{118}" add "+%F{39}"
-		if (del > 0) diff = diff " %F{208}" del "-%F{39}"
+		if (add > 0) out = out " %F{118}" add "+%F{39}"
+		if (del > 0) out = out " %F{208}" del "-%F{39}"
 		print out
 	}'
 }
