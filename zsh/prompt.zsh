@@ -79,13 +79,14 @@ function git_propmt_dirty() {
 
 	untracked="$(git ls-files --others --exclude-standard "${root:-.}" | wc -l)"
 
-	git diff -b --numstat HEAD | awk -v u="$untracked" '{
+	# 为了性能只统计 100 个文件
+	git diff -b --numstat HEAD | head -n 100 | awk -v u="$untracked" '{
 		if ($1 != "-") add += $1
 		if ($2 != "-") del += $2
 		files++
 	} END {
-		out = " ] [ %F{250}" files "%F{39}"
-		diff = ""
+		out = " ] ["
+		if (files > 0) out = out " %F{250}" files "%F{39}"
 		if (u > 0) out = out " %F{237}" u "%F{39}"
 		if (add > 0) out = out " %F{118}" add "+%F{39}"
 		if (del > 0) out = out " %F{208}" del "-%F{39}"

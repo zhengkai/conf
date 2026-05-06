@@ -4,4 +4,4 @@ hypr-close-all-window
 
 sleep 2
 
-/run/current-system/sw/bin/reboot "$@"
+systemctl reboot "$@"
