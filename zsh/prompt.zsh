@@ -71,7 +71,8 @@ function git_propmt() {
 
 function git_propmt_dirty() {
 
-	if [ -z "$(git status --short 2>/dev/null)" ]; then
+	# 原本用的 git status --short，但无法忽略只有空格变化的情况
+	if [ -z "$(git diff -b --name-only 2>/dev/null)" ]; then
 		return
 	fi
 

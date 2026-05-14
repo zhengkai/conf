@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+# 用于临时修改 hosts
+
+DST="/etc/hosts"
+
+if [ ! -h "$DST" ]; then
+	echo "ready"
+	exit
+fi
+
+set -x
+
+sudo rm -f "$DST"
+
+sudo cp /etc/static/hosts "$DST"
+sudo chmod 644 "$DST"
+
+echo "192.168.50.207	soulogic.com" | sudo tee -a "$DST"
