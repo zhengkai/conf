@@ -166,11 +166,6 @@ alias less='less -r --tabs=4'
 alias pss='ps aux | \grep'
 alias netss='sudo netstat -nap | grep'
 
-alias vi='nvim -O'
-alias vim='nvim -O'
-alias :vs='nvim -O'
-alias vs='nvim -O'
-
 alias c1="awk '{print \$1}'"
 alias c2="awk '{print \$2}'"
 alias c3="awk '{print \$3}'"
