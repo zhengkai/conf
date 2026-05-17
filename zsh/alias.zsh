@@ -241,6 +241,10 @@ ex () {
 	fi
 }
 
+geoiplookup() {
+	mmdblookup --file ~/dev/ip-range/country.mmdb --ip "$@" | sed 's/ <utf8_string>//g'
+}
+
 trimaudio() {
 	ffmpeg -i "$1" -an -c:v copy "$2"
 }

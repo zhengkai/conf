@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+echo "已禁止自动休眠，按 Ctrl+C 恢复..."
+
+set -x
+systemd-inhibit --what=idle:sleep:handle-lid-switch --who="keep-awake" --why="手动禁止休眠" --mode=block sleep infinity
