@@ -14,7 +14,7 @@ if ! virsh list --state-running --name | grep -q "^${VM_NAME}$"; then
 fi
 
 if [ "$(hyprctl activeworkspace -j | jq '.windows')" -eq 0 ]; then
-	hyprctl dispatch exec "[workspace name:${VM_NAME} silent; fullscreen] looking-glass-client -f /dev/shm/looking-glass"
+	hyprctl dispatch exec "[workspace name:${VM_NAME} silent; fullscreen]  virt-manager --connect qemu:///system --show-domain-console win11"
 else
 	echo no > /tmp/looking-glass-check.txt
 fi

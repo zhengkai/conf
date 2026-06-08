@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-WORKSPACE="qq"
+WORKSPACE="steam"
 
 current=$(hyprctl activeworkspace -j | jq -r '.name')
 if [ "$current" == "$WORKSPACE" ]; then
@@ -9,8 +9,14 @@ if [ "$current" == "$WORKSPACE" ]; then
 fi
 hyprctl dispatch workspace "name:${WORKSPACE}"
 
-pgrep -x qq && exit 1
+pgrep -x steam && exit 1
+
+unset http_proxy
+unset https_proxy
+
+unset HTTP_PROXY
+unset HTTPS_PROXY
 
 unset LD_PRELOAD
 
-"$(dirname "$(readlink -f "$0")")/start-qq.sh" > /tmp/qq.txt
+steam -forcedesktopscaling=2 %U > /tmp/steam.txt
