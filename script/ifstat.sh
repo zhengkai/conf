@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IF=$(ifconfig -s | \grep -E '^(eth|enp|ens|wlp)' | awk '{print $1}' | tr '\n' ',' | sed 's/,$//')
+IF=$(ifconfig -s | \grep -E '^(eth|enp|ens|eno|wlp)' | awk '{print $1}' | tr '\n' ',' | sed 's/,$//')
 
 if [ -n "$IF" ]; then
 	ifstat-legacy -t -i "$IF" "$@"
