@@ -1,0 +1,26 @@
+#! /usr/bin/env bash
+
+set -x
+
+key="$1"
+title="$2"
+body="$3"
+
+DIR="${XDG_RUNTIME_DIR:-/tmp}/notify-once"
+mkdir -p "$DIR"
+
+id=0
+
+state="${DIR}/${key}.id"
+if [ -f "$state" ]; then
+	id=$(cat "$state")
+fi
+
+new_id=$(notify-send \
+  --print-id \
+  --replace-id="$id" \
+  -u critical \
+  -t 0 \
+  "$title" "$body")
+
+echo "$new_id" > "$state"
