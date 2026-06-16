@@ -47,7 +47,6 @@ alias lsof='sudo lsof'
 alias lsb_release='sudo lsb_release'
 # alias kitty='/usr/local/src/kitty/kitty/launcher/kitty'
 alias dl='yt-dlp --no-prefer-free-formats -f "bv+ba/b"'
-alias psql='sudo -u postgres psql --dbname=fb'
 alias xjq='xclip -out | jq .'
 
 alias gkl="gpg2 --list-keys --keyid-format long 'Zheng Kai'"
