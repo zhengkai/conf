@@ -28,5 +28,6 @@ UPDAY=$(echo "${UPSEC}/86400" | bc)
 if [ "$UPDAY" -ge "$DAY" ]; then
 	datetime
 	echo "uptime over $UPDAY days (${UPSEC} sec)" >> "$FILE"
+	touch /tmp/rebooting.txt
 	sudo reboot
 fi
