@@ -40,3 +40,5 @@ do
 	npm install --location=global "$item"
 	hash -r
 done
+
+npm cache clean --force
