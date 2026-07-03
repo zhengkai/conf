@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 source_path="talk:/backup/"
 target_path="/backup/talk_vps"
 

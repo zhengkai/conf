@@ -1,3 +1,3 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 nvim --headless -c "lua require('lazy').update({ wait = true })" +qa

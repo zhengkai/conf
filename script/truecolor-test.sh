@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 # Based on: https://gist.github.com/XVilka/8346728
 
 for i in {1..5}

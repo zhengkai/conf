@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 convert "$1" \
     \( -clone 0 -resize 16x16 \) \
     \( -clone 0 -resize 32x32 \) \

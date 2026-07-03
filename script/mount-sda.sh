@@ -1,4 +1,6 @@
-#! /bin/bash -e
+#! /usr/bin/env bash
+
+set -e
 
 DISK="/dev/disk/by-uuid/5e9a7f92-143a-41dd-9fab-82743af6f145"
 

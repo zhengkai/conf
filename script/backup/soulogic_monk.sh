@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 source_path="/backup/"
 target_path="monk:/backup"
 
