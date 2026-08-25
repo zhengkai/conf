@@ -1,24 +1,16 @@
 // ==UserScript==
-// @name         ChatGPT Keepalive
+// @name         ChatGPT
 // @namespace    https://soulogic.com/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       Zheng Kai
-// @match        https://chat.openai.com/
+// @match        https://chatgpt.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=openai.com
-// @grant        none
+// @grant        GM_addStyle
 // ==/UserScript==
 
-(() => {
-	'use strict';
-
-	setInterval(() => {
-		const iframe = document.createElement('iframe');
-		iframe.style.display = 'none';
-		iframe.src = '/api/auth/session';
-		document.body.appendChild(iframe);
-		iframe.onload = () => {
-			document.body.removeChild(iframe);
-		};
-	}, 30000);
-})();
+GM_addStyle(`
+div[aria-live="polite"][popover="manual"] {
+	display: none !important;
+}
+`);
