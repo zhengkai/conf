@@ -13,6 +13,8 @@ export TMPDIR="/tmp/${USER}"
 ~/conf/script/safe-git-pull.sh ~/build
 ~/conf/script/safe-git-pull.sh ~/.config/nvim
 
+~/.config/nvim/restore.sh || :
+
 if [ -x ~/hide/pac/run.sh ]; then
 	(
 		~/conf/script/safe-git-pull.sh ~/hide || :

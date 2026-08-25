@@ -9,7 +9,7 @@ fi
 
 FILE="${SAVE_PATH}/${HOSTNAME}-${DATE}.txt"
 
-vi "$FILE"
+nvim "$FILE"
 
 if [ -f "$FILE" ]; then
 	SIZE=`stat -c%s "$FILE" 2>/dev/null`

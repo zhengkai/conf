@@ -211,7 +211,7 @@ alias set600="(sudo find . -type d -exec sudo chmod 700 {} \;) && (sudo find . -
 
 alias chmy="sudo chown -R '${USER}:${USER}' ."
 
-alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -v -E "loop|dm\-"'
+alias iostat='sudo S_COLORS=always iostat -x 1 --pretty -m | grep -vE " (loop[0-9]+|dm-[0-9]+)$"'
 
 alias nping='TIME="%E" \time nc -w 5 -vz'
 
