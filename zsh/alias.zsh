@@ -151,7 +151,7 @@ alias du1="du1o | sort -h | expand -t 8"
 alias du1n="du1o | LC_ALL=C sort -k2,2 | expand -t 8"
 alias dus="sudo du --max-depth=0 -h | expand -t 8"
 
-alias rsync='rsync --partial -vzrtopg'
+alias rsync='rsync --partial -vzrtopg --info=progress2'
 alias rcp="rsync --no-owner --no-group --exclude='@eaDir' --exclude='@eaDir/**' --exclude='.DS_Store'"
 alias ssltime='curl -w "TCP handshake: %{time_connect}, SSL handshake: %{time_appconnect}\n" -so /dev/null'
 alias sslview='sudo openssl x509 -noout -text -in'
