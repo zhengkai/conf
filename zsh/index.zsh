@@ -18,10 +18,9 @@ export INPUT_METHOD="fcitx"
 export FIGNORE=".lock .example"
 
 HISTFILE=$HOME/conf/zsh/history.txt
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=50000
 setopt share_history
-setopt inc_append_history
 setopt autocd
 setopt ignoreeof
 

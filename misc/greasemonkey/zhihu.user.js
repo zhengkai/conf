@@ -35,11 +35,36 @@ div:has(> svg.ZDI.ZDI--AgreeFill24) {
 		a.style.display = 'none';
 	};
 
+	const disableAntiCopy = () => {
+
+		for (const event of [
+			'copy',
+			'cut',
+			'paste',
+			'contextmenu',
+			'selectstart',
+			'dragstart'
+		]) {
+			window.addEventListener(event, e => {
+				e.stopImmediatePropagation();
+			}, true);
+		}
+
+		document.addEventListener('keydown', e => {
+			if ((e.ctrlKey || e.metaKey) &&
+				['c', 'x', 'a'].includes(e.key.toLowerCase())) {
+				e.stopImmediatePropagation();
+			}
+		}, true);
+	};
+
 	const clean = () => {
 
 		if (document.hidden) {
 			return;
 		}
+
+		disableAntiCopy();
 
 		document.title = document.title.replace(/\(.+?\) /, '');
 
