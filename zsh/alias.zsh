@@ -18,6 +18,8 @@ alias iptables-save='sudo iptables-save'
 
 alias fname='fc-query --format="family: %{family}\nstyle: %{style}\nfullname: %{fullname}\npostscriptname: %{postscriptname}\n"'
 
+alias hf-whoami='curl -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/api/whoami-v2'
+
 alias mj='make -j$(nproc)'
 
 alias uuid='\cat /proc/sys/kernel/random/uuid'
