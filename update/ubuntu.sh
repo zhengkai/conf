@@ -14,5 +14,7 @@ sudo apt -y -q autoclean
 sudo rm -f /etc/ssl/certs/CNNIC_ROOT.pem || :
 sudo rm -f /usr/share/ca-certificates/mozilla/CNNIC_ROOT.crt || :
 
+sudo chmod -x /etc/cron.daily/locate
+
 echo
 date '+%Y-%m-%d %H:%M:%S'
